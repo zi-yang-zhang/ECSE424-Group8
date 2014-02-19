@@ -21,7 +21,7 @@ public class ElbowExtensionExercise extends Activity {
 		return true;
 	}
 	public void goToElbowExtensionResult(View view){
-		Intent intent = new Intent(this, ClawStretchResult.class);
+		Intent intent = new Intent(this, ElbowExtensionResult.class);
 		startActivity(intent);
 	}
 

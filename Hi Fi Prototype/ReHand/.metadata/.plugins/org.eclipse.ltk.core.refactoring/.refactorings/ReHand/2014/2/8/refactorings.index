@@ -40,3 +40,84 @@
 1392700413459	Extracts string 'null' into R.string.thumb_stretch_level
 1392700482976	Extracts string 'null' into R.string.radial_deviation_level
 1392701575003	Delete elements
+1392769233395	Rename resource 'claw-stretch.png'
+1392769239298	Rename resource 'finger-grip.png'
+1392769244172	Rename resource 'finger-lift.png'
+1392769248986	Rename resource 'radial-deviation.png'
+1392769253582	Rename resource 'thumb-stretch.png'
+1392769258367	Rename resource 'wrist-flex.png'
+1392770678268	Rename resource 'Arm Rotation.jpg'
+1392770687342	Rename resource 'Elbow Extension.jpg'
+1392770695591	Rename resource 'Open and Close.jpg'
+1392770839619	Delete elements
+1392778397695	Extracts string 'null' into R.string.tutorial_text
+1392781698635	Extracts string 'null' into R.string.exercise_text_elbow_extension
+1392782909981	Rename resource 'wrist_flex_stretch_page.xml'
+1392783511732	Copy file
+1392783537828	Copy file
+1392785850908	Extracts string 'null' into R.string.title_activity_arm_rotation_exercise
+1392785863702	Extracts string 'null' into R.string.title_activity_arm_rotation_page
+1392785890520	Extracts string 'null' into R.string.title_activity_arm_rotation_result
+1392785917077	Extracts string 'null' into R.string.title_activity_arm_rotation_tutorial_page
+1392786231456	Extracts string 'null' into R.string.title_activity_elbow_extension_exercise
+1392786245286	Extracts string 'null' into R.string.title_activity_elbow_extension_page
+1392786267292	Extracts string 'null' into R.string.title_activity_elbow_extension_result
+1392786284145	Extracts string 'null' into R.string.title_activity_elbow_extension_tutorial_page
+1392786308861	Extracts string 'null' into R.string.title_activity_finger_grip_exercise
+1392786317895	Extracts string 'null' into R.string.title_activity_finger_grip_page
+1392786328536	Extracts string 'null' into R.string.title_activity_finger_grip_result
+1392786345719	Extracts string 'null' into R.string.title_activity_finger_grip_tutorial_page
+1392786385642	Extracts string 'null' into R.string.title_activity_finger_lift_exercise
+1392786394305	Extracts string 'null' into R.string.title_activity_finger_lift_page
+1392786404708	Extracts string 'null' into R.string.title_activity_finger_lift_result
+1392786418044	Extracts string 'null' into R.string.title_activity_finger_lift_tutorial_page
+1392786455854	Extracts string 'null' into R.string.title_activity_open_and_close_exercise
+1392786466955	Extracts string 'null' into R.string.title_activity_open_and_close_page
+1392786476006	Extracts string 'null' into R.string.title_activity_open_and_close_result
+1392786490026	Extracts string 'null' into R.string.title_activity_open_and_close_tutorial_page
+1392786516437	Extracts string 'null' into R.string.title_activity_radial_deviation_exercise
+1392786526641	Extracts string 'null' into R.string.title_activity_radial_deviation_page
+1392786538381	Extracts string 'null' into R.string.title_activity_radial_deviation_result
+1392786554441	Extracts string 'null' into R.string.title_activity_radial_deviation_tutorial_page
+1392786574595	Extracts string 'null' into R.string.title_activity_thumb_stretch_exercise
+1392786586868	Extracts string 'null' into R.string.title_activity_thumb_stretch_page
+1392786599512	Extracts string 'null' into R.string.title_activity_thumb_stretch_result
+1392786612734	Extracts string 'null' into R.string.title_activity_thumb_stretch_tutorial_page
+1392786634965	Extracts string 'null' into R.string.title_activity_wrist_flex_exercise
+1392786643792	Extracts string 'null' into R.string.title_activity_wrist_flex_page
+1392786653925	Extracts string 'null' into R.string.title_activity_wrist_flex_result
+1392786665540	Extracts string 'null' into R.string.title_activity_wrist_flex_tutorial_page
+1392787549096	Delete elements
+1392787565516	Copy compilation unit
+1392787582879	Copy compilation unit
+1392787592266	Copy compilation unit
+1392787598004	Copy compilation unit
+1392787607206	Copy compilation unit
+1392787613466	Copy compilation unit
+1392787624835	Copy compilation unit
+1392787633293	Copy compilation unit
+1392788878035	Copy file
+1392788899956	Copy file
+1392788915587	Copy file
+1392788931669	Copy file
+1392788946213	Copy file
+1392788960088	Copy file
+1392788969101	Copy file
+1392789174100	Copy file
+1392789210281	Rename resource 'activity_claw_elbow_extension_page.xml'
+1392789221037	Rename resource 'activity_claw_finger_lift_page.xml'
+1392790057850	Rename resource 'activity_elbow_extension_tutorial.xml'
+1392790288722	Copy file
+1392790292462	Delete element
+1392790314545	Copy file
+1392790328433	Copy file
+1392790340740	Copy file
+1392790352208	Copy file
+1392790366923	Copy file
+1392790381971	Copy file
+1392790393364	Copy file
+1392790446787	Delete element
+1392797915861	Extracts string 'null' into R.string.result_text_this_time
+1392798021314	Extracts string 'null' into R.string.one_hundred_percent
+1392798057525	Extracts string 'null' into R.string.result_text_personal_best
+1392798197067	Extracts string 'null' into R.string.result_exercises_button_text

@@ -13,7 +13,7 @@ public class ElbowExtensionTutorialPage extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_claw_stretch_tutorial_page);
+		setContentView(R.layout.activity_elbow_extension_tutorial_page);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -30,7 +30,7 @@ public class ElbowExtensionTutorialPage extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.claw_stretch_tutorial_page, menu);
+		getMenuInflater().inflate(R.menu.elbow_extension_tutorial_page, menu);
 		return true;
 	}
 
@@ -51,7 +51,7 @@ public class ElbowExtensionTutorialPage extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	public void goToExercisePage(View view){
-			Intent intent = new Intent(this, ClawStretchExercise.class);
+			Intent intent = new Intent(this, ElbowExtensionExercise.class);
 			startActivity(intent);
 		
 	}

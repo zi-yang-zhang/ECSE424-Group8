@@ -50,10 +50,49 @@ public class ExerciseListPage extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void goToClawStretchPage(View view){
-		
+
+	public void goToArmRotationPage(View view){		
+		Intent intent = new Intent(this, ArmRotationPage.class);
+		startActivity(intent);
+	}
+
+	public void goToClawStretchPage(View view){		
 		Intent intent = new Intent(this, ClawStretchPage.class);
 		startActivity(intent);
 	}
 
+	public void goToElbowExtensionPage(View view){		
+		Intent intent = new Intent(this, ElbowExtensionPage.class);
+		startActivity(intent);
+	}
+
+	public void goToFingerGripPage(View view){		
+		Intent intent = new Intent(this, FingerGripPage.class);
+		startActivity(intent);
+	}
+
+	public void goToFingerLiftPage(View view){		
+		Intent intent = new Intent(this, FingerLiftPage.class);
+		startActivity(intent);
+	}
+
+	public void goToOpenAndClosePage(View view){		
+		Intent intent = new Intent(this, OpenAndClosePage.class);
+		startActivity(intent);
+	}
+
+	public void goToRadialDeviationPage(View view){		
+		Intent intent = new Intent(this, RadialDeviationPage.class);
+		startActivity(intent);
+	}
+
+	public void goToThumbStretchPage(View view){		
+		Intent intent = new Intent(this, ThumbStretchPage.class);
+		startActivity(intent);
+	}
+
+	public void goToWristFlexPage(View view){		
+		Intent intent = new Intent(this, WristFlexPage.class);
+		startActivity(intent);
+	}
 }

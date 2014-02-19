@@ -13,7 +13,7 @@ public class ArmRotationTutorialPage extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_claw_stretch_tutorial_page);
+		setContentView(R.layout.activity_arm_rotation_tutorial_page);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -30,7 +30,7 @@ public class ArmRotationTutorialPage extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.claw_stretch_tutorial_page, menu);
+		getMenuInflater().inflate(R.menu.arm_rotation_tutorial_page, menu);
 		return true;
 	}
 
@@ -50,10 +50,10 @@ public class ArmRotationTutorialPage extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void goToExercisePage(View view){
-			Intent intent = new Intent(this, ClawStretchExercise.class);
-			startActivity(intent);
-		
+
+	public void goToExercisePage(View view) {
+		Intent intent = new Intent(this, ArmRotationExercise.class);
+		startActivity(intent);
 	}
 
 }

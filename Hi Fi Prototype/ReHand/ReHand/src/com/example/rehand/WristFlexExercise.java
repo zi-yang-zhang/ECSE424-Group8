@@ -20,8 +20,8 @@ public class WristFlexExercise extends Activity {
 		getMenuInflater().inflate(R.menu.wrist_flex_exercise, menu);
 		return true;
 	}
-	public void goToWristFlexhResult(View view){
-		Intent intent = new Intent(this, ClawStretchResult.class);
+	public void goToWristFlexResult(View view){
+		Intent intent = new Intent(this, WristFlexResult.class);
 		startActivity(intent);
 	}
 

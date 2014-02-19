@@ -21,7 +21,7 @@ public class OpenAndCloseExercise extends Activity {
 		return true;
 	}
 	public void goToOpenAndCloseResult(View view){
-		Intent intent = new Intent(this, ClawStretchResult.class);
+		Intent intent = new Intent(this, OpenAndCloseResult.class);
 		startActivity(intent);
 	}
 

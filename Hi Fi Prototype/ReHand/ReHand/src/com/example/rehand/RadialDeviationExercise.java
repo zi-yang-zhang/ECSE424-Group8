@@ -21,7 +21,7 @@ public class RadialDeviationExercise extends Activity {
 		return true;
 	}
 	public void goToRadialDeviationResult(View view){
-		Intent intent = new Intent(this, ClawStretchResult.class);
+		Intent intent = new Intent(this, RadialDeviationResult.class);
 		startActivity(intent);
 	}
 

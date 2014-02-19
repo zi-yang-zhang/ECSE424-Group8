@@ -15,7 +15,7 @@ public class OpenAndClosePage extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_claw_stretch_page);
+		setContentView(R.layout.activity_open_and_close_page);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -32,7 +32,7 @@ public class OpenAndClosePage extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.claw_stretch_page, menu);
+		getMenuInflater().inflate(R.menu.open_and_close_page, menu);
 		return true;
 	}
 
@@ -58,7 +58,7 @@ public class OpenAndClosePage extends Activity {
 	    
 	    // Check which checkbox was clicked
 	    switch(view.getId()) {
-	        case R.id.claw_stretch_tutorial:
+	        case R.id.open_and_close_tutorial:
 	            if (checked){
 	            	this.tutorial = true;
 	            }
@@ -66,20 +66,15 @@ public class OpenAndClosePage extends Activity {
 	    }
 	}
 	public void goToExercisePage(View view){
-		boolean checked = ((CheckBox) view).isChecked();
-	    // Check which checkbox was clicked
-	    switch(view.getId()) {
-	        case R.id.claw_stretch_tutorial:
-	            if (checked){
-	            	Intent exerciseWithTutorial = new Intent(this, ClawStretchTutorialPage.class);
-	    			startActivity(exerciseWithTutorial);
-	            }else{
-	            	Intent exerciseWithOutTutorial = new Intent(this, ClawStretchExercise.class);
-	    			startActivity(exerciseWithOutTutorial);
-	            }
-
-	    }
-
+		CheckBox check = (CheckBox) findViewById(R.id.open_and_close_tutorial);
+		boolean checked = check.isChecked();
+        if (checked){
+            Intent exerciseWithTutorial = new Intent(this, OpenAndCloseTutorialPage.class);
+            startActivity(exerciseWithTutorial);
+        }else{
+            Intent exerciseWithOutTutorial = new Intent(this, OpenAndCloseExercise.class);
+            startActivity(exerciseWithOutTutorial);
+        }
 	}
 
 }

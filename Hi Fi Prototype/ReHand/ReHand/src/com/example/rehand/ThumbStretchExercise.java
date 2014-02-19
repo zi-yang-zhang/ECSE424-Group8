@@ -21,7 +21,7 @@ public class ThumbStretchExercise extends Activity {
 		return true;
 	}
 	public void goToThumbStretchResult(View view){
-		Intent intent = new Intent(this, ClawStretchResult.class);
+		Intent intent = new Intent(this, ThumbStretchResult.class);
 		startActivity(intent);
 	}
 

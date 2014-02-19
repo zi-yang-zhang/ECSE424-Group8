@@ -66,20 +66,15 @@ public class ClawStretchPage extends Activity {
 	    }
 	}
 	public void goToExercisePage(View view){
-		boolean checked = ((CheckBox) view).isChecked();
-	    // Check which checkbox was clicked
-	    switch(view.getId()) {
-	        case R.id.claw_stretch_tutorial:
-	            if (checked){
-	            	Intent exerciseWithTutorial = new Intent(this, ClawStretchTutorialPage.class);
-	    			startActivity(exerciseWithTutorial);
-	            }else{
-	            	Intent exerciseWithOutTutorial = new Intent(this, ClawStretchExercise.class);
-	    			startActivity(exerciseWithOutTutorial);
-	            }
-
-	    }
-
+		CheckBox check = (CheckBox) findViewById(R.id.claw_stretch_tutorial);
+		boolean checked = check.isChecked();
+        if (checked){
+            Intent exerciseWithTutorial = new Intent(this, ClawStretchTutorialPage.class);
+            startActivity(exerciseWithTutorial);
+        }else{
+            Intent exerciseWithOutTutorial = new Intent(this, ClawStretchExercise.class);
+            startActivity(exerciseWithOutTutorial);
+        }
 	}
 
 }

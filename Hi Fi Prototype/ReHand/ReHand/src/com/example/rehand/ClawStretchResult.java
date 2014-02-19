@@ -2,7 +2,9 @@ package com.example.rehand;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class ClawStretchResult extends Activity {
 
@@ -19,4 +21,8 @@ public class ClawStretchResult extends Activity {
 		return true;
 	}
 
+	public void goToExercisesPage(View view){
+		Intent intent = new Intent(this, ExerciseListPage.class);
+		startActivity(intent);
+	}
 }

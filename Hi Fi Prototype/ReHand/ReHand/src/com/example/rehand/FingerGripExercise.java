@@ -21,7 +21,7 @@ public class FingerGripExercise extends Activity {
 		return true;
 	}
 	public void goToFingerGripResult(View view){
-		Intent intent = new Intent(this, ClawStretchResult.class);
+		Intent intent = new Intent(this, FingerGripResult.class);
 		startActivity(intent);
 	}
 
