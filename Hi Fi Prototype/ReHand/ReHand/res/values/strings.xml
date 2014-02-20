@@ -5,7 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="greeting_words">Welcome To ReHand</string>
-    <string name="touch_screen_instructions">Tap on either botton to continue</string>
+    <string name="touch_screen_instructions">Tap on either button to continue</string>
     <string name="sign_up">Sign Up now!</string>
     <string name="log_in">Log In!</string>
     <string name="title_activity_home_page">HomePage</string>
@@ -76,8 +76,21 @@
     <string name="title_activity_wrist_flex_result">WristFlexResult</string>
     <string name="title_activity_wrist_flex_tutorial_page">WristFlexTutorialPage</string>
     <string name="result_text_this_time">This Time:</string>
-    <string name="one_hundred_percent">100%</string>
     <string name="result_text_personal_best">Personal Best:</string>
     <string name="result_exercises_button_text">Exercises</string>
+    <string name="progress">Progress</string>
+    <string name="progress_text_title">Progress</string>
+    <string name="progress_text_view_details">View Details</string>
+    <string name="title_activity_progress_page">ProgressPage</string>
+    <string name="title_activity_details_page">DetailsPage</string>
+    <string name="progress_arm_rotation">Not Done</string>
+    <string name="progress_claw_stretch">Not Done</string>
+    <string name="progress_elbow_extension">Not Done</string>
+    <string name="progress_finger_grip">Not Done</string>
+    <string name="progress_finger_lift">Not Done</string>
+    <string name="progress_open_and_close">Not Done</string>
+    <string name="progress_radial_deviation">Not Done</string>
+    <string name="progress_thumb_stretch">Not Done</string>
+    <string name="progress_wrist_flex">Not Done</string>
 
 </resources>

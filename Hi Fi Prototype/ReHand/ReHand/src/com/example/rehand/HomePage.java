@@ -56,6 +56,13 @@ public class HomePage extends Activity {
 		Intent intent = new Intent(this, ExerciseListPage.class);
 		startActivity(intent);
 	}
+
+	public void goToProgressPage(View view){
+		// Do something in response to button
+		Intent intent = new Intent(this, ProgressPage.class);
+		startActivity(intent);
+	}
+
 	public void goToSchedulePage(View view){
 		// Do something in response to button
 		Intent intent = new Intent(this, SchedulePage.class);

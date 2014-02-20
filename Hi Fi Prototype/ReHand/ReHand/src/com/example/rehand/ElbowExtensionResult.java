@@ -2,7 +2,9 @@ package com.example.rehand;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
 
@@ -10,6 +12,9 @@ public class ElbowExtensionResult extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		prefs.edit().putString("ElbowExtension", "Done").commit();
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_elbow_extension_result);
 	}

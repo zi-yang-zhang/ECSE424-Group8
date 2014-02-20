@@ -55,6 +55,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.rehand.HomePage" />
         </activity>
+        <activity
+            android:name="com.example.rehand.ProgressPage"
+            android:label="@string/title_activity_progress_page"
+            android:parentActivityName="com.example.rehand.HomePage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.HomePage" />
+        </activity>
+        <activity
+            android:name="com.example.rehand.DetailsPage"
+            android:label="@string/title_activity_details_page"
+            android:parentActivityName="com.example.rehand.ProgressPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.ProgressPage" />
+        </activity>
 
         <activity
             android:name="com.example.rehand.ArmRotationPage"

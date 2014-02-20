@@ -9,7 +9,7 @@
     tools:context=".HomePage" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/ArmRotationProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -27,23 +27,35 @@
         android:text="@string/touch_screen_instructions" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="67dp"
-        android:text="@string/schedule"
-		android:onClick="goToSchedulePage"/>
-
-    <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/ArmRotationProgress"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
         android:text="@string/exercises"
         android:onClick="goToExerciseListPage" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="14dp"
+        android:onClick="goToProgressPage"
+        android:text="@string/progress" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/Button01"
+        android:layout_marginTop="14dp"
+        android:onClick="goToSchedulePage"
+        android:text="@string/schedule" />
 
 </RelativeLayout>
