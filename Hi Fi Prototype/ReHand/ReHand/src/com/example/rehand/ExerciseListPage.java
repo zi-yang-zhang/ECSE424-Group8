@@ -1,12 +1,15 @@
 package com.example.rehand;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class ExerciseListPage extends Activity {
 
@@ -16,6 +19,48 @@ public class ExerciseListPage extends Activity {
 		setContentView(R.layout.activity_exercise_list_page);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		setupExercises();
+	}
+
+	private void setupExercises() {
+		Button b;
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		if(!prefs.getString("ArmRotation", "Not Done").equals("Not Done")) {
+			b = (Button) findViewById(R.id.button1);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("ClawStretch", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button5);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button6);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("FingerGrip", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button7);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("FingerLift", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button2);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("OpenAndClose", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button8);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button9);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("ThumbStretch", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button3);
+			b.setEnabled(false);
+        }
+        if(!prefs.getString("WristFlex", "Not Done").equals("Not Done")) {
+        	b = (Button) findViewById(R.id.button4);
+			b.setEnabled(false);
+        }
 	}
 
 	/**

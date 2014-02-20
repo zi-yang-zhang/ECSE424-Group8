@@ -77,4 +77,9 @@ public class WristFlexPage extends Activity {
         }
 	}
 
+	public void goToSchedule(View view) {
+		Intent intent = new Intent(this, SchedulePage.class);
+		intent.putExtra("Exercise", 9);
+		startActivity(intent);
+	}
 }

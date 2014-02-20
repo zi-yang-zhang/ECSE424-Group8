@@ -20,9 +20,9 @@ public class ArmRotationExercise extends Activity {
 		getMenuInflater().inflate(R.menu.arm_rotation_exercise, menu);
 		return true;
 	}
-	public void goToArmRotationResult(View view){
+
+	public void goToArmRotationResult(View view) {
 		Intent intent = new Intent(this, ArmRotationResult.class);
 		startActivity(intent);
 	}
-
 }

@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:onClick="goToSchedule"
         android:text="@string/exercise_botton_schedule" />
 
     <CheckBox

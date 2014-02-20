@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercises">
+        <item></</item>
+        <item>Arm Rotation</item>
+        <item>Claw Stretch</item>
+        <item>Elbow Extension</item>
+        <item>Finger Grip</item>
+        <item>Finger Lift</item>
+        <item>Open And Close</item>
+        <item>Radial Deviation</item>
+        <item>Thumb Stretch</item>
+        <item>Wrist Flex</item>
+    </string-array>
+    <string name="app_name">ReHand</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="greeting_words">Welcome To ReHand</string>
+    <string name="touch_screen_instructions">Tap on either button to continue</string>
+    <string name="sign_up">Sign Up now!</string>
+    <string name="log_in">Log In!</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="greeting_home_page">Welcome Back!</string>
+    <string name="exercises">Exercises</string>
+    <string name="schedule">Schedule</string>
+    <string name="title_activity_exercise_list_page">ExerciseListPage</string>
+    <string name="title_activity_schedule_page">SchedulePage</string>
+    <string name="exercise_botton_text_claw_stretch">Claw Stretch</string>
+    <string name="title_activity_claw_stretch_page">ClawStretchPage</string>
+    <string name="exercise_level_text">"Level: "</string>
+    <string name="claw_stretch_level">I</string>
+    <string name="exercise_botton_schedule">Schedule</string>
+    <string name="exercise_tutorial_check_box">Show Tutorial?</string>
+    <string name="exercise_start_botton_text">Start!</string>
+    <string name="title_activity_claw_stretch_exercise">ClawStretchExercise</string>
+    <string name="test_end_game">End Game</string>
+    <string name="title_activity_claw_stretch_tutorial_page">ClawStretchTutorialPage</string>
+    <string name="title_activity_claw_stretch_result">ClawStretchResult</string>
+    <string name="exercise_text_arm_rotation">Arm Rotation</string>
+    <string name="excercise_text_elbow_extension">Elbow Extension</string>
+    <string name="arm_rotation_level">I</string>
+    <string name="elbow_extension_level">I</string>
+    <string name="exercise_text_finger_grip">Finger Grip</string>
+    <string name="finger_grip_level">I</string>
+    <string name="exercise_text_open_and_close">Open And Close</string>
+    <string name="open_and_close_level">I</string>
+    <string name="exercise_text_finger_lift">Finger Lift</string>
+    <string name="finger_lift_level">I</string>
+    <string name="exercise_text_radial_deviation">Radial Deviation</string>
+    <string name="wrist_flex_level">I</string>
+    <string name="exercise_text_wrist_flex">Wrist Flex</string>
+    <string name="exercise_text_thumb_stretch">Thumb Stretch</string>
+    <string name="thumb_stretch_level">I</string>
+    <string name="radial_deviation_level">I</string>
+    <string name="tutorial_text">tutorial</string>
+    <string name="exercise_text_elbow_extension">Elbow Extension</string>
+    <string name="title_activity_arm_rotation_exercise">ArmRotationExercise</string>
+    <string name="title_activity_arm_rotation_page">ArmRotationPage</string>
+    <string name="title_activity_arm_rotation_result">ArmRotationResult</string>
+    <string name="title_activity_arm_rotation_tutorial_page">ArmRotationTutorialPage</string>
+    <string name="title_activity_elbow_extension_exercise">ElbowExtensionExercise</string>
+    <string name="title_activity_elbow_extension_page">ElbowExtensionPage</string>
+    <string name="title_activity_elbow_extension_result">ElbowExtensionResult</string>
+    <string name="title_activity_elbow_extension_tutorial_page">ElbowExtensionTutorialPage</string>
+    <string name="title_activity_finger_grip_exercise">FingerGripExercise</string>
+    <string name="title_activity_finger_grip_page">FingerGripPage</string>
+    <string name="title_activity_finger_grip_result">FingerGripResult</string>
+    <string name="title_activity_finger_grip_tutorial_page">FingerGripTutorialPage</string>
+    <string name="title_activity_finger_lift_exercise">FingerLiftExercise</string>
+    <string name="title_activity_finger_lift_page">FingerLiftPage</string>
+    <string name="title_activity_finger_lift_result">FingerLiftResult</string>
+    <string name="title_activity_finger_lift_tutorial_page">FingerLiftTutorialPage</string>
+    <string name="title_activity_open_and_close_exercise">OpenAndCloseExercise</string>
+    <string name="title_activity_open_and_close_page">OpenAndClosePage</string>
+    <string name="title_activity_open_and_close_result">OpenAndCloseResult</string>
+    <string name="title_activity_open_and_close_tutorial_page">OpenAndCloseTutorialPage</string>
+    <string name="title_activity_radial_deviation_exercise">RadialDeviationExercise</string>
+    <string name="title_activity_radial_deviation_page">RadialDeviationPage</string>
+    <string name="title_activity_radial_deviation_result">RadialDeviationResult</string>
+    <string name="title_activity_radial_deviation_tutorial_page">RadialDeviationTutorialPage</string>
+    <string name="title_activity_thumb_stretch_exercise">ThumbStretchExercise</string>
+    <string name="title_activity_thumb_stretch_page">ThumbStretchPage</string>
+    <string name="title_activity_thumb_stretch_result">ThumbStretchResult</string>
+    <string name="title_activity_thumb_stretch_tutorial_page">ThumbStretchTutorialPage</string>
+    <string name="title_activity_wrist_flex_exercise">WristFlexExercise</string>
+    <string name="title_activity_wrist_flex_page">WristFlexPage</string>
+    <string name="title_activity_wrist_flex_result">WristFlexResult</string>
+    <string name="title_activity_wrist_flex_tutorial_page">WristFlexTutorialPage</string>
+    <string name="result_text_this_time">This Time:</string>
+    <string name="result_text_personal_best">Personal Best:</string>
+    <string name="result_exercises_button_text">Exercises</string>
+    <string name="progress">Progress</string>
+    <string name="progress_text_title">Progress</string>
+    <string name="progress_text_view_details">View Details</string>
+    <string name="title_activity_progress_page">ProgressPage</string>
+    <string name="title_activity_details_page">DetailsPage</string>
+    <string name="progress_arm_rotation">Not Done</string>
+    <string name="progress_claw_stretch">Not Done</string>
+    <string name="progress_elbow_extension">Not Done</string>
+    <string name="progress_finger_grip">Not Done</string>
+    <string name="progress_finger_lift">Not Done</string>
+    <string name="progress_open_and_close">Not Done</string>
+    <string name="progress_radial_deviation">Not Done</string>
+    <string name="progress_thumb_stretch">Not Done</string>
+    <string name="progress_wrist_flex">Not Done</string>
+    <string name="zero_percent">0%</string>
+    <string name="schedule_time">Time:</string>
+    <string name="schedule_exercise">Exercise:</string>
+    <string name="schedule_set">Set</string>
+
+</resources>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string-array name="exercises">
+        <item></item>
+        <item>Arm Rotation</item>
+        <item>Claw Stretch</item>
+        <item>Elbow Extension</item>
+        <item>Finger Grip</item>
+        <item>Finger Lift</item>
+        <item>Open And Close</item>
+        <item>Radial Deviation</item>
+        <item>Thumb Stretch</item>
+        <item>Wrist Flex</item>
+    </string-array>
     <string name="app_name">ReHand</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
@@ -92,5 +103,9 @@
     <string name="progress_radial_deviation">Not Done</string>
     <string name="progress_thumb_stretch">Not Done</string>
     <string name="progress_wrist_flex">Not Done</string>
+    <string name="zero_percent">0%</string>
+    <string name="schedule_time">Time:</string>
+    <string name="schedule_exercise">Exercise:</string>
+    <string name="schedule_set">Set</string>
 
 </resources>

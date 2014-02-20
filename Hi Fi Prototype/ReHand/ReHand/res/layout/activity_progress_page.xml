@@ -40,4 +40,13 @@
         android:layout_marginTop="52dp"
         android:max="100" />
 
+    <TextView
+        android:id="@+id/progressPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/zero_percent"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>

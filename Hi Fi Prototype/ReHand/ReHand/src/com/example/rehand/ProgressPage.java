@@ -1,12 +1,18 @@
 package com.example.rehand;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class ProgressPage extends Activity {
 
@@ -16,6 +22,46 @@ public class ProgressPage extends Activity {
 		setContentView(R.layout.activity_progress_page);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		calculatePercentage();
+	}
+
+	private void calculatePercentage() {
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		int done = 0;
+		if(!prefs.getString("ArmRotation", "Not Done").equals("Not Done")) {
+			done++;
+        }
+        if(!prefs.getString("ClawStretch", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+        if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+        if(!prefs.getString("FingerGrip", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+        if(!prefs.getString("FingerLift", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+        if(!prefs.getString("OpenAndClose", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+        if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+        if(!prefs.getString("ThumbStretch", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+        if(!prefs.getString("WristFlex", "Not Done").equals("Not Done")) {
+        	done++;
+        }
+
+        TextView view = (TextView) findViewById(R.id.progressPercentage);
+        DecimalFormat df = new DecimalFormat("#.##");
+        view.setText(df.format(done/9.0*100) + "%");
+
+        ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+        bar.setProgress((int) (done/9.0*100.0));
 	}
 
 	/**

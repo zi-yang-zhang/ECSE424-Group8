@@ -77,4 +77,9 @@ public class ClawStretchPage extends Activity {
         }
 	}
 
+	public void goToSchedule(View view) {
+		Intent intent = new Intent(this, SchedulePage.class);
+		intent.putExtra("Exercise", 2);
+		startActivity(intent);
+	}
 }

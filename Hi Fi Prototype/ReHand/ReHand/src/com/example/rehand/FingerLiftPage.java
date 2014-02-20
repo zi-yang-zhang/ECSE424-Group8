@@ -77,4 +77,9 @@ public class FingerLiftPage extends Activity {
         }
 	}
 
+	public void goToSchedule(View view) {
+		Intent intent = new Intent(this, SchedulePage.class);
+		intent.putExtra("Exercise", 5);
+		startActivity(intent);
+	}
 }

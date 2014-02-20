@@ -77,4 +77,9 @@ public class ThumbStretchPage extends Activity {
         }
 	}
 
+	public void goToSchedule(View view) {
+		Intent intent = new Intent(this, SchedulePage.class);
+		intent.putExtra("Exercise", 8);
+		startActivity(intent);
+	}
 }

@@ -77,4 +77,9 @@ public class OpenAndClosePage extends Activity {
         }
 	}
 
+	public void goToSchedule(View view) {
+		Intent intent = new Intent(this, SchedulePage.class);
+		intent.putExtra("Exercise", 6);
+		startActivity(intent);
+	}
 }
