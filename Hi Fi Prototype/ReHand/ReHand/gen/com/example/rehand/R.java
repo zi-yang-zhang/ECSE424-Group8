@@ -173,18 +173,18 @@ public final class R {
         public static final int wrist_flex_tutorial_page=0x7f08002a;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f060064;
+        public static final int action_forgot_password=0x7f060068;
         public static final int action_settings=0x7f060001;
-        public static final int action_sign_in_register=0x7f060062;
-        public static final int action_sign_in_short=0x7f060063;
+        public static final int action_sign_in_register=0x7f060066;
+        public static final int action_sign_in_short=0x7f060067;
         public static final int app_name=0x7f060000;
         public static final int arm_rotation_level=0x7f06001a;
         public static final int claw_stretch_level=0x7f060010;
         public static final int elbow_extension_level=0x7f06001b;
-        public static final int error_field_required=0x7f060069;
-        public static final int error_incorrect_password=0x7f060068;
-        public static final int error_invalid_email=0x7f060066;
-        public static final int error_invalid_password=0x7f060067;
+        public static final int error_field_required=0x7f06006d;
+        public static final int error_incorrect_password=0x7f06006c;
+        public static final int error_invalid_email=0x7f06006a;
+        public static final int error_invalid_password=0x7f06006b;
         public static final int excercise_text_elbow_extension=0x7f060019;
         public static final int exercise_botton_schedule=0x7f060011;
         public static final int exercise_botton_text_claw_stretch=0x7f06000d;
@@ -206,7 +206,7 @@ public final class R {
         public static final int greeting_words=0x7f060003;
         public static final int hello_world=0x7f060002;
         public static final int log_in=0x7f060006;
-        public static final int login_progress_signing_in=0x7f060065;
+        public static final int login_progress_signing_in=0x7f060069;
         public static final int open_and_close_level=0x7f06001f;
         public static final int progress=0x7f06004d;
         public static final int progress_arm_rotation=0x7f060052;
@@ -222,8 +222,8 @@ public final class R {
         public static final int progress_wrist_flex=0x7f06005a;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f060060;
-        public static final int prompt_password=0x7f060061;
+        public static final int prompt_email=0x7f060064;
+        public static final int prompt_password=0x7f060065;
         public static final int radial_deviation_level=0x7f060027;
         public static final int result_exercises_button_text=0x7f06004c;
         public static final int result_text_personal_best=0x7f06004b;
@@ -234,7 +234,11 @@ public final class R {
         public static final int schedule_time=0x7f06005c;
         public static final int sign_up=0x7f060005;
         public static final int test_end_game=0x7f060015;
+        public static final int thumb_stretch_bottom_left=0x7f060061;
+        public static final int thumb_stretch_bottom_right=0x7f060062;
         public static final int thumb_stretch_level=0x7f060026;
+        public static final int thumb_stretch_top_left=0x7f06005f;
+        public static final int thumb_stretch_top_right=0x7f060060;
         public static final int title_activity_arm_rotation_exercise=0x7f06002a;
         public static final int title_activity_arm_rotation_page=0x7f06002b;
         public static final int title_activity_arm_rotation_result=0x7f06002c;
@@ -258,7 +262,7 @@ public final class R {
         public static final int title_activity_finger_lift_result=0x7f060038;
         public static final int title_activity_finger_lift_tutorial_page=0x7f060039;
         public static final int title_activity_home_page=0x7f060007;
-        public static final int title_activity_login_page=0x7f06005f;
+        public static final int title_activity_login_page=0x7f060063;
         public static final int title_activity_open_and_close_exercise=0x7f06003a;
         public static final int title_activity_open_and_close_page=0x7f06003b;
         public static final int title_activity_open_and_close_result=0x7f06003c;

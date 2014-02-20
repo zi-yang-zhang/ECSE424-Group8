@@ -108,8 +108,5 @@
     <string name="schedule_exercise">Exercise:</string>
     <string name="schedule_set">Set</string>
     <string name="thumb_stretch_top_left">Top Left</string>
-    <string name="thumb_stretch_top_right">Top Right</string>
-    <string name="thumb_stretch_bottom_left">Bottom Left</string>
-    <string name="thumb_stretch_bottom_right">Bottom Right</string>
 
 </resources>

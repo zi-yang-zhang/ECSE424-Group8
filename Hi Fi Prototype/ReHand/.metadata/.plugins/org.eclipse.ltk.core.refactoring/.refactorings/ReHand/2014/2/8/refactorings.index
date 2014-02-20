@@ -121,3 +121,38 @@
 1392798021314	Extracts string 'null' into R.string.one_hundred_percent
 1392798057525	Extracts string 'null' into R.string.result_text_personal_best
 1392798197067	Extracts string 'null' into R.string.result_exercises_button_text
+1392830124712	Extracts string 'null' into R.string.progress
+1392830437423	Copy file
+1392830449524	Copy file
+1392830558510	Extracts string 'null' into R.string.progress_text_title
+1392830852832	Extracts string 'null' into R.string.progress_text_view_details
+1392830975819	Extracts string 'null' into R.string.progress_text_view_details
+1392831615178	Copy file
+1392831625395	Copy file
+1392847798764	Extracts string 'null' into R.string.progrss_arm_rotation
+1392847834279	Extracts string 'null' into R.string.progress_claw_stretch
+1392847862220	Extracts string 'null' into R.string.progress_elbow_extension
+1392847911082	Extracts string 'null' into R.string.progress_finger_grip
+1392847937102	Extracts string 'null' into R.string.progress_finger_lift
+1392847960889	Extracts string 'null' into R.string.progress_open_and_close
+1392847987506	Extracts string 'null' into R.string.progress_radial_deviation
+1392848003073	Extracts string 'null' into R.string.progress_thumb_stretch
+1392848018284	Extracts string 'null' into R.string.progress_wrist_flex
+1392854440490	Rename field 'textView1'
+1392854467241	Rename field 'TextView01'
+1392854475731	Rename field 'armRotationProgress'
+1392854485208	Rename field 'TextView02'
+1392854494785	Rename field 'TextView03'
+1392854505061	Rename field 'TextView05'
+1392854515297	Rename field 'TextView08'
+1392854528608	Rename field 'TextView04'
+1392854537966	Rename field 'TextView06'
+1392854547926	Rename field 'TextView07'
+1392866714562	Extracts string 'null' into R.string.zero_percent
+1392871961361	Extracts string 'null' into R.string.schedule_time
+1392871990955	Extracts string 'null' into R.string.schedule_exercise
+1392872067527	Extracts string 'null' into R.string.schedule_set
+1392882706621	Extracts string 'null' into R.string.thumb_stretch_top_left
+1392882720664	Extracts string 'null' into R.string.thumb_stretch_top_right
+1392882736515	Extracts string 'null' into R.string.thumb_stretch_bottom_left
+1392882754157	Extracts string 'null' into R.string.thumb_stretch_bottom_right
