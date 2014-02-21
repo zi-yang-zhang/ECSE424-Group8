@@ -111,5 +111,17 @@
     <string name="thumb_stretch_top_right">Top Right</string>
     <string name="thumb_stretch_bottom_left">Bottom Left</string>
     <string name="thumb_stretch_bottom_right">Bottom Right</string>
+    <string name="startup_title">Welcome to ReHand</string>
+    <string name="button">Button</string>
+    <string name="startup_button_instruction">This is a button. By pressing a button, you can move to different pages of the application.</string>
+    <string name="startup_back_instruction">^ This is how you return to pages you have previously visited. When you see an arrow on this button, you can return to a previous page</string>
+    <string name="home">Home</string>
+    <string name="startup_home">Press this button to continue to the log in page</string>
+    <string name="getting_started_dialog_text">Let\'s get to know where you\'re at! We are going to put you through a series of exercises to get an idea of where you\'ll need help. When you\'re ready view the exercises!</string>
+    <string name="getting_started_positive">Exercises</string>
+    <string name="getting_started_negative">Later</string>
+    <string name="getting_started_welcome">Hi User!</string>
+    <string name="getting_started_cancel">Cancel</string>
+    <string name="close">Close</string>
 
 </resources>

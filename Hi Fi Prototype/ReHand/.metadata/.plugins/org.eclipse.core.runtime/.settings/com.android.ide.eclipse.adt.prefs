@@ -1,6 +1,8 @@
-#Wed Feb 19 13:47:13 EST 2014
+#Thu Feb 20 15:19:47 EST 2014
 com.android.ide.eclipse.adt.sdk=C\:\\Users\\Reklaw\\Downloads\\adt-bundle-windows-x86_64-20131030\\sdk
 design.structure.flyout.width=289
+com.android.ide.eclipse.adt.refactorIds=always
 eclipse.preferences.version=1
+com.android.ide.eclipse.adt.palette=ICON_TEXT,alpha
 com.android.ide.eclipse.adt.fixLegacyEditors=1
 com.android.ide.eclipse.adt.xmlEditor=true

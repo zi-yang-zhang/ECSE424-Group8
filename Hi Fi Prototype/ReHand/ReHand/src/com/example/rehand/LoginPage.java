@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -53,8 +52,6 @@ public class LoginPage extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE).edit().clear().commit();
-
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_login_page);

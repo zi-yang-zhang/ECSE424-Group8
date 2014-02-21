@@ -1,5 +1,7 @@
 package com.example.rehand;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class ExerciseListPage extends Activity {
 
@@ -24,43 +28,60 @@ public class ExerciseListPage extends Activity {
 
 	private void setupExercises() {
 		Button b;
+		int done = 0;
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
 		if(!prefs.getString("ArmRotation", "Not Done").equals("Not Done")) {
 			b = (Button) findViewById(R.id.button1);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("ClawStretch", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button5);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button6);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("FingerGrip", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button7);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("FingerLift", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button2);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("OpenAndClose", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button8);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button9);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("ThumbStretch", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button3);
 			b.setEnabled(false);
+			done++;
         }
         if(!prefs.getString("WristFlex", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button4);
 			b.setEnabled(false);
+			done++;
         }
+
+        TextView view = (TextView) findViewById(R.id.progressPercentage);
+        DecimalFormat df = new DecimalFormat("#.##");
+        view.setText(df.format(done/9.0*100) + "%");
+
+        ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+        bar.setProgress((int) (done/9.0*100.0));
 	}
 
 	/**

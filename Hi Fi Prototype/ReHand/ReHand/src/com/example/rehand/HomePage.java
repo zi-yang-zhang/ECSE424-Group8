@@ -1,7 +1,9 @@
 package com.example.rehand;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
@@ -13,7 +15,15 @@ public class HomePage extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home_page);
+
+		SharedPreferences prefs = this.getSharedPreferences("com.example.redhand", Context.MODE_PRIVATE);
+		if(prefs.getInt("GettingStartedFirstTime", 0) != 0) {
+			//Haven't done getting started yet
+			setContentView(R.layout.activity_getting_started_page);
+		} else {
+			setContentView(R.layout.activity_home_page);
+		}
+
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -69,4 +79,19 @@ public class HomePage extends Activity {
 		startActivity(intent);
 	}
 
+	public void gettingStartedPositive(View view) {
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
+
+		Intent intent = new Intent(this, ExerciseListPage.class);
+		startActivity(intent);
+	}
+
+	public void gettingStartedNegative(View view) {
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
+
+		Intent intent = new Intent(this, HomePage.class);
+		startActivity(intent);
+	}
 }

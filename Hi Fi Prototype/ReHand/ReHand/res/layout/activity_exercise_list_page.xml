@@ -15,61 +15,79 @@
                 android:onClick="goToArmRotationPage"
                 android:text="@string/exercise_text_arm_rotation" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToClawStretchPage"
-        android:text="@string/exercise_botton_text_claw_stretch" />
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToClawStretchPage"
+                android:text="@string/exercise_botton_text_claw_stretch" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToElbowExtensionPage"
-        android:text="@string/exercise_text_elbow_extension" />
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToElbowExtensionPage"
+                android:text="@string/exercise_text_elbow_extension" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToFingerGripPage"
-        android:text="@string/exercise_text_finger_grip" />
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToFingerGripPage"
+                android:text="@string/exercise_text_finger_grip" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToFingerLiftPage"
-        android:text="@string/exercise_text_finger_lift" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToFingerLiftPage"
+                android:text="@string/exercise_text_finger_lift" />
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToOpenAndClosePage"
-        android:text="@string/exercise_text_open_and_close" />
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToOpenAndClosePage"
+                android:text="@string/exercise_text_open_and_close" />
 
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToRadialDeviationPage"
-        android:text="@string/exercise_text_radial_deviation" />
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToRadialDeviationPage"
+                android:text="@string/exercise_text_radial_deviation" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToThumbStretchPage"
-        android:text="@string/exercise_text_thumb_stretch" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToThumbStretchPage"
+                android:text="@string/exercise_text_thumb_stretch" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToWristFlexPage"
-        android:text="@string/exercise_text_wrist_flex" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goToWristFlexPage"
+                android:text="@string/exercise_text_wrist_flex" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_marginTop="0dp"
+                android:layout_weight="0.39"
+                android:max="100" />
+
+            <TextView
+                android:id="@+id/progressPercentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/zero_percent"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </LinearLayout>
+
         </ScrollView>
