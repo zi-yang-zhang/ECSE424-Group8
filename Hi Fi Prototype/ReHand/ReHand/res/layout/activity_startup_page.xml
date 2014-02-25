@@ -31,19 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/Button01"
+        android:layout_below="@+id/textView2"
         android:text="@string/startup_home"
         android:textAlignment="center" />
-
-    <Button
-        android:id="@+id/Button01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:onClick="close"
-        android:text="@string/close" />
 
     <Button
         android:id="@+id/button1"
@@ -52,6 +42,7 @@
         android:layout_below="@+id/TextView01"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:text="@string/button" />
+        android:onClick="close"
+        android:text="@string/continue_button" />
 
 </RelativeLayout>

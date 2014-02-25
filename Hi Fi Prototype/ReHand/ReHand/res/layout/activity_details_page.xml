@@ -88,16 +88,6 @@
         android:text="@string/progress_radial_deviation"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/OpenAndCloseProgress"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button8"
-        android:layout_alignBottom="@+id/button8"
-        android:layout_alignLeft="@+id/FingerLiftProgress"
-        android:text="@string/progress_open_and_close"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
     <Button
         android:id="@+id/button1"
         style="?android:attr/borderlessButtonStyle"
@@ -131,24 +121,15 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button7"
-        android:layout_alignLeft="@+id/button8"
-        android:text="@string/exercise_text_finger_lift" />
-
-    <Button
-        android:id="@+id/button8"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
         android:layout_alignLeft="@+id/button9"
-        android:text="@string/exercise_text_open_and_close" />
+        android:text="@string/exercise_text_finger_lift" />
 
     <Button
         android:id="@+id/button9"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button8"
+        android:layout_below="@+id/button2"
         android:layout_alignLeft="@+id/button3"
         android:text="@string/exercise_text_radial_deviation" />
 

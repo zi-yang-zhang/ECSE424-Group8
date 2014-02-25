@@ -14,17 +14,21 @@ public class HomePage extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+/*		if(prefs.getInt("GettingStartedFirstTime", 0) != 0) {
+			Intent intent = new Intent(this, GettingStartedPage.class);
+	        startActivity(intent);
+		}*/
 		super.onCreate(savedInstanceState);
-
-		SharedPreferences prefs = this.getSharedPreferences("com.example.redhand", Context.MODE_PRIVATE);
-		if(prefs.getInt("GettingStartedFirstTime", 0) != 0) {
-			//Haven't done getting started yet
+		if(prefs.getInt("FirstTime", 0) == 0) {
+			//First time opening app
+			setContentView(R.layout.activity_startup_page);
+		} else if(prefs.getInt("GettingStartedFirstTime", 0) == 0) {
+			//First time opening app
 			setContentView(R.layout.activity_getting_started_page);
 		} else {
 			setContentView(R.layout.activity_home_page);
 		}
-
-		// Show the Up button in the action bar.
 		setupActionBar();
 	}
 
@@ -33,7 +37,7 @@ public class HomePage extends Activity {
 	 */
 	private void setupActionBar() {
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setDisplayHomeAsUpEnabled(false);
 
 	}
 
@@ -60,7 +64,7 @@ public class HomePage extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
+
 	public void goToExerciseListPage(View view){
 		// Do something in response to button
 		Intent intent = new Intent(this, ExerciseListPage.class);
@@ -73,23 +77,25 @@ public class HomePage extends Activity {
 		startActivity(intent);
 	}
 
-	public void goToSchedulePage(View view){
-		// Do something in response to button
-		Intent intent = new Intent(this, SchedulePage.class);
-		startActivity(intent);
-	}
+    public void gettingStartedPositive(View view) {
+        SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+        prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
 
-	public void gettingStartedPositive(View view) {
+        Intent intent = new Intent(this, ExerciseListPage.class);
+        startActivity(intent);
+    }
+
+    public void gettingStartedNegative(View view) {
+        SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+        prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
+
+        Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
+    }
+
+	public void close(View view) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
-
-		Intent intent = new Intent(this, ExerciseListPage.class);
-		startActivity(intent);
-	}
-
-	public void gettingStartedNegative(View view) {
-		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
+		prefs.edit().putInt("FirstTime", 1).commit();
 
 		Intent intent = new Intent(this, HomePage.class);
 		startActivity(intent);

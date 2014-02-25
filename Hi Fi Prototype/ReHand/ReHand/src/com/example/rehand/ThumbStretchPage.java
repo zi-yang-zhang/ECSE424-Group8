@@ -7,7 +7,6 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 
 public class ThumbStretchPage extends Activity {
 	boolean tutorial = false;
@@ -52,34 +51,14 @@ public class ThumbStretchPage extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void onCheckboxClicked(View view) {
-	    // Is the view now checked?
-	    boolean checked = ((CheckBox) view).isChecked();
-	    
-	    // Check which checkbox was clicked
-	    switch(view.getId()) {
-	        case R.id.thumb_stretch_tutorial:
-	            if (checked){
-	            	this.tutorial = true;
-	            }
 
-	    }
-	}
-	public void goToExercisePage(View view){
-		CheckBox check = (CheckBox) findViewById(R.id.thumb_stretch_tutorial);
-		boolean checked = check.isChecked();
-        if (checked){
-            Intent exerciseWithTutorial = new Intent(this, ThumbStretchTutorialPage.class);
-            startActivity(exerciseWithTutorial);
-        }else{
-            Intent exerciseWithOutTutorial = new Intent(this, ThumbStretchExercise.class);
-            startActivity(exerciseWithOutTutorial);
-        }
+	public void goToExercisePage(View view) {
+        Intent exerciseWithOutTutorial = new Intent(this, ThumbStretchExercise.class);
+        startActivity(exerciseWithOutTutorial);
 	}
 
-	public void goToSchedule(View view) {
-		Intent intent = new Intent(this, SchedulePage.class);
-		intent.putExtra("Exercise", 8);
-		startActivity(intent);
+	public void viewTutorial(View view) {
+		Intent exerciseWithTutorial = new Intent(this, ThumbStretchTutorialPage.class);
+        startActivity(exerciseWithTutorial);
 	}
 }

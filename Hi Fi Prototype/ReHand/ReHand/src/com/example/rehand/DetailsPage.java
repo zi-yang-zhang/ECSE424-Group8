@@ -43,10 +43,6 @@ public class DetailsPage extends Activity {
         	view = (TextView) findViewById(R.id.FingerLiftProgress);
 			view.setText("Done");
         }
-        if(!prefs.getString("OpenAndClose", "Not Done").equals("Not Done")) {
-        	view = (TextView) findViewById(R.id.OpenAndCloseProgress);
-			view.setText("Done");
-        }
         if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
         	view = (TextView) findViewById(R.id.RadialDeviationProgress);
 			view.setText("Done");

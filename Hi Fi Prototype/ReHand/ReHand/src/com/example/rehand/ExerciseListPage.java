@@ -55,11 +55,6 @@ public class ExerciseListPage extends Activity {
 			b.setEnabled(false);
 			done++;
         }
-        if(!prefs.getString("OpenAndClose", "Not Done").equals("Not Done")) {
-        	b = (Button) findViewById(R.id.button8);
-			b.setEnabled(false);
-			done++;
-        }
         if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button9);
 			b.setEnabled(false);
@@ -78,10 +73,10 @@ public class ExerciseListPage extends Activity {
 
         TextView view = (TextView) findViewById(R.id.progressPercentage);
         DecimalFormat df = new DecimalFormat("#.##");
-        view.setText(df.format(done/9.0*100) + "%");
+        view.setText(df.format(done/8.0*100) + "%");
 
         ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
-        bar.setProgress((int) (done/9.0*100.0));
+        bar.setProgress((int) (done/8.0*100.0));
 	}
 
 	/**
@@ -139,11 +134,6 @@ public class ExerciseListPage extends Activity {
 
 	public void goToFingerLiftPage(View view){		
 		Intent intent = new Intent(this, FingerLiftPage.class);
-		startActivity(intent);
-	}
-
-	public void goToOpenAndClosePage(View view){		
-		Intent intent = new Intent(this, OpenAndClosePage.class);
 		startActivity(intent);
 	}
 

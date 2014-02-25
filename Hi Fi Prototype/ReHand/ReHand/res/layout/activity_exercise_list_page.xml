@@ -44,13 +44,6 @@
                 android:text="@string/exercise_text_finger_lift" />
 
             <Button
-                android:id="@+id/button8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="goToOpenAndClosePage"
-                android:text="@string/exercise_text_open_and_close" />
-
-            <Button
                 android:id="@+id/button9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

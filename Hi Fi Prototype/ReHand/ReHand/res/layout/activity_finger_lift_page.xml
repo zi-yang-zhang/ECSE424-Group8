@@ -18,51 +18,25 @@
         android:text="@string/exercise_text_finger_lift"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignRight="@+id/button1"
-        android:text="@string/finger_lift_level"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/finger_lift_tutorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:onClick="goToSchedule"
-        android:text="@string/exercise_botton_schedule" />
-
-    <CheckBox
-        android:id="@+id/finger_lift_tutorial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
+        android:onClick="viewTutorial"
         android:text="@string/exercise_tutorial_check_box" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/finger_lift_tutorial"
-        android:layout_below="@+id/ArmRotationProgress"
-        android:layout_marginTop="20dp"
-        android:text="@string/exercise_level_text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/finger_lift_tutorial"
+        android:layout_alignRight="@+id/finger_lift_tutorial"
         android:layout_below="@+id/finger_lift_tutorial"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/exercise_start_botton_text" 
-        android:onClick="goToExercisePage"/>
+        android:onClick="goToExercisePage"
+        android:text="@string/exercise_start_botton_text" />
 
 </RelativeLayout>
