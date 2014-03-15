@@ -27,6 +27,8 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 	private Sensor mOrientation;
 	private final float NOISE = (float) 5;
 	private float mLastX, mLastY, mLastZ;
+	float movementZ;
+	private boolean mInitialized;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -52,24 +54,38 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 		final TextView xPosition = (TextView) findViewById(R.id.xPosition);
 		final TextView yPosition = (TextView) findViewById(R.id.yPosition);
 		final TextView zPosition = (TextView) findViewById(R.id.zPosition);
+		final TextView horizontalMovement = (TextView) findViewById(R.id.horizontalMovement);
 	    float z = event.values[0];
 	    float x = event.values[1];
 	    float y = event.values[2];
 
+	    if (!mInitialized) {
+	    	mLastX = x;
+			mLastY = y;
+			mLastZ = z;
+			xPosition.setText("X: " +"0.0");
+			yPosition.setText("Y: " +"0.0");
+			zPosition.setText("Z: " +"0.0");
+	    	movementZ=0;
+	    	mInitialized=true;
+	    }else{
 				float deltaX = Math.abs(mLastX - x);
 				float deltaY = Math.abs(mLastY - y);
 				float deltaZ = Math.abs(mLastZ - z);
 				if (deltaX < NOISE) deltaX = mLastX;else deltaX = x;
 				if (deltaY < NOISE) deltaY = mLastY;else deltaY = y;
-				if (deltaZ < NOISE) deltaZ = mLastZ;else deltaZ = z;
-				boolean enterX = deltaX < NOISE;
-				System.out.println(enterX);
+				if (deltaZ < NOISE) deltaZ = mLastZ;else deltaZ = z;movementZ = movementZ + (deltaZ-mLastZ);
+				
 				mLastX = deltaX;
 				mLastY = deltaY;
 				mLastZ = deltaZ;
+				
+				horizontalMovement.setText("moved: " +Float.toString(movementZ));
 				xPosition.setText("X: " +Float.toString(deltaX));
 				yPosition.setText("Y: " +Float.toString(deltaY));
 				zPosition.setText("Z: " +Float.toString(deltaZ));
+	    }
+	    System.out.println(movementZ);
 
 		/*
 		final TextView xPosition = (TextView) findViewById(R.id.xPosition);
