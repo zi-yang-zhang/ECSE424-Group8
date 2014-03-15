@@ -79,7 +79,7 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 			zPosition.setText("");
 			horizontalMovement.setText("");
 	    	movementZ=0;
-	    }else if(timer/5>4){
+	    }else if(timer/5>=5&&timer/5<15){
 			float deltaX = Math.abs(mLastX - x);
 			float deltaY = Math.abs(mLastY - y);
 			float deltaZ = Math.abs(mLastZ - z);
@@ -95,6 +95,12 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 			xPosition.setText("X: " +Float.toString(deltaX));
 			yPosition.setText("Y: " +Float.toString(deltaY));
 			zPosition.setText("Z: " +Float.toString(deltaZ));
+	    }else if(timer==75){
+			mSensorManager.unregisterListener(this, mOrientation);
+			Intent intent = new Intent(this, ElbowExtensionResult.class);
+			intent.putExtra("score", Float.toString(movementZ));
+			startActivity(intent);
+			this.finish();
 	    }
 
 		/*
@@ -140,5 +146,11 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 		// TODO Auto-generated method stub
 		
 	}
-
+	@Override
+	public void onDestroy() {
+	    super.onDestroy();  // Always call the superclass
+	    
+	    // Stop method tracing that the activity started during onCreate()
+	    android.os.Debug.stopMethodTracing();
+	}
 }

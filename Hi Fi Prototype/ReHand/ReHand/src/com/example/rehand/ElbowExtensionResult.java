@@ -7,16 +7,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 public class ElbowExtensionResult extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		prefs.edit().putString("ElbowExtension", "Done").commit();
+		//prefs.edit().putString("ElbowExtension", "Done").commit();
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_elbow_extension_result);
+		final TextView socreText = (TextView) findViewById(R.id.socreText);
+		String score = this.getIntent().getStringExtra("score");
+		socreText.setText("Your Score: "+score);
+		
 	}
 
 	@Override
