@@ -14,21 +14,31 @@ import android.view.View;
 import android.widget.TextView;
 
 public class ElbowExtensionExercise extends Activity implements SensorEventListener {
+	/*
 	private SensorManager mSensorManager;
 	private Sensor mAccelerometer;
 	private final float NOISE = (float) 0.3;
 	private boolean mInitialized;
 	private float mLastX, mLastY, mLastZ;
+	*/
+
 	
-	
+	private SensorManager mSensorManager;
+	private Sensor mOrientation;
+	private final float NOISE = (float) 5;
+	private float mLastX, mLastY, mLastZ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_elbow_extension_exercise);
-
+/*
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 		mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+	*/
+	    mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+	    mOrientation = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+	    mSensorManager.registerListener(this, mOrientation, SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
 	@Override
@@ -39,6 +49,29 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 	}
 	@Override
 	public void onSensorChanged(SensorEvent event){
+		final TextView xPosition = (TextView) findViewById(R.id.xPosition);
+		final TextView yPosition = (TextView) findViewById(R.id.yPosition);
+		final TextView zPosition = (TextView) findViewById(R.id.zPosition);
+	    float z = event.values[0];
+	    float x = event.values[1];
+	    float y = event.values[2];
+
+				float deltaX = Math.abs(mLastX - x);
+				float deltaY = Math.abs(mLastY - y);
+				float deltaZ = Math.abs(mLastZ - z);
+				if (deltaX < NOISE) deltaX = mLastX;else deltaX = x;
+				if (deltaY < NOISE) deltaY = mLastY;else deltaY = y;
+				if (deltaZ < NOISE) deltaZ = mLastZ;else deltaZ = z;
+				boolean enterX = deltaX < NOISE;
+				System.out.println(enterX);
+				mLastX = deltaX;
+				mLastY = deltaY;
+				mLastZ = deltaZ;
+				xPosition.setText("X: " +Float.toString(deltaX));
+				yPosition.setText("Y: " +Float.toString(deltaY));
+				zPosition.setText("Z: " +Float.toString(deltaZ));
+
+		/*
 		final TextView xPosition = (TextView) findViewById(R.id.xPosition);
 		final TextView yPosition = (TextView) findViewById(R.id.yPosition);
 		final TextView zPosition = (TextView) findViewById(R.id.zPosition);
@@ -68,6 +101,7 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 			zPosition.setText("Z: " +Float.toString(deltaZ));
 			
 		}
+		*/
 		
 	}
 	public void goToElbowExtensionResult(View view){
