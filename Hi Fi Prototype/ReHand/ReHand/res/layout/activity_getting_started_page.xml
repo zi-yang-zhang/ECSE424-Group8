@@ -9,7 +9,7 @@
     tools:context=".GettingStartedPage" >
 
     <TextView
-        android:id="@+id/ArmRotationProgress"
+        android:id="@+id/gettingStartedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -18,24 +18,24 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/laterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:onClick="gettingStartedNegative"
+        android:onClick="gettingStartedToHome"
         android:text="@string/getting_started_negative" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/exerciseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Button01"
+        android:layout_above="@+id/laterButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/Button01"
+        android:layout_alignRight="@+id/laterButton"
         android:layout_marginBottom="17dp"
-        android:onClick="gettingStartedPositive"
+        android:onClick="gettingStartedToExercise"
         android:text="@string/exercises" />
 
     <TextView
@@ -44,7 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/ArmRotationProgress"
         android:layout_marginTop="30dp"
         android:text="@string/getting_started_dialog_text"
         android:textAppearance="?android:attr/textAppearanceMedium" />

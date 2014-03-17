@@ -27,6 +27,7 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
     private static final String KEY_PREVIOUSSCORE = "previousScore";
     private static final String KEY_BEFOREPREVIOUSSCORE = "beforePreviousScore";
     private static final String KEY_PERSONALBEST = "personalBest";
+    private static final String KEY_LEVEL = "level";
     // Books Table Columns names
     private static final String[] COLUMNS = {KEY_ID,
     										KEY_NAME,
@@ -36,7 +37,8 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
     										KEY_CURRENTSCORE,
     										KEY_PREVIOUSSCORE,
     										KEY_BEFOREPREVIOUSSCORE,
-    										KEY_PERSONALBEST};
+    										KEY_PERSONALBEST,
+    										KEY_LEVEL};
     
     
 
@@ -57,7 +59,8 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
                 KEY_CURRENTSCORE + " REAL," +
                 KEY_PREVIOUSSCORE + " REAL," +
                 KEY_BEFOREPREVIOUSSCORE + " REAL," +
-                KEY_PERSONALBEST + " REAL" +
+                KEY_PERSONALBEST + " REAL," +
+                KEY_LEVEL + " INTEGER" +
                 ")";
         // create books table
         db.execSQL(CREATE_SCORE_TABLE);
@@ -93,7 +96,7 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
 		values.put(KEY_PREVIOUSSCORE, result.getPreviousScore());
 		values.put(KEY_BEFOREPREVIOUSSCORE, result.getBeforePreviousScore());
 		values.put(KEY_PERSONALBEST, result.getPersonalBest());
-
+		values.put(KEY_LEVEL, result.getLevel());
 		// 3. insert
 		db.insert(TABLE_SCORES, // table
 		        null, //nullColumnHack
@@ -133,7 +136,7 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
         result.setPreviousScore(Double.parseDouble(cursor.getString(6)));
         result.setBeforePreviousScore(Double.parseDouble(cursor.getString(7)));
         result.setPersonalBest(Double.parseDouble(cursor.getString(8)));
-     
+        result.setLevel(Integer.parseInt(cursor.getString(9)));
         //log 
         Log.d("getResult("+id+")", result.toString());
      
@@ -172,7 +175,7 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
         result.setPreviousScore(Double.parseDouble(cursor.getString(6)));
         result.setBeforePreviousScore(Double.parseDouble(cursor.getString(7)));
         result.setPersonalBest(Double.parseDouble(cursor.getString(8)));
-     
+        result.setLevel(Integer.parseInt(cursor.getString(9)));
         //log 
         Log.d("getResult("+name+")", result.toString());
      
@@ -203,7 +206,7 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
                 result.setPreviousScore(Double.parseDouble(cursor.getString(6)));
                 result.setBeforePreviousScore(Double.parseDouble(cursor.getString(7)));
                 result.setPersonalBest(Double.parseDouble(cursor.getString(8)));
-  
+                result.setLevel(Integer.parseInt(cursor.getString(9)));
                 // Add book to books
                 results.add(result);
             } while (cursor.moveToNext());
@@ -230,7 +233,7 @@ public class ScoreDatabaseHelper extends SQLiteOpenHelper{
 		values.put(KEY_PREVIOUSSCORE, result.getPreviousScore());
 		values.put(KEY_BEFOREPREVIOUSSCORE, result.getBeforePreviousScore());
 		values.put(KEY_PERSONALBEST, result.getPersonalBest());
-     
+		values.put(KEY_LEVEL, result.getLevel());
         // 3. updating row
         int i = db.update(TABLE_SCORES, //table
                 values, // column/value

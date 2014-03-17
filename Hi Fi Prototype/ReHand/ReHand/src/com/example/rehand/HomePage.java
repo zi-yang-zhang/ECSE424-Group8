@@ -20,10 +20,12 @@ public class HomePage extends Activity {
 	        startActivity(intent);
 		}*/
 		super.onCreate(savedInstanceState);
-		if(prefs.getInt("FirstTime", 0) == 0) {
+		//if(prefs.getInt("FirstTime", 0) == 0) {
+		if(prefs.getBoolean("FirstTime", true) == true) {
 			//First time opening app
 			setContentView(R.layout.activity_startup_page);
-		} else if(prefs.getInt("GettingStartedFirstTime", 0) == 0) {
+		//} else if(prefs.getInt("GettingStartedFirstTime", 0) == 0) {
+		} else if(prefs.getBoolean("GettingStartedFirstTime", true) == true) {
 			//First time opening app
 			setContentView(R.layout.activity_getting_started_page);
 		} else {
@@ -77,25 +79,26 @@ public class HomePage extends Activity {
 		startActivity(intent);
 	}
 
-    public void gettingStartedPositive(View view) {
+    public void gettingStartedToExercise(View view) {
         SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-        prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
-
+      //prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
+        prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
         Intent intent = new Intent(this, ExerciseListPage.class);
         startActivity(intent);
     }
 
-    public void gettingStartedNegative(View view) {
+    public void gettingStartedToHome(View view) {
         SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-        prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
-
+        //prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
+        prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
         Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
 
 	public void close(View view) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		prefs.edit().putInt("FirstTime", 1).commit();
+		prefs.edit().putBoolean("FirstTime",false).commit();
+		//prefs.edit().putInt("FirstTime", 1).commit();
 
 		Intent intent = new Intent(this, HomePage.class);
 		startActivity(intent);

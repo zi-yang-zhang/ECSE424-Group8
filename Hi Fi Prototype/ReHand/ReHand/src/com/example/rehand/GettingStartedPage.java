@@ -30,18 +30,18 @@ public class GettingStartedPage extends Activity {
 		return true;
 	}
 
-    public void gettingStartedPositive(View view) {
+    public void gettingStartedToExercise(View view) {
         SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-        prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
-
+      //prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
+        prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
         Intent intent = new Intent(this, ExerciseListPage.class);
         startActivity(intent);
     }
 
-    public void gettingStartedNegative(View view) {
+    public void gettingStartedToHome(View view) {
         SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-        prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
-
+        //prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
+        prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
         Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
