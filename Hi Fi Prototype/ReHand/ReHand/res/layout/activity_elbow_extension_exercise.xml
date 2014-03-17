@@ -14,46 +14,14 @@
         android:id="@+id/countDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.50"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <LinearLayout
+    <ProgressBar
+        android:id="@+id/timeProgress"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.33" >
-
-        <TextView
-            android:id="@+id/xPosition"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.00"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/yPosition"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.00"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/zPosition"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.00"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/horizontalMovement"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="289dp"
-        android:layout_height="wrap_content"
-        android:onClick="goToElbowExtensionResult"
-        android:text="@string/test_end_game" />
+        android:layout_weight="0.50" />
 
 </LinearLayout>
