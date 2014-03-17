@@ -151,4 +151,8 @@ public class ExerciseListPage extends Activity {
 		Intent intent = new Intent(this, WristFlexPage.class);
 		startActivity(intent);
 	}
+	public void goToHomePage(View view){		
+		Intent intent = new Intent(this, HomePage.class);
+		startActivity(intent);
+	}
 }

@@ -20,20 +20,27 @@ public class ElbowExtensionResult extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_elbow_extension_result);
 		final TextView socreText = (TextView) findViewById(R.id.socreText);
-		String score = this.getIntent().getStringExtra("score");
+		final TextView testTypeText = (TextView) findViewById(R.id.testTypeText);
+		String attemptText = this.getIntent().getStringExtra("score");
+		double attempt = Double.parseDouble(attemptText);
+		//getting started
 		if(gettingStarted){
-			socreText.setText("Your Benchmark: "+score);
-			ExerciseResult elbowExtensionResult = new ExerciseResult(2,"Elbow Extension",Double.parseDouble(score),180 );
-			
+			//create new entry and save in database
+			ExerciseResult elbowExtensionResult = new ExerciseResult(2,"Elbow Extension",attempt,90 );
+			double score = elbowExtensionResult.getCurrentScore();
+			testTypeText.setText("You Have Completed Bench Mark Test!");
+			socreText.setText("Your Score: "+String.valueOf(score));
 			db.addResult(elbowExtensionResult);
 			prefs.edit().putBoolean("elbowExtensionFirstTime", false).commit();
 		}else{
-			socreText.setText("Your Score: "+score);
 			ExerciseResult elbowExtensionResult = db.getResult(2);
-			if(elbowExtensionResult.getPreviousScore()==0){
-				
-			}
-			
+			elbowExtensionResult.updatePersonalBest(attempt);
+			elbowExtensionResult.updateScores(attempt);
+			elbowExtensionResult.updateCurrentProgress();
+			double score = elbowExtensionResult.getCurrentScore();
+			testTypeText.setText("You Have Completed Elbow Extension Exercise!");
+			socreText.setText("Your Score: "+String.valueOf(score));
+			db.updateResult(elbowExtensionResult);
 		}
 		
 		

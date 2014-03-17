@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="exercises">
         <item></item>
         <item>Arm Rotation</item>
@@ -12,6 +13,7 @@
         <item>Thumb Stretch</item>
         <item>Wrist Flex</item>
     </string-array>
+
     <string name="app_name">ReHand</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
@@ -90,7 +92,7 @@
     <string name="result_text_personal_best">Personal Best:</string>
     <string name="result_exercises_button_text">Exercises</string>
     <string name="progress">Progress</string>
-    <string name="progress_text_title">Progress</string>
+    <string name="progress_text_title">Daily Progress</string>
     <string name="progress_text_view_details">View Details</string>
     <string name="title_activity_progress_page">ProgressPage</string>
     <string name="title_activity_details_page">DetailsPage</string>
@@ -123,5 +125,12 @@
     <string name="getting_started_welcome">Hi User!</string>
     <string name="continue_button">Continue</string>
     <string name="title_activity_getting_started_page">GettingStartedPage</string>
+    <string name="progress_page_instruction">Tap on exercise name to view detail progress of each exercise</string>
+    <string name="title_activity_elbow_extention_progress_detail_page">ElbowExtentionProgressDetailPage</string>
+    <string name="elbow_extension_detail_progress_page">Elbow Extension Exercise Progress</string>
+    <string name="personal_best_text">Personal Best:</string>
+    <string name="current_level">Level:</string>
+    <string name="back_button">Back</string>
+    <string name="benchmark_text">Benchmark:</string>
 
 </resources>

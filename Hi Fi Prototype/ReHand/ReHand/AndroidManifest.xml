@@ -26,6 +26,7 @@
             android:label="@string/title_activity_home_page" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -53,7 +54,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.rehand.ProgressPage" />
         </activity>
-
         <activity
             android:name="com.example.rehand.ArmRotationPage"
             android:label="@string/title_activity_arm_rotation_page"
@@ -64,7 +64,7 @@
         </activity>
         <activity
             android:name="com.example.rehand.ArmRotationExercise"
-            android:label="@string/title_activity_arm_rotation_exercise" 
+            android:label="@string/title_activity_arm_rotation_exercise"
             android:parentActivityName="com.example.rehand.ArmRotationPage" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -82,7 +82,6 @@
             android:name="com.example.rehand.ArmRotationResult"
             android:label="@string/title_activity_arm_rotation_result" >
         </activity>
-
         <activity
             android:name="com.example.rehand.ClawStretchPage"
             android:label="@string/title_activity_claw_stretch_page"
@@ -93,7 +92,7 @@
         </activity>
         <activity
             android:name="com.example.rehand.ClawStretchExercise"
-            android:label="@string/title_activity_claw_stretch_exercise" 
+            android:label="@string/title_activity_claw_stretch_exercise"
             android:parentActivityName="com.example.rehand.ClawStretchPage" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -111,7 +110,6 @@
             android:name="com.example.rehand.ClawStretchResult"
             android:label="@string/title_activity_claw_stretch_result" >
         </activity>
-
         <activity
             android:name="com.example.rehand.ElbowExtensionPage"
             android:label="@string/title_activity_elbow_extension_page"
@@ -139,7 +137,6 @@
             android:name="com.example.rehand.ElbowExtensionResult"
             android:label="@string/title_activity_elbow_extension_result" >
         </activity>
-
         <activity
             android:name="com.example.rehand.FingerGripPage"
             android:label="@string/title_activity_finger_grip_page"
@@ -150,7 +147,7 @@
         </activity>
         <activity
             android:name="com.example.rehand.FingerGripExercise"
-            android:label="@string/title_activity_finger_grip_exercise" 
+            android:label="@string/title_activity_finger_grip_exercise"
             android:parentActivityName="com.example.rehand.FingerGripPage" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -168,7 +165,6 @@
             android:name="com.example.rehand.FingerGripResult"
             android:label="@string/title_activity_finger_grip_result" >
         </activity>
-        
         <activity
             android:name="com.example.rehand.FingerLiftPage"
             android:label="@string/title_activity_finger_lift_page"
@@ -197,7 +193,6 @@
             android:name="com.example.rehand.FingerLiftResult"
             android:label="@string/title_activity_finger_lift_result" >
         </activity>
-
         <activity
             android:name="com.example.rehand.RadialDeviationPage"
             android:label="@string/title_activity_radial_deviation_page"
@@ -226,8 +221,6 @@
             android:name="com.example.rehand.RadialDeviationResult"
             android:label="@string/title_activity_radial_deviation_result" >
         </activity>
-        
-        
         <activity
             android:name="com.example.rehand.ThumbStretchPage"
             android:label="@string/title_activity_thumb_stretch_page"
@@ -256,8 +249,6 @@
             android:name="com.example.rehand.ThumbStretchResult"
             android:label="@string/title_activity_thumb_stretch_result" >
         </activity>
-        
-        
         <activity
             android:name="com.example.rehand.WristFlexPage"
             android:label="@string/title_activity_wrist_flex_page"
@@ -286,7 +277,14 @@
             android:name="com.example.rehand.WristFlexResult"
             android:label="@string/title_activity_wrist_flex_result" >
         </activity>
-        
+        <activity
+            android:name="com.example.rehand.ElbowExtentionProgressDetailPage"
+            android:label="@string/title_activity_elbow_extention_progress_detail_page"
+            android:parentActivityName="com.example.rehand.DetailsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.DetailsPage" />
+        </activity>
     </application>
 
 </manifest>

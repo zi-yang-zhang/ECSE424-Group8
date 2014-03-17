@@ -2,11 +2,13 @@ package com.example.rehand;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class DetailsPage extends Activity {
@@ -87,6 +89,45 @@ public class DetailsPage extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	public void goToArmRotationPage(View view){		
+		Intent intent = new Intent(this, ArmRotationPage.class);
+		startActivity(intent);
+	}
+
+	public void goToClawStretchPage(View view){		
+		Intent intent = new Intent(this, ClawStretchPage.class);
+		startActivity(intent);
+	}
+
+	public void goToElbowExtentionProgressDetailPage(View view){		
+		Intent intent = new Intent(this, ElbowExtentionProgressDetailPage.class);
+		startActivity(intent);
+	}
+
+	public void goToFingerGripPage(View view){		
+		Intent intent = new Intent(this, FingerGripPage.class);
+		startActivity(intent);
+	}
+
+	public void goToFingerLiftPage(View view){		
+		Intent intent = new Intent(this, FingerLiftPage.class);
+		startActivity(intent);
+	}
+
+	public void goToRadialDeviationPage(View view){		
+		Intent intent = new Intent(this, RadialDeviationPage.class);
+		startActivity(intent);
+	}
+
+	public void goToThumbStretchPage(View view){		
+		Intent intent = new Intent(this, ThumbStretchPage.class);
+		startActivity(intent);
+	}
+
+	public void goToWristFlexPage(View view){		
+		Intent intent = new Intent(this, WristFlexPage.class);
+		startActivity(intent);
 	}
 
 }

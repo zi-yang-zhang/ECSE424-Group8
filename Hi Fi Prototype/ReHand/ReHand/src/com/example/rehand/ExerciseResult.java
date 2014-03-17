@@ -34,7 +34,9 @@ public class ExerciseResult {
         this.currentProgress = 100*(benchmark 
         					- (benchmark - (maximumMark - benchmark)/NUMBEROFLEVEL))
         					/(((maximumMark - benchmark)/NUMBEROFLEVEL)*2);
-        this.personalBest = benchmark;	
+        this.personalBest = 100*(benchmark 
+				- (benchmark - (maximumMark - benchmark)/NUMBEROFLEVEL))
+				/(((maximumMark - benchmark)/NUMBEROFLEVEL)*2);	
         this.level = 1;
     }
     // getter
