@@ -1,10 +1,12 @@
 package com.example.rehand;
 
-import android.os.Bundle;
+import java.text.DecimalFormat;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ public class ElbowExtensionResult extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
 		//prefs.edit().putString("ElbowExtension", "Done").commit();
+		DecimalFormat f = new DecimalFormat("##.##");
 		ScoreDatabaseHelper db = new ScoreDatabaseHelper(this);
 		boolean gettingStarted = prefs.getBoolean("elbowExtensionFirstTime", true);
 		super.onCreate(savedInstanceState);
@@ -29,7 +32,7 @@ public class ElbowExtensionResult extends Activity {
 			ExerciseResult elbowExtensionResult = new ExerciseResult(2,"Elbow Extension",attempt,90 );
 			double score = elbowExtensionResult.getCurrentScore();
 			testTypeText.setText("You Have Completed Bench Mark Test!");
-			socreText.setText("Your Score: "+String.valueOf(score));
+			socreText.setText("Your Score: "+String.valueOf(f.format(score)) +"%");
 			db.addResult(elbowExtensionResult);
 			prefs.edit().putBoolean("elbowExtensionFirstTime", false).commit();
 		}else{
@@ -39,7 +42,7 @@ public class ElbowExtensionResult extends Activity {
 			elbowExtensionResult.updateCurrentProgress();
 			double score = elbowExtensionResult.getCurrentScore();
 			testTypeText.setText("You Have Completed Elbow Extension Exercise!");
-			socreText.setText("Your Score: "+String.valueOf(score));
+			socreText.setText("Your Score: "+String.valueOf(f.format(score))+"%");
 			db.updateResult(elbowExtensionResult);
 		}
 		

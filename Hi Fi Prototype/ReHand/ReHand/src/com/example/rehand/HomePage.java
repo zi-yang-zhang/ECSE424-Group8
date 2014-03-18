@@ -1,7 +1,9 @@
 package com.example.rehand;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -80,27 +82,71 @@ public class HomePage extends Activity {
 	}
 
     public void gettingStartedToExercise(View view) {
-        SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-      //prefs.edit().putInt("GettingStartedFirstTime", 1).commit();
-        prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
-        Intent intent = new Intent(this, ExerciseListPage.class);
-        startActivity(intent);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		//prefs.edit().putInt("FirstTime", 1).commit();
+		builder.setMessage(R.string.warning_message_getting_started_to_exercise)
+			   .setTitle("Warning");
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	               // User clicked OK button
+	       		SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+	       		prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
+	       		Intent intent = new Intent(getBaseContext(), ExerciseListPage.class);
+	    		startActivity(intent);
+	    		finish();
+	           }
+	       });
+	builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	        	   dialog.cancel();
+	        	   }
+	       });
+		builder.create().show();
     }
 
     public void gettingStartedToHome(View view) {
-        SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-        //prefs.edit().putInt("GettingStartedFirstTime", 2).commit();
-        prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
-        Intent intent = new Intent(this, HomePage.class);
-        startActivity(intent);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		//prefs.edit().putInt("FirstTime", 1).commit();
+		builder.setMessage(R.string.warning_message_getting_started_to_home)
+			   .setTitle("Warning");
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	               // User clicked OK button
+	       		SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+	       		prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
+	       		Intent intent = new Intent(getBaseContext(), HomePage.class);
+	    		startActivity(intent);
+	    		finish();
+	           }
+	       });
+	builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	        	   dialog.cancel();
+	        	   }
+	       });
+		builder.create().show();
     }
 
 	public void close(View view) {
-		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		prefs.edit().putBoolean("FirstTime",false).commit();
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		//prefs.edit().putInt("FirstTime", 1).commit();
-
-		Intent intent = new Intent(this, HomePage.class);
-		startActivity(intent);
+		builder.setMessage(R.string.warning_message_startup_page)
+			   .setTitle("Warning");
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	               // User clicked OK button
+	       		SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+	    		prefs.edit().putBoolean("FirstTime",false).commit();
+	       		Intent intent = new Intent(getBaseContext(), HomePage.class);
+	    		startActivity(intent);
+	    		finish();
+	           }
+	       });
+	builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	        	   dialog.cancel();
+	        	   }
+	       });
+		builder.create().show();
 	}
 }

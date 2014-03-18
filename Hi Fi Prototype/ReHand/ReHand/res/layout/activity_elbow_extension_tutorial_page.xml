@@ -9,7 +9,7 @@
     tools:context=".ElbowExtensionPage" >
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/indexFingerArrow"
             android:layout_width="match_parent"
             android:layout_height="712dp"
             android:contentDescription="@string/tutorial_text"

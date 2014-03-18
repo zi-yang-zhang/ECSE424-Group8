@@ -1,7 +1,11 @@
 package com.example.rehand;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
@@ -20,21 +24,34 @@ public class ElbowExtentionProgressDetailPage extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		boolean gettingStarted = prefs.getBoolean("elbowExtensionFirstTime", true);
+		DecimalFormat f = new DecimalFormat("##.##");
 		final TextView levelText = (TextView) findViewById(R.id.level);
 		final TextView personalBestScore = (TextView) findViewById(R.id.personalBestScore);
 		final TextView progressText = (TextView) findViewById(R.id.progress);
 		final TextView benchmarkText = (TextView) findViewById(R.id.benchmark);
+		final TextView benchmarkTextView = (TextView) findViewById(R.id.benchmarkText);
+		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+		if(gettingStarted){
+			benchmarkTextView.setText("Please do benchmark Test");
+			benchmarkText.setText("");
+			levelText.setText("");
+			personalBestScore.setText("");
+			progressText.setText("0%");
+	        bar.setProgress((int) 0);
+		}else{
 		ExerciseResult elbowExtensionResult = db.getResult(2);
 		double currentProgress = elbowExtensionResult.getCurrentProgress();
 		double personalBest = elbowExtensionResult.getPersonalBest();
 		int level = elbowExtensionResult.getLevel();
 		double benchmark = elbowExtensionResult.getBenchmark();
-		benchmarkText.setText(String.valueOf(benchmark));
+		benchmarkText.setText(String.valueOf(f.format(benchmark)));
 		levelText.setText(String.valueOf(level));
 		personalBestScore.setText(String.valueOf(personalBest));
-		progressText.setText(String.valueOf(currentProgress));
-		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+		progressText.setText(String.valueOf(f.format(currentProgress))+"%");
         bar.setProgress((int) currentProgress);
+		}
 	}
 
 	/**
