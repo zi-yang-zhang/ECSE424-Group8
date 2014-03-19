@@ -137,7 +137,12 @@
     <string name="cancel">cancel</string>
     <string name="warning_message_getting_started_to_home">Dear user, please notice that you will not be able to view this page again unless you uninstall the application. However, you can still do benchmark tests by going to the exercise page. Please keep in mind that the benchmark exercise is a one time exercise.Click &quot;ok&quot; to continue, or click &quot;cancel&quot; to view this page again.</string>
     <string name="warning_message_getting_started_to_exercise">Hi, user! Thank you for using this application. You will be doing benchmark tests now, so be prepared! Please note that you will not able to view this page again unless you uninstall the application. Click &quot;ok&quot; to do the benchmark test, or click &quot;cancel&quot; to view this page again.</string>
+<<<<<<< HEAD
     <string name="title_activity_finger_lift_progress_detail_page">FingerLiftProgressDetailPage</string>
     <string name="finger_lift_detail_progress_page">Finger Lift Exercise Progress</string>
+=======
+    <string name="arm_rotation_detail_progress_page">Arm Rotation Exercise Progress</string>
+    <string name="title_activity_arm_rotation_progress_detail_page">ArmRotationProgressDetailPage</string>
+>>>>>>> branch 'master' of https://github.com/awalker1/ECSE424-Group8.git
 
 </resources>

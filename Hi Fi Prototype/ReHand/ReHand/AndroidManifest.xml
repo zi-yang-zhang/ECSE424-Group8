@@ -278,7 +278,7 @@
             android:label="@string/title_activity_wrist_flex_result" >
         </activity>
         <activity
-            android:name="com.example.rehand.ElbowExtentionProgressDetailPage"
+            android:name="com.example.rehand.ElbowExtensionProgressDetailPage"
             android:label="@string/title_activity_elbow_extention_progress_detail_page"
             android:parentActivityName="com.example.rehand.DetailsPage" >
             <meta-data
