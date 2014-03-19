@@ -101,7 +101,7 @@ public class DetailsPage extends Activity {
 	}
 
 	public void goToElbowExtentionProgressDetailPage(View view){		
-		Intent intent = new Intent(this, ElbowExtentionProgressDetailPage.class);
+		Intent intent = new Intent(this, ElbowExtensionProgressDetailPage.class);
 		startActivity(intent);
 	}
 

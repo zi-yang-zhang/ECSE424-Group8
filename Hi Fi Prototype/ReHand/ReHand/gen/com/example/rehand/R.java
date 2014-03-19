@@ -25,18 +25,23 @@ public final class R {
     }
     public static final class drawable {
         public static final int arm_rotation=0x7f020000;
-        public static final int claw_stretch=0x7f020001;
-        public static final int elbow_extension=0x7f020002;
-        public static final int finger_grip=0x7f020003;
-        public static final int finger_lift=0x7f020004;
-        public static final int finger_lift_arrow=0x7f020005;
-        public static final int green_light=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int open_and_close=0x7f020008;
-        public static final int radial_deviation=0x7f020009;
-        public static final int red_light=0x7f02000a;
-        public static final int thumb_stretch=0x7f02000b;
-        public static final int wrist_flex=0x7f02000c;
+        public static final int back=0x7f020001;
+        public static final int claw_stretch=0x7f020002;
+        public static final int done=0x7f020003;
+        public static final int elbow_extension=0x7f020004;
+        public static final int finger_grip=0x7f020005;
+        public static final int finger_lift=0x7f020006;
+        public static final int finger_lift_arrow=0x7f020007;
+        public static final int go=0x7f020008;
+        public static final int green_light=0x7f020009;
+        public static final int hold=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int open_and_close=0x7f02000c;
+        public static final int radial_deviation=0x7f02000d;
+        public static final int ready=0x7f02000e;
+        public static final int red_light=0x7f02000f;
+        public static final int thumb_stretch=0x7f020010;
+        public static final int wrist_flex=0x7f020011;
     }
     public static final class id {
         public static final int ArmRotationProgress=0x7f090001;
@@ -56,8 +61,8 @@ public final class R {
         public static final int action_settings=0x7f09004d;
         public static final int armRotationProgressButton=0x7f090007;
         public static final int arm_rotation_tutorial=0x7f090002;
-        public static final int benchmark=0x7f090024;
-        public static final int benchmarkText=0x7f090023;
+        public static final int benchmark=0x7f090022;
+        public static final int benchmarkText=0x7f090021;
         public static final int button1=0x7f090000;
         public static final int button2=0x7f090003;
         public static final int button3=0x7f09002a;
@@ -69,7 +74,7 @@ public final class R {
         public static final int clawStretchProgressButton=0x7f090009;
         public static final int claw_stretch_tutorial=0x7f090006;
         public static final int countDown=0x7f090018;
-        public static final int currentLevelText=0x7f090020;
+        public static final int currentLevelText=0x7f09001e;
         public static final int editText1=0x7f090046;
         public static final int elbowExtentionProgressButton=0x7f09000b;
         public static final int elbow_extension_tutorial=0x7f09001a;
@@ -86,7 +91,7 @@ public final class R {
         public static final int indexFingerGreenLight=0x7f090030;
         public static final int indexFingerRedLight=0x7f090031;
         public static final int laterButton=0x7f090041;
-        public static final int level=0x7f090021;
+        public static final int level=0x7f09001f;
         public static final int littleFingerArrow=0x7f090038;
         public static final int littleFingerButton=0x7f09003e;
         public static final int littleFingerGreenLight=0x7f090039;
@@ -95,10 +100,10 @@ public final class R {
         public static final int middleFingerButton=0x7f09003c;
         public static final int middleFingerGreenLight=0x7f090033;
         public static final int middleFingerRedLight=0x7f090034;
-        public static final int personalBestScore=0x7f090022;
-        public static final int personalBestText=0x7f09001f;
-        public static final int progress=0x7f090025;
-        public static final int progressBar1=0x7f09001e;
+        public static final int personalBestScore=0x7f090020;
+        public static final int personalBestText=0x7f09001d;
+        public static final int progress=0x7f090023;
+        public static final int progressBar1=0x7f09001c;
         public static final int progressPageInstruction=0x7f090016;
         public static final int progressPercentage=0x7f09002c;
         public static final int radialDeviationProgressButton=0x7f090015;
@@ -107,10 +112,10 @@ public final class R {
         public static final int ringFingerButton=0x7f09003d;
         public static final int ringFingerGreenLight=0x7f090036;
         public static final int ringFingerRedLight=0x7f090037;
-        public static final int socreText=0x7f09001c;
+        public static final int socreText=0x7f090025;
         public static final int spinner=0x7f090047;
-        public static final int testTypeText=0x7f09001b;
-        public static final int textView1=0x7f09001d;
+        public static final int testTypeText=0x7f090024;
+        public static final int textView1=0x7f09001b;
         public static final int textView2=0x7f090004;
         public static final int textView3=0x7f090045;
         public static final int thumbStretchProgressButton=0x7f090013;
@@ -131,9 +136,9 @@ public final class R {
         public static final int activity_details_page=0x7f030008;
         public static final int activity_elbow_extension_exercise=0x7f030009;
         public static final int activity_elbow_extension_page=0x7f03000a;
-        public static final int activity_elbow_extension_result=0x7f03000b;
-        public static final int activity_elbow_extension_tutorial_page=0x7f03000c;
-        public static final int activity_elbow_extention_progress_detail_page=0x7f03000d;
+        public static final int activity_elbow_extension_progress_detail_page=0x7f03000b;
+        public static final int activity_elbow_extension_result=0x7f03000c;
+        public static final int activity_elbow_extension_tutorial_page=0x7f03000d;
         public static final int activity_exercise_list_page=0x7f03000e;
         public static final int activity_finger_grip_exercise=0x7f03000f;
         public static final int activity_finger_grip_page=0x7f030010;
@@ -174,9 +179,9 @@ public final class R {
         public static final int details_page=0x7f080008;
         public static final int elbow_extension_exercise=0x7f080009;
         public static final int elbow_extension_page=0x7f08000a;
-        public static final int elbow_extension_result=0x7f08000b;
-        public static final int elbow_extension_tutorial_page=0x7f08000c;
-        public static final int elbow_extention_progress_detail_page=0x7f08000d;
+        public static final int elbow_extension_progress_detail_page=0x7f08000b;
+        public static final int elbow_extension_result=0x7f08000c;
+        public static final int elbow_extension_tutorial_page=0x7f08000d;
         public static final int exercise_list_page=0x7f08000e;
         public static final int finger_grip_exercise=0x7f08000f;
         public static final int finger_grip_page=0x7f080010;
@@ -207,11 +212,12 @@ public final class R {
         public static final int wrist_flex_tutorial_page=0x7f080029;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f060080;
+        public static final int action_forgot_password=0x7f060082;
         public static final int action_settings=0x7f060001;
-        public static final int action_sign_in_register=0x7f06007e;
-        public static final int action_sign_in_short=0x7f06007f;
+        public static final int action_sign_in_register=0x7f060080;
+        public static final int action_sign_in_short=0x7f060081;
         public static final int app_name=0x7f060000;
+        public static final int arm_rotation_detail_progress_page=0x7f06007b;
         public static final int arm_rotation_level=0x7f06001a;
         public static final int back_button=0x7f060074;
         public static final int benchmark_text=0x7f060075;
@@ -222,10 +228,10 @@ public final class R {
         public static final int current_level=0x7f060073;
         public static final int elbow_extension_detail_progress_page=0x7f060071;
         public static final int elbow_extension_level=0x7f06001b;
-        public static final int error_field_required=0x7f060085;
-        public static final int error_incorrect_password=0x7f060084;
-        public static final int error_invalid_email=0x7f060082;
-        public static final int error_invalid_password=0x7f060083;
+        public static final int error_field_required=0x7f060087;
+        public static final int error_incorrect_password=0x7f060086;
+        public static final int error_invalid_email=0x7f060084;
+        public static final int error_invalid_password=0x7f060085;
         public static final int excercise_text_elbow_extension=0x7f060019;
         public static final int exercise_botton_schedule=0x7f060011;
         public static final int exercise_botton_text_claw_stretch=0x7f06000d;
@@ -252,7 +258,7 @@ public final class R {
         public static final int hello_world=0x7f060002;
         public static final int home=0x7f060067;
         public static final int log_in=0x7f060006;
-        public static final int login_progress_signing_in=0x7f060081;
+        public static final int login_progress_signing_in=0x7f060083;
         public static final int ok=0x7f060077;
         public static final int open_and_close_level=0x7f06001f;
         public static final int personal_best_text=0x7f060072;
@@ -271,8 +277,8 @@ public final class R {
         public static final int progress_wrist_flex=0x7f06005a;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f06007c;
-        public static final int prompt_password=0x7f06007d;
+        public static final int prompt_email=0x7f06007e;
+        public static final int prompt_password=0x7f06007f;
         public static final int radial_deviation_level=0x7f060027;
         public static final int result_exercises_button_text=0x7f06004c;
         public static final int result_text_personal_best=0x7f06004b;
@@ -294,6 +300,7 @@ public final class R {
         public static final int thumb_stretch_top_right=0x7f060060;
         public static final int title_activity_arm_rotation_exercise=0x7f06002a;
         public static final int title_activity_arm_rotation_page=0x7f06002b;
+        public static final int title_activity_arm_rotation_progress_detail_page=0x7f06007c;
         public static final int title_activity_arm_rotation_result=0x7f06002c;
         public static final int title_activity_arm_rotation_tutorial_page=0x7f06002d;
         public static final int title_activity_claw_stretch_exercise=0x7f060014;
@@ -317,7 +324,7 @@ public final class R {
         public static final int title_activity_finger_lift_tutorial_page=0x7f060039;
         public static final int title_activity_getting_started_page=0x7f06006e;
         public static final int title_activity_home_page=0x7f060007;
-        public static final int title_activity_login_page=0x7f06007b;
+        public static final int title_activity_login_page=0x7f06007d;
         public static final int title_activity_open_and_close_exercise=0x7f06003a;
         public static final int title_activity_open_and_close_page=0x7f06003b;
         public static final int title_activity_open_and_close_result=0x7f06003c;

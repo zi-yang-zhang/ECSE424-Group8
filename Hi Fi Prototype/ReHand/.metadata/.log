@@ -12161,3 +12161,18 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.ui 4 4 2014-02-25 00:45:09.796
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2014-03-18 23:59:46.808 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.7.0
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2014-03-19 01:11:16.706
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-19 01:18:06.380
+!MESSAGE activity_arm_rotation_progress_detail_page.xml: Couldn't resolve resource @string/arm_rotation_detail_progress_page
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-19 01:19:15.477
+!MESSAGE activity_arm_rotation_progress_detail_page.xml: Couldn't resolve resource @string/arm_rotation_detail_progress_page
