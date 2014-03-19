@@ -4,7 +4,9 @@ import java.lang.reflect.Array;
 import java.util.Random;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class FingerLiftExercise extends Activity {
 	int fingerIndex;
@@ -21,8 +24,15 @@ public class FingerLiftExercise extends Activity {
 	int i;
 	int timeCount;
 	boolean index,middle,ring,little;
+	long [] benchmarkStartScores = new long[4];
+	long [] benchmarkEndScores = new long[4];
+	boolean indexFirstPressed,middleFirstPressed,ringFirstPressed,littleFirstPressed;
+	boolean indexdone,middledone,ringdone,littledone;
+	int timer = 60;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		boolean gettingStarted = prefs.getBoolean("fingerLiftFirstTime", true);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_finger_lift_exercise);
 		final ImageView indexFingerGreenLight = (ImageView)findViewById(R.id.indexFingerGreenLight);
@@ -44,7 +54,15 @@ public class FingerLiftExercise extends Activity {
 		final ImageView littleFingerRedLight = (ImageView)findViewById(R.id.littleFingerRedLight);
 		final ImageView littleFingerArrow = (ImageView)findViewById(R.id.littleFingerArrow);
 		final Button littleFingerButton = (Button) findViewById(R.id.littleFingerButton);
-		
+		final TextView gameCounter = (TextView)findViewById(R.id.gameCounter);
+		final TextView fingerLiftInstruction = (TextView)findViewById(R.id.fingerLiftInstruction);
+
+  		 
+		if(gettingStarted){
+			fingerLiftInstruction.setText("BenchMarking Test");
+					}else{
+			fingerLiftInstruction.setText("");
+			/*
 		 new CountDownTimer(30000, 1000) {
 			 
 		     public void onTick(long millisUntilFinished) {
@@ -57,6 +75,8 @@ public class FingerLiftExercise extends Activity {
 	    	 		 ringFingerArrow.setVisibility(View.INVISIBLE);
 	    	 		 littleFingerArrow.setVisibility(View.INVISIBLE);
 		    	 }else{
+		    		 
+		    		 
 		    		 if(timeCount%5==0){
 		    			 fingerIndex =randInt(0,3);
 			    		 if(i>0){
@@ -115,6 +135,7 @@ public class FingerLiftExercise extends Activity {
 					    		 System.out.println("little finger released");
 					    	 }
 							}
+							
 		    		 }
 		    		 
 		    	 timeCount++;
@@ -141,6 +162,116 @@ public class FingerLiftExercise extends Activity {
     	 		finish();
 		     }
 		  }.start();
+		  */
+		}
+		CountDownTimer startTimer = new CountDownTimer(60000, 100) {
+			 
+		     public void onTick(long millisUntilFinished) {
+		    	 if(i%10==0){
+		    		 gameCounter.setText(String.valueOf(timer));
+		    		 timer--;
+		    		 
+		    	 }
+		    	 i++;
+		    	 if(!indexFirstPressed){
+		    		 indexFingerArrow.setVisibility(View.VISIBLE);
+		    		 middleFingerArrow.setVisibility(View.INVISIBLE);
+		    		 ringFingerArrow.setVisibility(View.INVISIBLE);
+		    		 littleFingerArrow.setVisibility(View.INVISIBLE);
+		    	 }
+		    	 if((!indexFirstPressed)&&indexFingerButton.isPressed()){
+		    		 indexFirstPressed=true;
+		    	 }
+		    	 if((!indexFingerButton.isPressed())&&benchmarkStartScores[0]==0&&indexFirstPressed){
+		    		 System.out.println("start index");
+		    		 benchmarkStartScores[0]=System.currentTimeMillis();
+		    	 }
+		    	 if((indexFingerButton.isPressed())&&benchmarkEndScores[0]==0&&benchmarkStartScores[0]!=0&&indexFirstPressed){
+		    		 benchmarkEndScores[0]=System.currentTimeMillis();
+		    		 System.out.println("end index");
+		    		 indexFingerArrow.setVisibility(View.INVISIBLE);
+		    		 middleFingerArrow.setVisibility(View.VISIBLE);
+		    		 ringFingerArrow.setVisibility(View.INVISIBLE);
+		    		 littleFingerArrow.setVisibility(View.INVISIBLE);
+		    		 indexdone=true;
+		    	 }
+		    	 
+		    	 if((!middleFirstPressed)&&middleFingerButton.isPressed()){
+		    		 middleFirstPressed=true;
+		    	 }
+		    	 if((!middleFingerButton.isPressed())&&benchmarkStartScores[1]==0&&middleFirstPressed&&indexdone){
+		    		 System.out.println("start middle");
+		    		 benchmarkStartScores[1]=System.currentTimeMillis();
+		    	 }
+		    	 if((middleFingerButton.isPressed())&&benchmarkEndScores[1]==0&&benchmarkStartScores[1]!=0&&middleFirstPressed){
+		    		 benchmarkEndScores[1]=System.currentTimeMillis();
+		    		 System.out.println("end middle");
+		    		 indexFingerArrow.setVisibility(View.INVISIBLE);
+		    		 middleFingerArrow.setVisibility(View.INVISIBLE);
+		    		 ringFingerArrow.setVisibility(View.VISIBLE);
+		    		 littleFingerArrow.setVisibility(View.INVISIBLE);
+		    		 middledone=true;
+		    	 }
+		    	 
+		    	 if((!ringFirstPressed)&&ringFingerButton.isPressed()){
+		    		 ringFirstPressed=true;
+		    	 }
+		    	 if((!ringFingerButton.isPressed())&&benchmarkStartScores[2]==0&&ringFirstPressed&&middledone){
+		    		 System.out.println("start ring");
+		    		 benchmarkStartScores[2]=System.currentTimeMillis();
+		    	 }
+		    	 if((ringFingerButton.isPressed())&&benchmarkEndScores[2]==0&&benchmarkStartScores[2]!=0&&ringFirstPressed){
+		    		 benchmarkEndScores[2]=System.currentTimeMillis();
+		    		 System.out.println("start ring");
+		    		 indexFingerArrow.setVisibility(View.INVISIBLE);
+		    		 middleFingerArrow.setVisibility(View.INVISIBLE);
+		    		 ringFingerArrow.setVisibility(View.INVISIBLE);
+		    		 littleFingerArrow.setVisibility(View.VISIBLE);
+		    		 ringdone = true;
+		    	 }
+		    	 
+		    	 if((!littleFirstPressed)&&littleFingerButton.isPressed()){
+		    		 littleFirstPressed=true;
+		    	 }
+		    	 if((!littleFingerButton.isPressed())&&benchmarkStartScores[3]==0&&littleFirstPressed&&ringdone){
+		    		 System.out.println("start little");
+		    		 benchmarkStartScores[3]=System.currentTimeMillis();
+		    	 }
+		    	 if((littleFingerButton.isPressed())&&benchmarkEndScores[3]==0&&benchmarkStartScores[3]!=0&&littleFirstPressed){
+		    		 
+		    		 System.out.println("end little");
+		    		 benchmarkEndScores[3]=System.currentTimeMillis();
+			    	 indexFingerArrow.setVisibility(View.INVISIBLE);
+		   	 		 middleFingerArrow.setVisibility(View.INVISIBLE);
+		   	 		 ringFingerArrow.setVisibility(View.INVISIBLE);
+		   	 		 littleFingerArrow.setVisibility(View.INVISIBLE);
+		    	 }
+
+	    	 		 
+		     }
+		     public void onFinish() {
+		    	 double score=0;
+		    	 for(i=0;i<4;i++){
+		    		 System.out.println(i);
+		    		 System.out.println((benchmarkEndScores[i]-benchmarkStartScores[i])/1000);
+		    		
+		    		 score = score+(benchmarkEndScores[i]-benchmarkStartScores[i]);
+		    	 }
+		    	 score = score/4/1000;
+		    	 gameCounter.setText("Lift index finger to start bencmarking");
+		    	 indexFingerArrow.setVisibility(View.INVISIBLE);
+   	 		 middleFingerArrow.setVisibility(View.INVISIBLE);
+   	 		 ringFingerArrow.setVisibility(View.INVISIBLE);
+   	 		 littleFingerArrow.setVisibility(View.INVISIBLE);
+   	 		Intent intent = new Intent(getBaseContext(), FingerLiftResult.class);
+
+   	 		intent.putExtra("score", Double.toString(score));
+   	 		startActivity(intent);
+   	 		finish();
+		     }
+		  };
+		  startTimer.start();
+
 		indexFingerButton.setOnTouchListener(new OnTouchListener() {
 		    @Override
 		    public boolean onTouch(View v, MotionEvent event) {

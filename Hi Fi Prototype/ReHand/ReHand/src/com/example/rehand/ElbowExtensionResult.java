@@ -30,9 +30,8 @@ public class ElbowExtensionResult extends Activity {
 		if(gettingStarted){
 			//create new entry and save in database
 			ExerciseResult elbowExtensionResult = new ExerciseResult(2,"Elbow Extension",attempt,90 );
-			double score = elbowExtensionResult.getCurrentScore();
 			testTypeText.setText("You Have Completed Bench Mark Test!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(score)) +"%");
+			socreText.setText("Your Score: "+String.valueOf(f.format(attempt)) +" degrees!");
 			db.addResult(elbowExtensionResult);
 			prefs.edit().putBoolean("elbowExtensionFirstTime", false).commit();
 		}else{
@@ -42,7 +41,7 @@ public class ElbowExtensionResult extends Activity {
 			elbowExtensionResult.updateCurrentProgress();
 			double score = elbowExtensionResult.getCurrentScore();
 			testTypeText.setText("You Have Completed Elbow Extension Exercise!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(score))+"%");
+			socreText.setText("Your Score: "+String.valueOf(f.format(score))+" degrees!");
 			db.updateResult(elbowExtensionResult);
 		}
 		

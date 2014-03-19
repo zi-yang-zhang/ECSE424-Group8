@@ -34,9 +34,7 @@ public class ExerciseResult {
         this.currentProgress = 100*(benchmark 
         					- (benchmark - (maximumMark - benchmark)/NUMBEROFLEVEL))
         					/(((maximumMark - benchmark)/NUMBEROFLEVEL)*2);
-        this.personalBest = 100*(benchmark 
-				- (benchmark - (maximumMark - benchmark)/NUMBEROFLEVEL))
-				/(((maximumMark - benchmark)/NUMBEROFLEVEL)*2);	
+        this.personalBest = benchmark;
         this.level = 1;
     }
     // getter
@@ -129,11 +127,8 @@ public class ExerciseResult {
     	}
     }
     public void updatePersonalBest(double attempt) {
-    	double score = 100*(attempt 
-				- (benchmark - (maximumMark - benchmark)/NUMBEROFLEVEL))
-				/(((maximumMark - benchmark)/NUMBEROFLEVEL)*2);
-    	if(score > currentScore){
-    		personalBest = score;
+    	if(attempt > personalBest){
+    		personalBest = attempt;
     	}
     }
     

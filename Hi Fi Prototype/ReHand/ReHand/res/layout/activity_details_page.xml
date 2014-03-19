@@ -151,6 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/clawStretchProgressButton"
         android:layout_below="@+id/ClawStretchProgress"
+        android:onClick="goToFingerLiftProgressDetailPage"
         android:text="@string/exercise_text_finger_lift" />
 
 </RelativeLayout>

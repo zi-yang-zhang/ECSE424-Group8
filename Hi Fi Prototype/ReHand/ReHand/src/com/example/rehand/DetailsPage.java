@@ -110,8 +110,8 @@ public class DetailsPage extends Activity {
 		startActivity(intent);
 	}
 
-	public void goToFingerLiftPage(View view){		
-		Intent intent = new Intent(this, FingerLiftPage.class);
+	public void goToFingerLiftProgressDetailPage(View view){		
+		Intent intent = new Intent(this, FingerLiftProgressDetailPage.class);
 		startActivity(intent);
 	}
 

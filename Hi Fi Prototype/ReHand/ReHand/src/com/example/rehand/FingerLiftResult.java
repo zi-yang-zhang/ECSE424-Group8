@@ -19,7 +19,7 @@ public class FingerLiftResult extends Activity {
 		//prefs.edit().putString("FingerLift", "Done").commit();
 		DecimalFormat f = new DecimalFormat("##.##");
 		ScoreDatabaseHelper db = new ScoreDatabaseHelper(this);
-		boolean gettingStarted = prefs.getBoolean("elbowExtensionFirstTime", true);
+		boolean gettingStarted = prefs.getBoolean("fingerLiftFirstTime", true);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_finger_lift_result);
 		final TextView socreText = (TextView) findViewById(R.id.socreText);
@@ -29,22 +29,21 @@ public class FingerLiftResult extends Activity {
 		//getting started
 		if(gettingStarted){
 			//create new entry and save in database
-			double score = 100*attempt/5;
-			ExerciseResult elbowExtensionResult = new ExerciseResult(4,"Finger Lift",attempt,15);
-			elbowExtensionResult.setCurrentScore(score);
+			//double score = 100*attempt/5;
+			ExerciseResult fingerLiftResult = new ExerciseResult(4,"Finger Lift",attempt,(attempt+9));
 			testTypeText.setText("You Have Completed Bench Mark Test!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(score)) +"%");
-			db.addResult(elbowExtensionResult);
-			prefs.edit().putBoolean("elbowExtensionFirstTime", false).commit();
+			socreText.setText("Your Score: "+String.valueOf(f.format(attempt)));
+			db.addResult(fingerLiftResult);
+			prefs.edit().putBoolean("fingerLiftFirstTime", false).commit();
 		}else{
-			double score = 100*attempt/5;
-			ExerciseResult elbowExtensionResult = db.getResult(4);
-			elbowExtensionResult.updatePersonalBest(score);
-			elbowExtensionResult.updateScores(score);
-			elbowExtensionResult.updateCurrentProgress();
-			testTypeText.setText("You Have Completed Elbow Extension Exercise!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(score))+"%");
-			db.updateResult(elbowExtensionResult);
+			//double score = 100*attempt/5;
+			ExerciseResult fingerLiftResult = db.getResult(4);
+			fingerLiftResult.updatePersonalBest(attempt);
+			fingerLiftResult.updateScores(attempt);
+			fingerLiftResult.updateCurrentProgress();
+			testTypeText.setText("You Have Completed Finger Lift Exercise!");
+			socreText.setText("Your Score: "+String.valueOf(f.format(attempt)));
+			db.updateResult(fingerLiftResult);
 		}
 	}
 

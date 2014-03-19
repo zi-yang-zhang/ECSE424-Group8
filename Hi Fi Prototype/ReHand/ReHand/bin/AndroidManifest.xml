@@ -285,6 +285,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.rehand.DetailsPage" />
         </activity>
+        <activity
+            android:name="com.example.rehand.FingerLiftProgressDetailPage"
+            android:label="@string/title_activity_finger_lift_progress_detail_page"
+            android:parentActivityName="com.example.rehand.DetailsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.DetailsPage" />
+        </activity>
     </application>
 
 </manifest>
