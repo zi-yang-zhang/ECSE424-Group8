@@ -45,9 +45,9 @@ public class ThumbStretchProgressDetailPage extends Activity {
 		double personalBest = thumbStretchResult.getPersonalBest();
 		int level = thumbStretchResult.getLevel();
 		double benchmark = thumbStretchResult.getBenchmark();
-		benchmarkText.setText(String.valueOf(f.format(benchmark))+"cm");
+		benchmarkText.setText(String.valueOf(f.format(benchmark))+"Pixel");
 		levelText.setText(String.valueOf(level));
-		personalBestScore.setText(String.valueOf(f.format(personalBest))+"cm");
+		personalBestScore.setText(String.valueOf(f.format(personalBest))+"Pixel");
 		progressText.setText(String.valueOf(f.format(currentProgress))+"%");
         bar.setProgress((int) currentProgress);
 		}

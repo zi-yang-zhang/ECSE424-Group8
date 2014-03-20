@@ -19,8 +19,6 @@ public class FingerLiftResult extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		//prefs.edit().putString("FingerLift", "Done").commit();
-		
 		ScoreDatabaseHelper db = new ScoreDatabaseHelper(this);
 		boolean gettingStarted = prefs.getBoolean("fingerLiftFirstTime", true);
 		super.onCreate(savedInstanceState);
@@ -31,7 +29,6 @@ public class FingerLiftResult extends Activity {
 		attemptText = this.getIntent().getStringExtra("score");
 		attempt = Double.parseDouble(attemptText);
 		//getting started
-		
 		if(gettingStarted){
 			//create new entry and save in database
 			testTypeText.setText("You Have Completed Bench Mark Test!");

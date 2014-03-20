@@ -126,7 +126,7 @@ public class FingerLiftExercise extends Activity {
 		if(gettingStarted){
 			fingerLiftInstruction.setText("BenchMarking Test");
 					}else{
-			fingerLiftInstruction.setText("");
+			fingerLiftInstruction.setText("Finger Lift Exercise");
 			/*
 		 new CountDownTimer(30000, 1000) {
 			 

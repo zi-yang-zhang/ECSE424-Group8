@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
-        android:text="@string/exercise_text_elbow_extension"
+        android:text="Finger Lift"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView

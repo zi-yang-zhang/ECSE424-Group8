@@ -205,7 +205,7 @@
         <activity
             android:name="com.example.rehand.ThumbStretchExercise"
             android:label="@string/title_activity_thumb_stretch_exercise"
-            android:parentActivityName="com.example.rehand.ThumbStretchPage" >
+            android:parentActivityName="com.example.rehand.ThumbStretchPage" android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.rehand.ThumbStretchPage" />
