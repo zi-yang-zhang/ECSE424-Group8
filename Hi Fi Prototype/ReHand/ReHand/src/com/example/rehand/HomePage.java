@@ -83,7 +83,6 @@ public class HomePage extends Activity {
 
     public void gettingStartedToExercise(View view) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		//prefs.edit().putInt("FirstTime", 1).commit();
 		builder.setMessage(R.string.warning_message_getting_started_to_exercise)
 			   .setTitle("Warning");
 		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {

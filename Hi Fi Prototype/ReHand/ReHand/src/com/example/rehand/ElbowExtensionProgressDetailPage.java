@@ -48,7 +48,7 @@ public class ElbowExtensionProgressDetailPage extends Activity {
 		double benchmark = elbowExtensionResult.getBenchmark();
 		benchmarkText.setText(String.valueOf(f.format(benchmark)));
 		levelText.setText(String.valueOf(level));
-		personalBestScore.setText(String.valueOf(personalBest));
+		personalBestScore.setText(String.valueOf(f.format(personalBest)));
 		progressText.setText(String.valueOf(f.format(currentProgress))+"%");
         bar.setProgress((int) currentProgress);
 		}

@@ -16,13 +16,6 @@
                 android:text="@string/exercise_text_arm_rotation" />
 
             <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="goToClawStretchPage"
-                android:text="@string/exercise_botton_text_claw_stretch" />
-
-            <Button
                 android:id="@+id/button6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

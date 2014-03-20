@@ -143,6 +143,7 @@
 
     <string name="arm_rotation_detail_progress_page">Arm Rotation Exercise Progress</string>
     <string name="title_activity_arm_rotation_progress_detail_page">ArmRotationProgressDetailPage</string>
+    <string name="result_page_warning">Do you want to save this result to your record?</string>
 
 
 </resources>

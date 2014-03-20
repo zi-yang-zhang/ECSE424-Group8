@@ -29,10 +29,6 @@ public class DetailsPage extends Activity {
 			view = (TextView) findViewById(R.id.ArmRotationProgress);
 			view.setText("Done");
         }
-        if(!prefs.getString("ClawStretch", "Not Done").equals("Not Done")) {
-        	view = (TextView) findViewById(R.id.ClawStretchProgress);
-			view.setText("Done");
-        }
         if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
         	view = (TextView) findViewById(R.id.ElbowExtensionProgress);
 			view.setText("Done");
@@ -92,11 +88,6 @@ public class DetailsPage extends Activity {
 	}
 	public void goToArmRotationPage(View view){		
 		Intent intent = new Intent(this, ArmRotationPage.class);
-		startActivity(intent);
-	}
-
-	public void goToClawStretchPage(View view){		
-		Intent intent = new Intent(this, ClawStretchPage.class);
 		startActivity(intent);
 	}
 

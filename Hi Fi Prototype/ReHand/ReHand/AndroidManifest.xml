@@ -83,34 +83,6 @@
             android:label="@string/title_activity_arm_rotation_result" >
         </activity>
         <activity
-            android:name="com.example.rehand.ClawStretchPage"
-            android:label="@string/title_activity_claw_stretch_page"
-            android:parentActivityName="com.example.rehand.ExerciseListPage" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.rehand.ExerciseListPage" />
-        </activity>
-        <activity
-            android:name="com.example.rehand.ClawStretchExercise"
-            android:label="@string/title_activity_claw_stretch_exercise"
-            android:parentActivityName="com.example.rehand.ClawStretchPage" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.rehand.ClawStretchPage" />
-        </activity>
-        <activity
-            android:name="com.example.rehand.ClawStretchTutorialPage"
-            android:label="@string/title_activity_claw_stretch_tutorial_page"
-            android:parentActivityName="com.example.rehand.ClawStretchPage" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.rehand.ClawStretchPage" />
-        </activity>
-        <activity
-            android:name="com.example.rehand.ClawStretchResult"
-            android:label="@string/title_activity_claw_stretch_result" >
-        </activity>
-        <activity
             android:name="com.example.rehand.ElbowExtensionPage"
             android:label="@string/title_activity_elbow_extension_page"
             android:parentActivityName="com.example.rehand.ExerciseListPage" >
@@ -224,8 +196,8 @@
         <activity
             android:name="com.example.rehand.ThumbStretchPage"
             android:label="@string/title_activity_thumb_stretch_page"
-            android:screenOrientation="portrait" 
-            android:parentActivityName="com.example.rehand.ExerciseListPage" >
+            android:parentActivityName="com.example.rehand.ExerciseListPage"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.rehand.ExerciseListPage" />
@@ -289,6 +261,14 @@
         <activity
             android:name="com.example.rehand.FingerLiftProgressDetailPage"
             android:label="@string/title_activity_finger_lift_progress_detail_page"
+            android:parentActivityName="com.example.rehand.DetailsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.DetailsPage" />
+        </activity>
+        <activity
+            android:name="com.example.rehand.ArmRotationProgressDetailPage"
+            android:label="@string/title_activity_arm_rotation_progress_detail_page"
             android:parentActivityName="com.example.rehand.DetailsPage" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

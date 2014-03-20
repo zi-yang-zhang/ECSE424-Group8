@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
@@ -56,7 +57,71 @@ public class FingerLiftExercise extends Activity {
 		final Button littleFingerButton = (Button) findViewById(R.id.littleFingerButton);
 		final TextView gameCounter = (TextView)findViewById(R.id.gameCounter);
 		final TextView fingerLiftInstruction = (TextView)findViewById(R.id.fingerLiftInstruction);
-
+		
+		indexFingerButton.setOnTouchListener(new OnTouchListener() {
+		    @Override
+		    public boolean onTouch(View v, MotionEvent event) {
+		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+		        	index = false;
+		        	indexFingerRedLight.setVisibility(View.INVISIBLE);
+		        	indexFingerGreenLight.setVisibility(View.VISIBLE);
+		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+		        	index = true;
+		        	indexFingerGreenLight.setVisibility(View.INVISIBLE);
+		        	indexFingerRedLight.setVisibility(View.VISIBLE);
+		        }
+				return false;
+		    }
+		
+		});
+		middleFingerButton.setOnTouchListener(new OnTouchListener() {
+		    @Override
+		    public boolean onTouch(View v, MotionEvent event) {
+		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+		        	middle = false;
+		        	middleFingerRedLight.setVisibility(View.INVISIBLE);
+		        	middleFingerGreenLight.setVisibility(View.VISIBLE);
+		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+		        	middle = true;
+		        	middleFingerGreenLight.setVisibility(View.INVISIBLE);
+		        	middleFingerRedLight.setVisibility(View.VISIBLE);
+		        }
+				return false;
+		    }
+		
+		});
+		ringFingerButton.setOnTouchListener(new OnTouchListener() {
+		    @Override
+		    public boolean onTouch(View v, MotionEvent event) {
+		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+		        	ring = false;
+		        	ringFingerRedLight.setVisibility(View.INVISIBLE);
+		        	ringFingerGreenLight.setVisibility(View.VISIBLE);
+		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+		        	ring = true;
+		        	ringFingerGreenLight.setVisibility(View.INVISIBLE);
+		        	ringFingerRedLight.setVisibility(View.VISIBLE);
+		        }
+				return false;
+		    }
+		
+		});
+		littleFingerButton.setOnTouchListener(new OnTouchListener() {
+		    @Override
+		    public boolean onTouch(View v, MotionEvent event) {
+		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+		        	little = false;
+		        	littleFingerRedLight.setVisibility(View.INVISIBLE);
+		        	littleFingerGreenLight.setVisibility(View.VISIBLE);
+		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+		        	little = true;
+		        	littleFingerGreenLight.setVisibility(View.INVISIBLE);
+		        	littleFingerRedLight.setVisibility(View.VISIBLE);
+		        }
+				return false;
+		    }
+		
+		});
   		 
 		if(gettingStarted){
 			fingerLiftInstruction.setText("BenchMarking Test");
@@ -184,6 +249,8 @@ public class FingerLiftExercise extends Activity {
 		    	 }
 		    	 if((!indexFingerButton.isPressed())&&benchmarkStartScores[0]==0&&indexFirstPressed){
 		    		 System.out.println("start index");
+		    		 MediaPlayer hold = MediaPlayer.create(getBaseContext(), R.drawable.hold);
+						hold.start();
 		    		 benchmarkStartScores[0]=System.currentTimeMillis();
 		    	 }
 		    	 if((indexFingerButton.isPressed())&&benchmarkEndScores[0]==0&&benchmarkStartScores[0]!=0&&indexFirstPressed){
@@ -201,6 +268,8 @@ public class FingerLiftExercise extends Activity {
 		    	 }
 		    	 if((!middleFingerButton.isPressed())&&benchmarkStartScores[1]==0&&middleFirstPressed&&indexdone){
 		    		 System.out.println("start middle");
+		    		 MediaPlayer hold = MediaPlayer.create(getBaseContext(), R.drawable.hold);
+						hold.start();
 		    		 benchmarkStartScores[1]=System.currentTimeMillis();
 		    	 }
 		    	 if((middleFingerButton.isPressed())&&benchmarkEndScores[1]==0&&benchmarkStartScores[1]!=0&&middleFirstPressed){
@@ -218,11 +287,13 @@ public class FingerLiftExercise extends Activity {
 		    	 }
 		    	 if((!ringFingerButton.isPressed())&&benchmarkStartScores[2]==0&&ringFirstPressed&&middledone){
 		    		 System.out.println("start ring");
+		    		 MediaPlayer hold = MediaPlayer.create(getBaseContext(), R.drawable.hold);
+						hold.start();
 		    		 benchmarkStartScores[2]=System.currentTimeMillis();
 		    	 }
 		    	 if((ringFingerButton.isPressed())&&benchmarkEndScores[2]==0&&benchmarkStartScores[2]!=0&&ringFirstPressed){
 		    		 benchmarkEndScores[2]=System.currentTimeMillis();
-		    		 System.out.println("start ring");
+		    		 System.out.println("end ring");
 		    		 indexFingerArrow.setVisibility(View.INVISIBLE);
 		    		 middleFingerArrow.setVisibility(View.INVISIBLE);
 		    		 ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -235,6 +306,8 @@ public class FingerLiftExercise extends Activity {
 		    	 }
 		    	 if((!littleFingerButton.isPressed())&&benchmarkStartScores[3]==0&&littleFirstPressed&&ringdone){
 		    		 System.out.println("start little");
+		    		 MediaPlayer hold = MediaPlayer.create(getBaseContext(), R.drawable.hold);
+						hold.start();
 		    		 benchmarkStartScores[3]=System.currentTimeMillis();
 		    	 }
 		    	 if((littleFingerButton.isPressed())&&benchmarkEndScores[3]==0&&benchmarkStartScores[3]!=0&&littleFirstPressed){
@@ -245,8 +318,12 @@ public class FingerLiftExercise extends Activity {
 		   	 		 middleFingerArrow.setVisibility(View.INVISIBLE);
 		   	 		 ringFingerArrow.setVisibility(View.INVISIBLE);
 		   	 		 littleFingerArrow.setVisibility(View.INVISIBLE);
+		   	 		 littledone = true;
 		    	 }
-
+		    	 if(littledone){
+		    		 super.cancel();
+		    	 }
+		    	 
 	    	 		 
 		     }
 		     public void onFinish() {
@@ -272,70 +349,6 @@ public class FingerLiftExercise extends Activity {
 		  };
 		  startTimer.start();
 
-		indexFingerButton.setOnTouchListener(new OnTouchListener() {
-		    @Override
-		    public boolean onTouch(View v, MotionEvent event) {
-		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
-		        	index = false;
-		        	indexFingerRedLight.setVisibility(View.INVISIBLE);
-		        	indexFingerGreenLight.setVisibility(View.VISIBLE);
-		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-		        	index = true;
-		        	indexFingerGreenLight.setVisibility(View.INVISIBLE);
-		        	indexFingerRedLight.setVisibility(View.VISIBLE);
-		        }
-				return false;
-		    }
-		
-		});
-		middleFingerButton.setOnTouchListener(new OnTouchListener() {
-		    @Override
-		    public boolean onTouch(View v, MotionEvent event) {
-		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
-		        	middle = false;
-		        	middleFingerRedLight.setVisibility(View.INVISIBLE);
-		        	middleFingerGreenLight.setVisibility(View.VISIBLE);
-		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-		        	middle = true;
-		        	middleFingerGreenLight.setVisibility(View.INVISIBLE);
-		        	middleFingerRedLight.setVisibility(View.VISIBLE);
-		        }
-				return false;
-		    }
-		
-		});
-		ringFingerButton.setOnTouchListener(new OnTouchListener() {
-		    @Override
-		    public boolean onTouch(View v, MotionEvent event) {
-		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
-		        	ring = false;
-		        	ringFingerRedLight.setVisibility(View.INVISIBLE);
-		        	ringFingerGreenLight.setVisibility(View.VISIBLE);
-		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-		        	ring = true;
-		        	ringFingerGreenLight.setVisibility(View.INVISIBLE);
-		        	ringFingerRedLight.setVisibility(View.VISIBLE);
-		        }
-				return false;
-		    }
-		
-		});
-		littleFingerButton.setOnTouchListener(new OnTouchListener() {
-		    @Override
-		    public boolean onTouch(View v, MotionEvent event) {
-		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
-		        	little = false;
-		        	littleFingerRedLight.setVisibility(View.INVISIBLE);
-		        	littleFingerGreenLight.setVisibility(View.VISIBLE);
-		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-		        	little = true;
-		        	littleFingerGreenLight.setVisibility(View.INVISIBLE);
-		        	littleFingerRedLight.setVisibility(View.VISIBLE);
-		        }
-				return false;
-		    }
-		
-		});
 	}
 
 	@Override

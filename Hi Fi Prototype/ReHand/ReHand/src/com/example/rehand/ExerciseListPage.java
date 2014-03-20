@@ -35,11 +35,6 @@ public class ExerciseListPage extends Activity {
 			b.setEnabled(false);
 			done++;
         }
-        if(!prefs.getString("ClawStretch", "Not Done").equals("Not Done")) {
-        	b = (Button) findViewById(R.id.button5);
-			b.setEnabled(false);
-			done++;
-        }
         if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button6);
 			b.setEnabled(false);
@@ -114,11 +109,6 @@ public class ExerciseListPage extends Activity {
 
 	public void goToArmRotationPage(View view){		
 		Intent intent = new Intent(this, ArmRotationPage.class);
-		startActivity(intent);
-	}
-
-	public void goToClawStretchPage(View view){		
-		Intent intent = new Intent(this, ClawStretchPage.class);
 		startActivity(intent);
 	}
 

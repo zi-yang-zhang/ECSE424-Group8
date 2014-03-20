@@ -19,22 +19,12 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/ClawStretchProgress"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/clawStretchProgressButton"
-        android:layout_alignBottom="@+id/clawStretchProgressButton"
-        android:layout_alignLeft="@+id/ArmRotationProgress"
-        android:text="@string/progress_claw_stretch"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
         android:id="@+id/ElbowExtensionProgress"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/elbowExtentionProgressButton"
         android:layout_alignBottom="@+id/elbowExtentionProgressButton"
-        android:layout_alignLeft="@+id/ClawStretchProgress"
+        android:layout_alignLeft="@+id/ArmRotationProgress"
         android:text="@string/progress_elbow_extension"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -46,16 +36,6 @@
         android:layout_alignBottom="@+id/fingerGripProgressButton"
         android:layout_alignLeft="@+id/ElbowExtensionProgress"
         android:text="@string/progress_finger_grip"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/FingerLiftProgress"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/fingerLiftProgressButton"
-        android:layout_alignBottom="@+id/fingerLiftProgressButton"
-        android:layout_alignLeft="@+id/FingerGripProgress"
-        android:text="@string/progress_finger_lift"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -96,7 +76,23 @@
         android:text="@string/progress_page_instruction"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Button android:id="@+id/armRotationProgressButton" style="?android:attr/borderlessButtonStyle" android:layout_width="200dp" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_below="@+id/progressPageInstruction" android:text="@string/exercise_text_arm_rotation" /><Button android:id="@+id/fingerGripProgressButton" style="?android:attr/borderlessButtonStyle" android:layout_width="200dp" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_below="@+id/fingerLiftProgressButton" android:text="@string/exercise_text_finger_grip" />
+    <Button
+        android:id="@+id/armRotationProgressButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/progressPageInstruction"
+        android:text="@string/exercise_text_arm_rotation" />
+
+    <Button
+        android:id="@+id/fingerGripProgressButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fingerLiftProgressButton"
+        android:text="@string/exercise_text_finger_grip" />
 
     <Button
         android:id="@+id/radialDeviationProgressButton"
@@ -136,22 +132,23 @@
         android:text="@string/exercise_text_wrist_flex" />
 
     <Button
-        android:id="@+id/clawStretchProgressButton"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/wristFlexProgressButton"
-        android:layout_below="@+id/WristFlexProgress"
-        android:text="@string/exercise_botton_text_claw_stretch" />
-
-    <Button
         android:id="@+id/fingerLiftProgressButton"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/clawStretchProgressButton"
-        android:layout_below="@+id/ClawStretchProgress"
+        android:layout_alignLeft="@+id/wristFlexProgressButton"
+        android:layout_below="@+id/wristFlexProgressButton"
         android:onClick="goToFingerLiftProgressDetailPage"
         android:text="@string/exercise_text_finger_lift" />
+
+    <TextView
+        android:id="@+id/FingerLiftProgress"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fingerLiftProgressButton"
+        android:layout_alignBottom="@+id/fingerLiftProgressButton"
+        android:layout_alignLeft="@+id/FingerGripProgress"
+        android:text="@string/progress_finger_lift"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
