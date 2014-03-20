@@ -274,6 +274,38 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.rehand.DetailsPage" />
         </activity>
+        <activity
+            android:name="com.example.rehand.FingerGripProgressDetailPage"
+            android:label="@string/title_activity_finger_grip_progress_detail_page"
+            android:parentActivityName="com.example.rehand.DetailsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.DetailsPage" />
+        </activity>
+        <activity
+            android:name="com.example.rehand.RadialDeviationProgressDetailPage"
+            android:label="@string/title_activity_radial_deviation_progress_detail_page"
+            android:parentActivityName="com.example.rehand.DetailsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.DetailsPage" />
+        </activity>
+        <activity
+            android:name="com.example.rehand.ThumbStretchProgressDetailPage"
+            android:label="@string/title_activity_thumb_stretch_progress_detail_page"
+            android:parentActivityName="com.example.rehand.DetailsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.DetailsPage" />
+        </activity>
+        <activity
+            android:name="com.example.rehand.WristFlexProgressDetailPage"
+            android:label="@string/title_activity_wrist_flex_progress_detail_page"
+            android:parentActivityName="com.example.rehand.DetailsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rehand.DetailsPage" />
+        </activity>
     </application>
 
 </manifest>

@@ -86,8 +86,8 @@ public class DetailsPage extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void goToArmRotationPage(View view){		
-		Intent intent = new Intent(this, ArmRotationPage.class);
+	public void goToArmRotationProgressDetailPage(View view){		
+		Intent intent = new Intent(this, ArmRotationProgressDetailPage.class);
 		startActivity(intent);
 	}
 
@@ -96,8 +96,8 @@ public class DetailsPage extends Activity {
 		startActivity(intent);
 	}
 
-	public void goToFingerGripPage(View view){		
-		Intent intent = new Intent(this, FingerGripPage.class);
+	public void goToFingerGripProgressDetailPage(View view){		
+		Intent intent = new Intent(this, FingerGripProgressDetailPage.class);
 		startActivity(intent);
 	}
 
@@ -106,18 +106,18 @@ public class DetailsPage extends Activity {
 		startActivity(intent);
 	}
 
-	public void goToRadialDeviationPage(View view){		
-		Intent intent = new Intent(this, RadialDeviationPage.class);
+	public void goToRadialDeviationProgressDetailPage(View view){		
+		Intent intent = new Intent(this, RadialDeviationProgressDetailPage.class);
 		startActivity(intent);
 	}
 
-	public void goToThumbStretchPage(View view){		
-		Intent intent = new Intent(this, ThumbStretchPage.class);
+	public void goToThumbStretchProgressDetailPage(View view){		
+		Intent intent = new Intent(this, ThumbStretchProgressDetailPage.class);
 		startActivity(intent);
 	}
 
-	public void goToWristFlexPage(View view){		
-		Intent intent = new Intent(this, WristFlexPage.class);
+	public void goToWristFlexProgressDetailPage(View view){		
+		Intent intent = new Intent(this, WristFlexProgressDetailPage.class);
 		startActivity(intent);
 	}
 

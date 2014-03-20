@@ -47,9 +47,9 @@ public class FingerLiftProgressDetailPage extends Activity {
 		double personalBest = fingerLiftResult.getPersonalBest();
 		int level = fingerLiftResult.getLevel();
 		double benchmark = fingerLiftResult.getBenchmark();
-		benchmarkText.setText(String.valueOf(f.format(benchmark)));
+		benchmarkText.setText(String.valueOf(f.format(benchmark))+"Seconds");
 		levelText.setText(String.valueOf(level));
-		personalBestScore.setText(String.valueOf(f.format(personalBest)));
+		personalBestScore.setText(String.valueOf(f.format(personalBest))+"Seconds");
 		progressText.setText(String.valueOf(f.format(currentProgress))+"%");
         bar.setProgress((int) currentProgress);
 		}

@@ -20,10 +20,10 @@ public class ElbowExtensionProgressDetailPage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_elbow_extension_progress_detail_page);
-		ScoreDatabaseHelper db = new ScoreDatabaseHelper(this);
 		// Show the Up button in the action bar.
 		setupActionBar();
-
+		
+		ScoreDatabaseHelper db = new ScoreDatabaseHelper(this);
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
 		boolean gettingStarted = prefs.getBoolean("elbowExtensionFirstTime", true);
 		DecimalFormat f = new DecimalFormat("##.##");
@@ -46,9 +46,9 @@ public class ElbowExtensionProgressDetailPage extends Activity {
 		double personalBest = elbowExtensionResult.getPersonalBest();
 		int level = elbowExtensionResult.getLevel();
 		double benchmark = elbowExtensionResult.getBenchmark();
-		benchmarkText.setText(String.valueOf(f.format(benchmark)));
+		benchmarkText.setText(String.valueOf(f.format(benchmark))+"Degrees");
 		levelText.setText(String.valueOf(level));
-		personalBestScore.setText(String.valueOf(f.format(personalBest)));
+		personalBestScore.setText(String.valueOf(f.format(personalBest))+"Degrees");
 		progressText.setText(String.valueOf(f.format(currentProgress))+"%");
         bar.setProgress((int) currentProgress);
 		}
