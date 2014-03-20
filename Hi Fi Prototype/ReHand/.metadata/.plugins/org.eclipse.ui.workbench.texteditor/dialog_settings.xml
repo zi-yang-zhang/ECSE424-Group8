@@ -13,26 +13,26 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="SignUp" key="selection"/>
+		<item value="currentTime" key="selection"/>
 		<list key="findhistory">
+			<item value="currentTime"/>
+			<item value="detail"/>
+			<item value="elbow_extension"/>
+			<item value="elbow"/>
+			<item value="ElbowExtension"/>
+			<item value="elbowExtension"/>
+			<item value="e"/>
 			<item value="signup"/>
-			<item value="sign"/>
-			<item value="oncreateoptions"/>
-			<item value="pref"/>
-			<item value="medium"/>
-			<item value="title_"/>
-			<item value="250"/>
-			<item value="botton"/>
 		</list>
 		<list key="replacehistory">
+			<item value="arm_rotation"/>
+			<item value="ArmRotation"/>
+			<item value="armRotation"/>
 			<item value="200"/>
 			<item value="button"/>
 			<item value="open_and_close"/>
 			<item value="radial_deviation"/>
 			<item value="thumb_stretch"/>
-			<item value="wrist_flex"/>
-			<item value="finger_lift"/>
-			<item value="elbow_extension"/>
 		</list>
 	</section>
 </section>

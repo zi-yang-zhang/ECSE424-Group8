@@ -27,18 +27,16 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 	private Sensor mOrientation;
 	private final float NOISE = (float) 5;
 	private float mLastX, mLastY, mLastZ;
-	//float movementZ;
-	private int timer;
-	private float lastDeltaX = 0.0f;
-	private float lastDeltaY = 0.0f;
-	private float lastDeltaZ = 0.0f;
-	float movementZ;
+	private long timer;
+	private float start, end;
 	private boolean gameStart = false;
 	private boolean gameOver = false;
-	private int unit_time = 1;
 	private boolean stopped = false;
 	private String state = "A";
-	private int threshold = 3;
+	private int thresholdX = 10;
+	private int thresholdY = 10;
+	private int thresholdZ = 5;
+	private long wait_time = 2000;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -51,6 +49,8 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 	    mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 	    mOrientation = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 	    mSensorManager.registerListener(this, mOrientation, SensorManager.SENSOR_DELAY_NORMAL);
+
+	    timer = System.currentTimeMillis();
 	}
 
 	@Override
@@ -66,86 +66,85 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 	    float x = event.values[1];
 	    float y = event.values[2];
 	    if(!gameStart) {
-	    	timer++;
-		    if(timer/unit_time == 1){
-		    	countDown.setText("3");
-		    }else if(timer/unit_time == 2){
-		    	countDown.setText("2");
-		    }else if(timer/unit_time == 3){
-		    	countDown.setText("1");
-		    }else if(timer/unit_time == 4){
-		    	countDown.setText("");
+	    	long time = System.currentTimeMillis() - timer;
+	    	if(time > 4000) {
+	    		countDown.setText("");
 		    	MediaPlayer ready = MediaPlayer.create(this, R.drawable.ready);
 		    	ready.start();
 		    	mLastX = x;
 				mLastY = y;
 				mLastZ = z;
-		    	movementZ=0;
 		    	gameStart = true;
-		    	timer = 0;
-	        }
-	    } else {
-	    	timer++;
-			float deltaX = Math.abs(mLastX - x);
-			float deltaY = Math.abs(mLastY - y);
+		    	timer = System.currentTimeMillis();
+	    	} else if(time > 3000){
+		    	countDown.setText("1");
+		    } else if(time > 2000){
+		    	countDown.setText("2");
+		    } else if(time > 1000){
+		    	countDown.setText("3");
+		    }
+	    } else if(!gameOver) {
+			//float deltaX = Math.abs(mLastX - x);
+			//float deltaY = Math.abs(mLastY - y);
 			float deltaZ = Math.abs(mLastZ - z);
-			if (deltaX < NOISE) deltaX = mLastX; else deltaX = x;
-			if (deltaY < NOISE) deltaY = mLastY; else deltaY = y;
-			if (deltaZ < NOISE) deltaZ = mLastZ; else deltaZ = z;
+			//if (deltaX < NOISE) deltaX = mLastX; else deltaX = x;
+			//if (deltaY < NOISE) deltaY = mLastY; else deltaY = y;
+			//if (deltaZ < NOISE) deltaZ = mLastZ; else deltaZ = z;
 
-			if(Math.abs(lastDeltaX - deltaX) < threshold && Math.abs(lastDeltaY - deltaY) < threshold && Math.abs(lastDeltaZ - deltaZ) < threshold) {
+	    	//countDown.setText("" + ((Math.abs(x) < thresholdX)?"Y":"N") + ((Math.abs(y) < thresholdY)?"Y":"N") + ((Math.abs(mLastZ - z) < thresholdZ)?"Y":"N"));
+			if(Math.abs(x) < thresholdX && Math.abs(y) < thresholdY && Math.abs(deltaZ) < thresholdZ) {
 				stopped = true;
 			} else {
-				timer = 0;
 				stopped = false;
+				timer = System.currentTimeMillis();
 			}
-			lastDeltaX = deltaX;
-			lastDeltaY = deltaY;
-			lastDeltaZ = deltaZ;
 
 			if(stopped) {
-				timer++;
-				if(timer/unit_time == 5) {
+				long time = System.currentTimeMillis() - timer;
+				if(time > wait_time) {
 					//stopped moving for enough time
-					if(state.equals("D")) {
+					if(state.equals("C")) {
 						//DONE
 						MediaPlayer done = MediaPlayer.create(this, R.drawable.done);
 						done.start();
-						state = "E";
-						gameOver = true;
-					}
-					if(state.equals("C")) {
-						//Continue holding
 						state = "D";
+						end = z;
+						gameOver = true;
 					}
 					if(state.equals("B")) {
 						//HOLD
 				    	MediaPlayer hold = MediaPlayer.create(this, R.drawable.hold);
 						hold.start();
+						thresholdX = 180;
+						thresholdY = 180;
+						thresholdZ = 180;
 						state = "C";
+						wait_time = 4000;
 					}
                     if(state.equals("A")) {
                     	//GO
                     	MediaPlayer go = MediaPlayer.create(this, R.drawable.go);
                     	go.start();
                     	state = "B";
-                    	movementZ = 0;
+                    	start = z;
+                    	wait_time = 4000;
 					}
-                	timer = 0;
+                	timer = System.currentTimeMillis();
                 	stopped = false;
 				}
 			}
-			movementZ = movementZ + (deltaZ-mLastZ);
 
-			mLastX = deltaX;
-			mLastY = deltaY;
-			mLastZ = deltaZ;
-	    }
-
-	    if(gameOver){
+			//mLastX = deltaX;
+			//mLastY = deltaY;
+			mLastZ = z;
+	    } else {
+	    	double range = Math.round(end - start);
+	    	if(range < 0) {
+	    		range += 360;
+	    	}
 			mSensorManager.unregisterListener(this, mOrientation);
 			Intent intent = new Intent(this, ElbowExtensionResult.class);
-			intent.putExtra("score", Float.toString(movementZ));
+			intent.putExtra("score", Double.toString(range));
 			startActivity(intent);
 			this.finish();
 	    }

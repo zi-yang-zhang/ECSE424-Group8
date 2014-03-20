@@ -23,7 +23,6 @@ public class ThumbStretchResult extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_thumb_stretch_result);
-		ScoreDatabaseHelper db = new ScoreDatabaseHelper(this);
 		boolean gettingStarted = prefs.getBoolean("thumbStretchFirstTime", true);
 		DecimalFormat f = new DecimalFormat("##.##");
 		final TextView socreText = (TextView) findViewById(R.id.socreText);
