@@ -224,6 +224,7 @@
         <activity
             android:name="com.example.rehand.ThumbStretchPage"
             android:label="@string/title_activity_thumb_stretch_page"
+            android:screenOrientation="portrait" 
             android:parentActivityName="com.example.rehand.ExerciseListPage" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -35,7 +35,7 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 	float movementZ;
 	private boolean gameStart = false;
 	private boolean gameOver = false;
-	private int unit_time = 100;
+	private int unit_time = 1;
 	private boolean stopped = false;
 	private String state = "A";
 	private int threshold = 3;
@@ -144,7 +144,7 @@ public class ElbowExtensionExercise extends Activity implements SensorEventListe
 
 	    if(gameOver){
 			mSensorManager.unregisterListener(this, mOrientation);
-			Intent intent = new Intent(this, ElbowExtensionProgressDetailPage.class);
+			Intent intent = new Intent(this, ElbowExtensionResult.class);
 			intent.putExtra("score", Float.toString(movementZ));
 			startActivity(intent);
 			this.finish();
