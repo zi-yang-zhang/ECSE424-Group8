@@ -73,11 +73,11 @@ public class FingerGripResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("fingerGripFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult fingerGripResult = new ExerciseResult(6,"Finger Grip",attempt,(attempt+300));
+	    			ExerciseResult fingerGripResult = new ExerciseResult(3,"Finger Grip",attempt,(attempt+300));
 	    			db.addResult(fingerGripResult);
 	    			prefs.edit().putBoolean("fingerGripFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult fingerGripResult = db.getResult(6);
+	    			ExerciseResult fingerGripResult = db.getResult(3);
 	    			fingerGripResult.updatePersonalBest(attempt);
 	    			fingerGripResult.updateScores(attempt);
 	    			fingerGripResult.updateCurrentProgress();

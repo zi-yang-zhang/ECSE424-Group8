@@ -73,11 +73,11 @@ public class ElbowExtensionResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("elbowExtensionFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult elbowExtensionResult = new ExerciseResult(6,"Elbow Extension",attempt,(attempt+300));
+	    			ExerciseResult elbowExtensionResult = new ExerciseResult(2,"Elbow Extension",attempt,(attempt+300));
 	    			db.addResult(elbowExtensionResult);
 	    			prefs.edit().putBoolean("elbowExtensionFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult elbowExtensionResult = db.getResult(6);
+	    			ExerciseResult elbowExtensionResult = db.getResult(2);
 	    			elbowExtensionResult.updatePersonalBest(attempt);
 	    			elbowExtensionResult.updateScores(attempt);
 	    			elbowExtensionResult.updateCurrentProgress();

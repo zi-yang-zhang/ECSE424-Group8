@@ -73,11 +73,11 @@ public class ArmRotationResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("armRotationFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult armRotationResult = new ExerciseResult(6,"Arm Rotation",attempt,(attempt+300));
+	    			ExerciseResult armRotationResult = new ExerciseResult(1,"Arm Rotation",attempt,(attempt+300));
 	    			db.addResult(armRotationResult);
 	    			prefs.edit().putBoolean("armRotationFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult armRotationResult = db.getResult(6);
+	    			ExerciseResult armRotationResult = db.getResult(1);
 	    			armRotationResult.updatePersonalBest(attempt);
 	    			armRotationResult.updateScores(attempt);
 	    			armRotationResult.updateCurrentProgress();

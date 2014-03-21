@@ -72,11 +72,11 @@ public class RadialDeviationResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("radialDeviationFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult radialDeviationResult = new ExerciseResult(6,"Radial Deviation",attempt,(attempt+300));
+	    			ExerciseResult radialDeviationResult = new ExerciseResult(5,"Radial Deviation",attempt,(attempt+300));
 	    			db.addResult(radialDeviationResult);
 	    			prefs.edit().putBoolean("radialDeviationFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult radialDeviationResult = db.getResult(6);
+	    			ExerciseResult radialDeviationResult = db.getResult(5);
 	    			radialDeviationResult.updatePersonalBest(attempt);
 	    			radialDeviationResult.updateScores(attempt);
 	    			radialDeviationResult.updateCurrentProgress();

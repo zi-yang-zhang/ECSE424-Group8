@@ -40,7 +40,7 @@ public class ArmRotationProgressDetailPage extends Activity {
 			progressText.setText("0%");
 	        bar.setProgress((int) 0);
 		}else{
-		ExerciseResult armRotationResult = db.getResult(0);
+		ExerciseResult armRotationResult = db.getResult(1);
 		double currentProgress = armRotationResult.getCurrentProgress();
 		double personalBest = armRotationResult.getPersonalBest();
 		int level = armRotationResult.getLevel();

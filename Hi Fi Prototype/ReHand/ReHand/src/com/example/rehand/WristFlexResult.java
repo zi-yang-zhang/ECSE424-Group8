@@ -38,19 +38,6 @@ public class WristFlexResult extends Activity {
 		}
 		socreText.setText("Your Score: "+String.valueOf(f.format(attempt)) +" degrees!");
 		
-		
-		//ExerciseResult fingerGripResult = new ExerciseResult(3,"Finger Grip",200, Double.parseDouble(score));
-		/*if(started ==1){
-			
-		}
-		*/
-		//db.deleteResult(fingerGripResult);
-		//System.out.println(db.getResult(3).toString());
-		//db.addResult(result);
-		//db.deleteResult(result);
-		//System.out.println(started);
-		//System.out.println(result.toString());
-		//System.out.println(db.getResult(2).toString());
 	}
 
 	@Override
@@ -73,11 +60,11 @@ public class WristFlexResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("wristFlexFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult wristFlexResult = new ExerciseResult(6,"Wrist Flex",attempt,(attempt+300));
+	    			ExerciseResult wristFlexResult = new ExerciseResult(7,"Wrist Flex",attempt,(attempt+300));
 	    			db.addResult(wristFlexResult);
 	    			prefs.edit().putBoolean("wristFlexFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult wristFlexResult = db.getResult(6);
+	    			ExerciseResult wristFlexResult = db.getResult(7);
 	    			wristFlexResult.updatePersonalBest(attempt);
 	    			wristFlexResult.updateScores(attempt);
 	    			wristFlexResult.updateCurrentProgress();
