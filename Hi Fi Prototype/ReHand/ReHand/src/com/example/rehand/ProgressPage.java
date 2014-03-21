@@ -98,4 +98,8 @@ public class ProgressPage extends Activity {
 		Intent intent = new Intent(this, DetailsPage.class);
 		startActivity(intent);
 	}
+	public void goToHomePage(View view) {
+		Intent intent = new Intent(this, HomePage.class);
+		startActivity(intent);
+	}
 }

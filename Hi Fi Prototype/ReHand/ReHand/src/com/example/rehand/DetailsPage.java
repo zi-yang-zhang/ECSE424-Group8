@@ -120,5 +120,8 @@ public class DetailsPage extends Activity {
 		Intent intent = new Intent(this, WristFlexProgressDetailPage.class);
 		startActivity(intent);
 	}
-
+	public void goToProgressPage(View view){		
+		Intent intent = new Intent(this, ProgressPage.class);
+		startActivity(intent);
+	}
 }

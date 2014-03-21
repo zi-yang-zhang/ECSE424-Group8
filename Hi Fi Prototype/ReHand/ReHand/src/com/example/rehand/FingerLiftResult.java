@@ -32,10 +32,10 @@ public class FingerLiftResult extends Activity {
 		if(gettingStarted){
 			//create new entry and save in database
 			testTypeText.setText("You Have Completed Bench Mark Test!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(attempt)));
+			socreText.setText("Your Score: "+String.valueOf(f.format(attempt))+" seconds!");
 		}else{
 			testTypeText.setText("You Have Completed Finger Lift Exercise!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(attempt)));
+			socreText.setText("Your Score: "+String.valueOf(f.format(attempt))+" seconds!");
 		}
 	}
 
