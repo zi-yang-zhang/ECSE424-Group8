@@ -39,4 +39,14 @@
         android:onClick="goToExercisePage"
         android:text="@string/exercise_start_botton_text" />
 
+        <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignRight="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="40dp"
+        android:onClick="goBack"
+        android:text="@string/back_button" />
 </RelativeLayout>

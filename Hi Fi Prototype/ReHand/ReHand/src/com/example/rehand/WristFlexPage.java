@@ -24,7 +24,7 @@ public class WristFlexPage extends Activity {
 	 */
 	private void setupActionBar() {
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setDisplayHomeAsUpEnabled(false);
 
 	}
 
@@ -60,5 +60,10 @@ public class WristFlexPage extends Activity {
 	public void viewTutorial(View view) {
 		Intent exerciseWithTutorial = new Intent(this, WristFlexTutorialPage.class);
         startActivity(exerciseWithTutorial);
+	}
+	
+	public void goBack(View view) {
+		Intent exercises = new Intent(this, ExerciseListPage.class);
+        startActivity(exercises);
 	}
 }

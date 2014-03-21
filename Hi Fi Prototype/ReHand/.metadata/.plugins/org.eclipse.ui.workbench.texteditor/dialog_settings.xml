@@ -3,36 +3,36 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="475" key="DIALOG_Y_ORIGIN"/>
-		<item value="380" key="DIALOG_HEIGHT"/>
 		<item value="1280" key="DIALOG_X_ORIGIN"/>
+		<item value="380" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="currentTime" key="selection"/>
+		<item value="armRotation" key="selection"/>
 		<list key="findhistory">
-			<item value="currentTime"/>
-			<item value="detail"/>
-			<item value="elbow_extension"/>
+			<item value="wristFlex"/>
+			<item value="Wrist Flex"/>
+			<item value="Thumb Stretch"/>
+			<item value="thumbStretch"/>
+			<item value="pop"/>
+			<item value="would"/>
+			<item value="countdown"/>
 			<item value="elbow"/>
-			<item value="ElbowExtension"/>
-			<item value="elbowExtension"/>
-			<item value="e"/>
-			<item value="signup"/>
 		</list>
 		<list key="replacehistory">
-			<item value="arm_rotation"/>
-			<item value="ArmRotation"/>
 			<item value="armRotation"/>
-			<item value="200"/>
-			<item value="button"/>
-			<item value="open_and_close"/>
-			<item value="radial_deviation"/>
-			<item value="thumb_stretch"/>
+			<item value="elbowExtension"/>
+			<item value="fingerGrip"/>
+			<item value="Radial Deviation"/>
+			<item value="radialDeviation"/>
+			<item value="Wrist Flex"/>
+			<item value="wristFlex"/>
+			<item value="arm_rotation"/>
 		</list>
 	</section>
 </section>

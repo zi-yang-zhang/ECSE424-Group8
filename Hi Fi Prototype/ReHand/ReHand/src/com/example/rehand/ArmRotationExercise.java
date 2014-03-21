@@ -20,7 +20,6 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 	private final float NOISE = (float) 1;
 	private float mLastX, mLastY, mLastZ;
 	private long timer;
-	private float start, end;
 	private boolean gameStart = false;
 	private boolean gameOver = false;
 	private boolean stopped = false;
@@ -88,7 +87,7 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 			//if (deltaZ < NOISE) deltaZ = mLastZ; else deltaZ = z;
 
 	    	//countDown.setText("" + ((Math.abs(x) < thresholdX)?"Y":"N") + ((Math.abs(y) < thresholdY)?"Y":"N") + ((Math.abs(mLastZ - z) < thresholdZ)?"Y":"N"));
-			if(Math.abs(deltaX) < thresholdX && Math.abs(y) < thresholdY && Math.abs(mLastZ - z) < thresholdZ) {
+			if(Math.abs(deltaX) < thresholdX && Math.abs(y) < thresholdY && Math.abs(deltaZ) < thresholdZ) {
 				stopped = true;
 			} else {
 				stopped = false;

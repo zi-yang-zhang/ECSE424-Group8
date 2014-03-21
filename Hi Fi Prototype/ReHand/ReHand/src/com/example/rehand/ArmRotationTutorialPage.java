@@ -1,11 +1,15 @@
 package com.example.rehand;
 
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
 import android.support.v4.app.NavUtils;
 
 public class ArmRotationTutorialPage extends Activity {
@@ -15,7 +19,24 @@ public class ArmRotationTutorialPage extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_arm_rotation_tutorial_page);
 		// Show the Up button in the action bar.
-		setupActionBar();
+		//setupActionBar();
+		
+		getWindow().setFormat(PixelFormat.TRANSLUCENT);
+		VideoView videoView = new VideoView(this);
+		//if you want the controls to appear
+		videoView.setMediaController(new MediaController(this));
+		Uri video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.arm_rotation); //do not add any extension
+		//if your file is named sherif.mp4 and placed in /raw
+		//use R.raw.sherif
+		videoView.setVideoURI(video);
+		setContentView(videoView);
+		videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+		    public void onCompletion(MediaPlayer mp) {
+		    	Intent exerciseWithTutorial = new Intent(getBaseContext(), ArmRotationPage.class);
+		        startActivity(exerciseWithTutorial);
+		    }
+		});
+		videoView.start();
 	}
 
 	/**
@@ -23,7 +44,7 @@ public class ArmRotationTutorialPage extends Activity {
 	 */
 	private void setupActionBar() {
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setDisplayHomeAsUpEnabled(false);
 
 	}
 
@@ -49,11 +70,6 @@ public class ArmRotationTutorialPage extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	public void goToExercisePage(View view) {
-		Intent intent = new Intent(this, ArmRotationExercise.class);
-		startActivity(intent);
 	}
 
 }
