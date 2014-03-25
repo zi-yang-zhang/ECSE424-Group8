@@ -61,42 +61,6 @@
             android:label="@string/title_activity_arm_rotation_result" android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.example.rehand.ElbowExtensionPage"
-            android:label="@string/title_activity_elbow_extension_page" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.ElbowExtensionExercise"
-            android:label="@string/title_activity_elbow_extension_exercise" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.ElbowExtensionTutorialPage"
-            android:label="@string/title_activity_elbow_extension_tutorial_page"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.example.rehand.ElbowExtensionResult"
-            android:label="@string/title_activity_elbow_extension_result" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.FingerGripPage"
-            android:label="@string/title_activity_finger_grip_page" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.FingerGripExercise"
-            android:label="@string/title_activity_finger_grip_exercise" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.FingerGripTutorialPage"
-            android:label="@string/title_activity_finger_grip_tutorial_page"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.example.rehand.FingerGripResult"
-            android:label="@string/title_activity_finger_grip_result" android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name="com.example.rehand.FingerLiftPage"
             android:label="@string/title_activity_finger_lift_page" android:screenOrientation="portrait">
         </activity>
@@ -113,24 +77,6 @@
         <activity
             android:name="com.example.rehand.FingerLiftResult"
             android:label="@string/title_activity_finger_lift_result" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.RadialDeviationPage"
-            android:label="@string/title_activity_radial_deviation_page" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.RadialDeviationExercise"
-            android:label="@string/title_activity_radial_deviation_exercise" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.RadialDeviationTutorialPage"
-            android:label="@string/title_activity_radial_deviation_tutorial_page" 
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.example.rehand.RadialDeviationResult"
-            android:label="@string/title_activity_radial_deviation_result" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.example.rehand.ThumbStretchPage"
@@ -170,24 +116,12 @@
             android:label="@string/title_activity_wrist_flex_result" android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.example.rehand.ElbowExtensionProgressDetailPage"
-            android:label="@string/title_activity_elbow_extention_progress_detail_page" android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name="com.example.rehand.FingerLiftProgressDetailPage"
             android:label="@string/title_activity_finger_lift_progress_detail_page" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.example.rehand.ArmRotationProgressDetailPage"
             android:label="@string/title_activity_arm_rotation_progress_detail_page" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.FingerGripProgressDetailPage"
-            android:label="@string/title_activity_finger_grip_progress_detail_page" android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.example.rehand.RadialDeviationProgressDetailPage"
-            android:label="@string/title_activity_radial_deviation_progress_detail_page" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.example.rehand.ThumbStretchProgressDetailPage"

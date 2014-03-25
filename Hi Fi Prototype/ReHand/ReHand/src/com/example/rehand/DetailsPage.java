@@ -29,20 +29,8 @@ public class DetailsPage extends Activity {
 			view = (TextView) findViewById(R.id.ArmRotationProgress);
 			view.setText("Done");
         }
-        if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
-        	view = (TextView) findViewById(R.id.ElbowExtensionProgress);
-			view.setText("Done");
-        }
-        if(!prefs.getString("FingerGrip", "Not Done").equals("Not Done")) {
-        	view = (TextView) findViewById(R.id.FingerGripProgress);
-			view.setText("Done");
-        }
         if(!prefs.getString("FingerLift", "Not Done").equals("Not Done")) {
         	view = (TextView) findViewById(R.id.FingerLiftProgress);
-			view.setText("Done");
-        }
-        if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
-        	view = (TextView) findViewById(R.id.RadialDeviationProgress);
 			view.setText("Done");
         }
         if(!prefs.getString("ThumbStretch", "Not Done").equals("Not Done")) {
@@ -91,25 +79,12 @@ public class DetailsPage extends Activity {
 		startActivity(intent);
 	}
 
-	public void goToElbowExtentionProgressDetailPage(View view){		
-		Intent intent = new Intent(this, ElbowExtensionProgressDetailPage.class);
-		startActivity(intent);
-	}
-
-	public void goToFingerGripProgressDetailPage(View view){		
-		Intent intent = new Intent(this, FingerGripProgressDetailPage.class);
-		startActivity(intent);
-	}
 
 	public void goToFingerLiftProgressDetailPage(View view){		
 		Intent intent = new Intent(this, FingerLiftProgressDetailPage.class);
 		startActivity(intent);
 	}
 
-	public void goToRadialDeviationProgressDetailPage(View view){		
-		Intent intent = new Intent(this, RadialDeviationProgressDetailPage.class);
-		startActivity(intent);
-	}
 
 	public void goToThumbStretchProgressDetailPage(View view){		
 		Intent intent = new Intent(this, ThumbStretchProgressDetailPage.class);

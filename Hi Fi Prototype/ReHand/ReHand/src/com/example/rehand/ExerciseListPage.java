@@ -35,23 +35,8 @@ public class ExerciseListPage extends Activity {
 			b.setEnabled(false);
 			done++;
         }
-        if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
-        	b = (Button) findViewById(R.id.button6);
-			b.setEnabled(false);
-			done++;
-        }
-        if(!prefs.getString("FingerGrip", "Not Done").equals("Not Done")) {
-        	b = (Button) findViewById(R.id.button7);
-			b.setEnabled(false);
-			done++;
-        }
         if(!prefs.getString("FingerLift", "Not Done").equals("Not Done")) {
         	b = (Button) findViewById(R.id.button2);
-			b.setEnabled(false);
-			done++;
-        }
-        if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
-        	b = (Button) findViewById(R.id.button9);
 			b.setEnabled(false);
 			done++;
         }
@@ -112,23 +97,9 @@ public class ExerciseListPage extends Activity {
 		startActivity(intent);
 	}
 
-	public void goToElbowExtensionPage(View view){		
-		Intent intent = new Intent(this, ElbowExtensionPage.class);
-		startActivity(intent);
-	}
-
-	public void goToFingerGripPage(View view){		
-		Intent intent = new Intent(this, FingerGripPage.class);
-		startActivity(intent);
-	}
 
 	public void goToFingerLiftPage(View view){		
 		Intent intent = new Intent(this, FingerLiftPage.class);
-		startActivity(intent);
-	}
-
-	public void goToRadialDeviationPage(View view){		
-		Intent intent = new Intent(this, RadialDeviationPage.class);
 		startActivity(intent);
 	}
 

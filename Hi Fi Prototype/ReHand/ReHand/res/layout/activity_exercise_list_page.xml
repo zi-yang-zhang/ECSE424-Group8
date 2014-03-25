@@ -16,32 +16,11 @@
                 android:text="@string/exercise_text_arm_rotation" />
 
             <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="goToElbowExtensionPage"
-                android:text="@string/exercise_text_elbow_extension" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="goToFingerGripPage"
-                android:text="@string/exercise_text_finger_grip" />
-
-            <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="goToFingerLiftPage"
                 android:text="@string/exercise_text_finger_lift" />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="goToRadialDeviationPage"
-                android:text="@string/exercise_text_radial_deviation" />
 
             <Button
                 android:id="@+id/button3"

@@ -31,19 +31,7 @@ public class ProgressPage extends Activity {
 		if(!prefs.getString("ArmRotation", "Not Done").equals("Not Done")) {
 			done++;
         }
-        if(!prefs.getString("ClawStretch", "Not Done").equals("Not Done")) {
-        	done++;
-        }
-        if(!prefs.getString("ElbowExtension", "Not Done").equals("Not Done")) {
-        	done++;
-        }
-        if(!prefs.getString("FingerGrip", "Not Done").equals("Not Done")) {
-        	done++;
-        }
         if(!prefs.getString("FingerLift", "Not Done").equals("Not Done")) {
-        	done++;
-        }
-        if(!prefs.getString("RadialDeviation", "Not Done").equals("Not Done")) {
         	done++;
         }
         if(!prefs.getString("ThumbStretch", "Not Done").equals("Not Done")) {
@@ -55,10 +43,10 @@ public class ProgressPage extends Activity {
 
         TextView view = (TextView) findViewById(R.id.progressPercentage);
         DecimalFormat df = new DecimalFormat("#.##");
-        view.setText(df.format(done/8.0*100) + "%");
+        view.setText(df.format(done/4.0*100) + "%");
 
         ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
-        bar.setProgress((int) (done/8.0*100.0));
+        bar.setProgress((int) (done/4.0*100.0));
 	}
 
 	/**
