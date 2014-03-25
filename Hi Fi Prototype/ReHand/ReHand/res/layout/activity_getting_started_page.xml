@@ -48,4 +48,12 @@
         android:text="@string/getting_started_dialog_text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <CheckBox
+        android:id="@+id/notShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/exerciseButton"
+        android:layout_centerHorizontal="true"
+        android:text="Not to show this page again" />
+
 </RelativeLayout>

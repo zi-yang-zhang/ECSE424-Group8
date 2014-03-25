@@ -38,7 +38,7 @@ public class FingerLiftExercise extends Activity {
 		setContentView(R.layout.activity_finger_lift_exercise);
 
 		final MediaPlayer hold = MediaPlayer.create(this,
-				R.drawable.hold);
+				R.drawable.fingerlifthold);
 		final MediaPlayer intro = MediaPlayer.create(this,
 				R.drawable.fingerliftintro);
 		final MediaPlayer liftIndex = MediaPlayer.create(this,
@@ -87,6 +87,7 @@ public class FingerLiftExercise extends Activity {
 				indexdone = true;
 				holdTime[0] = -1;
 				gameInstruction.setText("Lift your middle finger");
+				liftMiddle.start();
 				indexHoldTime.setText("You have hold 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.VISIBLE);
@@ -106,6 +107,7 @@ public class FingerLiftExercise extends Activity {
 				middledone = true;
 				holdTime[1] = -1;
 				gameInstruction.setText("Lift your ring finger");
+				liftRing.start();
 				middleHoldTime.setText("You have hold 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.INVISIBLE);
@@ -124,6 +126,7 @@ public class FingerLiftExercise extends Activity {
 				holdTime[2] = -1;
 				ringdone = true;
 				gameInstruction.setText("Lift your little finger");
+				liftLittle.start();
 				ringHoldTime.setText("You have hold 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.INVISIBLE);
@@ -141,7 +144,11 @@ public class FingerLiftExercise extends Activity {
 			public void onFinish() {
 				holdTime[3] = -1;
 				littledone = true;
-				littleHoldTime.setText("Timeout");
+				littleHoldTime.setText("You have hold 15 seconds!");
+				indexFingerArrow.setVisibility(View.INVISIBLE);
+				middleFingerArrow.setVisibility(View.INVISIBLE);
+				ringFingerArrow.setVisibility(View.INVISIBLE);
+				littleFingerArrow.setVisibility(View.INVISIBLE);
 				int count = 0;
 				double score = 0.0;
 				for (int i = 0; i < 4; i++) {
@@ -153,14 +160,33 @@ public class FingerLiftExercise extends Activity {
 				if (count > 0) {
 					score = score / count;
 				}
-				indexFingerArrow.setVisibility(View.INVISIBLE);
-				middleFingerArrow.setVisibility(View.INVISIBLE);
-				ringFingerArrow.setVisibility(View.INVISIBLE);
-				littleFingerArrow.setVisibility(View.INVISIBLE);
 				Intent intent = new Intent(getBaseContext(),
 						FingerLiftResult.class);
-
-				intent.putExtra("score", Double.toString(score));
+				if(holdTime[0]==-1&&holdTime[1]==-1&&holdTime[2]==-1&&holdTime[3]==-1){
+					intent.putExtra("score", "Pass");
+				}else{
+					intent.putExtra("score", Double.toString(score));
+				}
+				if(holdTime[0]==-1){
+					intent.putExtra("scoreIndexFinger", "Pass");
+				}else{
+					intent.putExtra("scoreIndexFinger", Double.toString(holdTime[0]));
+				}
+				if(holdTime[1]==-1){
+					intent.putExtra("scoreMiddleFinger", "Pass");
+				}else{
+					intent.putExtra("scoreMiddleFinger", Double.toString(holdTime[1]));
+				}
+				if(holdTime[2]==-1){
+					intent.putExtra("scoreRingFinger", "Pass");
+				}else{
+					intent.putExtra("scoreRingFinger", Double.toString(holdTime[2]));
+				}
+				if(holdTime[2]==-1){
+					intent.putExtra("scoreLittleFinger", "Pass");
+				}else{
+					intent.putExtra("scoreLittleFinger", Double.toString(holdTime[3]));
+				}
 				startActivity(intent);
 				finish();
 			}
@@ -350,19 +376,49 @@ public class FingerLiftExercise extends Activity {
 						ringFingerArrow.setVisibility(View.INVISIBLE);
 						littleFingerArrow.setVisibility(View.INVISIBLE);
 
-						double score = 0;
+						int count = 0;
+						double score = 0.0;
 						for (int i = 0; i < 4; i++) {
-							score = score + holdTime[i];
+							if (holdTime[i] != -1) {
+								score = score + holdTime[i];
+								count++;
+							}
 						}
-						score = score / 4;
+						if (count > 0) {
+							score = score / count;
+						}
+						
 						indexFingerArrow.setVisibility(View.INVISIBLE);
 						middleFingerArrow.setVisibility(View.INVISIBLE);
 						ringFingerArrow.setVisibility(View.INVISIBLE);
 						littleFingerArrow.setVisibility(View.INVISIBLE);
 						Intent intent = new Intent(getBaseContext(),
 								FingerLiftResult.class);
-
-						intent.putExtra("score", Double.toString(score));
+						if(holdTime[0]==-1&&holdTime[1]==-1&&holdTime[2]==-1&&holdTime[3]==-1){
+							intent.putExtra("score", "Pass");
+						}else{
+							intent.putExtra("score", Double.toString(score));
+						}
+						if(holdTime[0]==-1){
+							intent.putExtra("scoreIndexFinger", "Pass");
+						}else{
+							intent.putExtra("scoreIndexFinger", Double.toString(holdTime[0]));
+						}
+						if(holdTime[1]==-1){
+							intent.putExtra("scoreMiddleFinger", "Pass");
+						}else{
+							intent.putExtra("scoreMiddleFinger", Double.toString(holdTime[1]));
+						}
+						if(holdTime[2]==-1){
+							intent.putExtra("scoreRingFinger", "Pass");
+						}else{
+							intent.putExtra("scoreRingFinger", Double.toString(holdTime[2]));
+						}
+						if(holdTime[2]==-1){
+							intent.putExtra("scoreLittleFinger", "Pass");
+						}else{
+							intent.putExtra("scoreLittleFinger", Double.toString(holdTime[3]));
+						}
 						startActivity(intent);
 						finish();
 
@@ -403,15 +459,4 @@ public class FingerLiftExercise extends Activity {
 		return true;
 	}
 
-	public static int randInt(int min, int max) {
-
-		// Usually this can be a field rather than a method variable
-		Random rand = new Random();
-
-		// nextInt is normally exclusive of the top value,
-		// so add 1 to make it inclusive
-		int randomNum = rand.nextInt((max - min) + 1) + min;
-
-		return randomNum;
-	}
 }

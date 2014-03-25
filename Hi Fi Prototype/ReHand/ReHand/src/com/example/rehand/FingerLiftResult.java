@@ -14,28 +14,74 @@ import android.view.View;
 import android.widget.TextView;
 
 public class FingerLiftResult extends Activity {
-	String attemptText;
-	double attempt;
+	private String attemptText;
+	private double attempt;
+	private String indexText;
+	private double index;
+	private String middleText;
+	private double middle;
+	private String ringText;
+	private double ring;
+	private String littleText;
+	private double little;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		ScoreDatabaseHelper db = new ScoreDatabaseHelper(this);
 		boolean gettingStarted = prefs.getBoolean("fingerLiftFirstTime", true);
 		super.onCreate(savedInstanceState);
-		DecimalFormat f = new DecimalFormat("##.##");
 		setContentView(R.layout.activity_finger_lift_result);
+		DecimalFormat f = new DecimalFormat("##.##");
 		final TextView socreText = (TextView) findViewById(R.id.socreText);
+		final TextView indexScore = (TextView) findViewById(R.id.indexScore);
+		final TextView middleScore = (TextView) findViewById(R.id.middleScore);
+		final TextView ringScore = (TextView) findViewById(R.id.ringScore);
+		final TextView littleScore = (TextView) findViewById(R.id.littleScore);
 		final TextView testTypeText = (TextView) findViewById(R.id.testTypeText);
 		attemptText = this.getIntent().getStringExtra("score");
-		attempt = Double.parseDouble(attemptText);
+		indexText = this.getIntent().getStringExtra("scoreIndexFinger");
+		middleText = this.getIntent().getStringExtra("scoreMiddleFinger");
+		ringText = this.getIntent().getStringExtra("scoreRingFinger");
+		littleText = this.getIntent().getStringExtra("scoreLittleFinger");
 		//getting started
 		if(gettingStarted){
-			//create new entry and save in database
 			testTypeText.setText("You Have Completed Bench Mark Test!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(attempt))+" seconds!");
 		}else{
 			testTypeText.setText("You Have Completed Finger Lift Exercise!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(attempt))+" seconds!");
+		}
+		if(attemptText.equalsIgnoreCase("Pass")){
+			attempt = 15;
+			socreText.setText("Pass");
+		}else{
+			attempt = Double.parseDouble(attemptText);
+			socreText.setText(String.valueOf(f.format(attempt))+" seconds");
+		}
+		
+		if(indexText.equalsIgnoreCase("Pass")){
+			indexScore.setText("Pass");
+		}else{
+			index = Double.parseDouble(indexText);
+			indexScore.setText(String.valueOf(f.format(index))+" seconds");
+		}
+		
+		if(middleText.equalsIgnoreCase("Pass")){
+			middleScore.setText("Pass");
+		}else{
+			middle = Double.parseDouble(middleText);
+			middleScore.setText(String.valueOf(f.format(middle))+" seconds");
+		}
+		
+		if(ringText.equalsIgnoreCase("Pass")){
+			ringScore.setText("Pass");
+		}else{
+			ring = Double.parseDouble(ringText);
+			ringScore.setText(String.valueOf(f.format(ring))+" seconds");
+		}
+		
+		if(littleText.equalsIgnoreCase("Pass")){
+			littleScore.setText("Pass");
+		}else{
+			little = Double.parseDouble(littleText);
+			littleScore.setText(String.valueOf(f.format(little))+" seconds");
 		}
 	}
 
@@ -59,7 +105,13 @@ public class FingerLiftResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("fingerLiftFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult fingerLiftResult = new ExerciseResult(2,"Finger Lift",attempt,(attempt+9));
+	       			
+	    			ExerciseResult fingerLiftResult = new ExerciseResult(2,"Finger Lift",attempt,15);
+	    			if(attempt==15){
+	    				fingerLiftResult.setLevel(3);
+	    				fingerLiftResult.setCurrentProgress(100);
+	    				fingerLiftResult.setCurrentScore(100);
+	       			}
 	    			db.addResult(fingerLiftResult);
 	    			prefs.edit().putBoolean("fingerLiftFirstTime", false).commit();
 	    		}else{

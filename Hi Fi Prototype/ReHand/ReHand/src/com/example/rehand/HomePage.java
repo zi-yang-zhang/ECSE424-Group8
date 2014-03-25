@@ -11,6 +11,7 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 
 public class HomePage extends Activity {
 
@@ -22,17 +23,7 @@ public class HomePage extends Activity {
 	        startActivity(intent);
 		}*/
 		super.onCreate(savedInstanceState);
-		//if(prefs.getInt("FirstTime", 0) == 0) {
-		if(prefs.getBoolean("FirstTime", true) == true) {
-			//First time opening app
-			setContentView(R.layout.activity_startup_page);
-		//} else if(prefs.getInt("GettingStartedFirstTime", 0) == 0) {
-		} else if(prefs.getBoolean("GettingStartedFirstTime", true) == true) {
-			//First time opening app
-			setContentView(R.layout.activity_getting_started_page);
-		} else {
-			setContentView(R.layout.activity_home_page);
-		}
+		setContentView(R.layout.activity_home_page);
 		setupActionBar();
 	}
 
@@ -81,50 +72,6 @@ public class HomePage extends Activity {
 		startActivity(intent);
 	}
 
-    public void gettingStartedToExercise(View view) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(R.string.warning_message_getting_started_to_exercise)
-			   .setTitle("Warning");
-		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-	           public void onClick(DialogInterface dialog, int id) {
-	               // User clicked OK button
-	       		SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-	       		prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
-	       		Intent intent = new Intent(getBaseContext(), ExerciseListPage.class);
-	    		startActivity(intent);
-	    		finish();
-	           }
-	       });
-	builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-	           public void onClick(DialogInterface dialog, int id) {
-	        	   dialog.cancel();
-	        	   }
-	       });
-		builder.create().show();
-    }
-
-    public void gettingStartedToHome(View view) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		//prefs.edit().putInt("FirstTime", 1).commit();
-		builder.setMessage(R.string.warning_message_getting_started_to_home)
-			   .setTitle("Warning");
-		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-	           public void onClick(DialogInterface dialog, int id) {
-	               // User clicked OK button
-	       		SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-	       		prefs.edit().putBoolean("GettingStartedFirstTime", false).commit();
-	       		Intent intent = new Intent(getBaseContext(), HomePage.class);
-	    		startActivity(intent);
-	    		finish();
-	           }
-	       });
-	builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-	           public void onClick(DialogInterface dialog, int id) {
-	        	   dialog.cancel();
-	        	   }
-	       });
-		builder.create().show();
-    }
 
 	public void close(View view) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);

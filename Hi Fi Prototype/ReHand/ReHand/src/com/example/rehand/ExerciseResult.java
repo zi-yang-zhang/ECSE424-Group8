@@ -121,9 +121,13 @@ public class ExerciseResult {
     		currentProgress = (currentScore + previousScore+ beforePreviousScore)/3;
     	}
     	if(currentProgress >= 100){
+    		if(level==3){
+    			currentProgress = 100;
+    		}else{
     		level++;
     		currentProgress = 0;
     		benchmark = benchmark + (maximumMark - benchmark)/NUMBEROFLEVEL;
+    		}
     	}
     }
     public void updatePersonalBest(double attempt) {
