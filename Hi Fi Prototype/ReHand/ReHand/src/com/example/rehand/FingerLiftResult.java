@@ -59,11 +59,11 @@ public class FingerLiftResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("fingerLiftFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult fingerLiftResult = new ExerciseResult(4,"Finger Lift",attempt,(attempt+9));
+	    			ExerciseResult fingerLiftResult = new ExerciseResult(2,"Finger Lift",attempt,(attempt+9));
 	    			db.addResult(fingerLiftResult);
 	    			prefs.edit().putBoolean("fingerLiftFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult fingerLiftResult = db.getResult(4);
+	    			ExerciseResult fingerLiftResult = db.getResult(2);
 	    			fingerLiftResult.updatePersonalBest(attempt);
 	    			fingerLiftResult.updateScores(attempt);
 	    			fingerLiftResult.updateCurrentProgress();

@@ -40,7 +40,7 @@ public class ThumbStretchProgressDetailPage extends Activity {
 			progressText.setText("0%");
 	        bar.setProgress((int) 0);
 		}else{
-		ExerciseResult thumbStretchResult = db.getResult(6);
+		ExerciseResult thumbStretchResult = db.getResult(3);
 		double currentProgress = thumbStretchResult.getCurrentProgress();
 		double personalBest = thumbStretchResult.getPersonalBest();
 		int level = thumbStretchResult.getLevel();

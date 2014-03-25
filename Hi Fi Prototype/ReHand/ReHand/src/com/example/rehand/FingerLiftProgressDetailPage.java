@@ -42,7 +42,7 @@ public class FingerLiftProgressDetailPage extends Activity {
 			progressText.setText("0%");
 	        bar.setProgress((int) 0);
 		}else{
-		ExerciseResult fingerLiftResult = db.getResult(4);
+		ExerciseResult fingerLiftResult = db.getResult(2);
 		double currentProgress = fingerLiftResult.getCurrentProgress();
 		double personalBest = fingerLiftResult.getPersonalBest();
 		int level = fingerLiftResult.getLevel();

@@ -40,7 +40,7 @@ public class WristFlexProgressDetailPage extends Activity {
 			progressText.setText("0%");
 	        bar.setProgress((int) 0);
 		}else{
-		ExerciseResult wristFlexResult = db.getResult(7);
+		ExerciseResult wristFlexResult = db.getResult(4);
 		double currentProgress = wristFlexResult.getCurrentProgress();
 		double personalBest = wristFlexResult.getPersonalBest();
 		int level = wristFlexResult.getLevel();

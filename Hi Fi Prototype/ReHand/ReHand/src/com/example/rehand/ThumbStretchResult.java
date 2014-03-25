@@ -60,11 +60,11 @@ public class ThumbStretchResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("thumbStretchFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult thumbStretchResult = new ExerciseResult(6,"Thumb Stretch",attempt,(attempt+300));
+	    			ExerciseResult thumbStretchResult = new ExerciseResult(3,"Thumb Stretch",attempt,(attempt+300));
 	    			db.addResult(thumbStretchResult);
 	    			prefs.edit().putBoolean("thumbStretchFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult thumbStretchResult = db.getResult(6);
+	    			ExerciseResult thumbStretchResult = db.getResult(3);
 	    			thumbStretchResult.updatePersonalBest(attempt);
 	    			thumbStretchResult.updateScores(attempt);
 	    			thumbStretchResult.updateCurrentProgress();

@@ -60,11 +60,11 @@ public class WristFlexResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("wristFlexFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult wristFlexResult = new ExerciseResult(7,"Wrist Flex",attempt,(attempt+300));
+	    			ExerciseResult wristFlexResult = new ExerciseResult(4,"Wrist Flex",attempt,(attempt+300));
 	    			db.addResult(wristFlexResult);
 	    			prefs.edit().putBoolean("wristFlexFirstTime", false).commit();
 	    		}else{
-	    			ExerciseResult wristFlexResult = db.getResult(7);
+	    			ExerciseResult wristFlexResult = db.getResult(4);
 	    			wristFlexResult.updatePersonalBest(attempt);
 	    			wristFlexResult.updateScores(attempt);
 	    			wristFlexResult.updateCurrentProgress();

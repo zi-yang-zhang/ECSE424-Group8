@@ -19,7 +19,6 @@ public class ArmRotationResult extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-		//prefs.edit().putString("ElbowExtension", "Done").commit();
 		DecimalFormat f = new DecimalFormat("##.##");
 		boolean gettingStarted = prefs.getBoolean("armRotationFirstTime", true);
 		super.onCreate(savedInstanceState);
@@ -37,20 +36,6 @@ public class ArmRotationResult extends Activity {
 			testTypeText.setText("You Have Completed Arm Rotation Exercise!");
 		}
 		socreText.setText("Your Score: "+String.valueOf(f.format(attempt)) +" degrees!");
-		
-		
-		//ExerciseResult fingerGripResult = new ExerciseResult(3,"Finger Grip",200, Double.parseDouble(score));
-		/*if(started ==1){
-			
-		}
-		*/
-		//db.deleteResult(fingerGripResult);
-		//System.out.println(db.getResult(3).toString());
-		//db.addResult(result);
-		//db.deleteResult(result);
-		//System.out.println(started);
-		//System.out.println(result.toString());
-		//System.out.println(db.getResult(2).toString());
 	}
 
 	@Override
@@ -64,9 +49,9 @@ public class ArmRotationResult extends Activity {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(R.string.result_page_warning)
 			   .setTitle("Saving Result");
+		//save the result
 		builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
-	               // User clicked OK button
 	        	SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
 	       		prefs.edit().putString("armRotation", "Done").commit();
 	       		ScoreDatabaseHelper db = new ScoreDatabaseHelper(getBaseContext());
@@ -77,6 +62,7 @@ public class ArmRotationResult extends Activity {
 	    			db.addResult(armRotationResult);
 	    			prefs.edit().putBoolean("armRotationFirstTime", false).commit();
 	    		}else{
+	    			//update the database
 	    			ExerciseResult armRotationResult = db.getResult(1);
 	    			armRotationResult.updatePersonalBest(attempt);
 	    			armRotationResult.updateScores(attempt);
@@ -88,6 +74,7 @@ public class ArmRotationResult extends Activity {
 	        	   
 	           }
 	       });
+		//Discard the result
 	builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
 	        	   dialog.cancel();
