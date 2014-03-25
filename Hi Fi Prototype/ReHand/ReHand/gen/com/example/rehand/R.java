@@ -24,30 +24,31 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int arm_rotation=0x7f020000;
-        public static final int back=0x7f020001;
-        public static final int claw_stretch=0x7f020002;
-        public static final int done=0x7f020003;
-        public static final int elbow_extension=0x7f020004;
-        public static final int finger_grip=0x7f020005;
-        public static final int finger_lift=0x7f020006;
-        public static final int finger_lift_arrow=0x7f020007;
-        public static final int fingerliftintro=0x7f020008;
-        public static final int go=0x7f020009;
-        public static final int green_light=0x7f02000a;
-        public static final int hold=0x7f02000b;
-        public static final int ic_launcher=0x7f02000c;
-        public static final int liftindexfinger=0x7f02000d;
-        public static final int liftlittlefinger=0x7f02000e;
-        public static final int liftmiddlefinger=0x7f02000f;
-        public static final int liftringfinger=0x7f020010;
-        public static final int open_and_close=0x7f020011;
-        public static final int radial_deviation=0x7f020012;
-        public static final int ready=0x7f020013;
-        public static final int red_cross=0x7f020014;
-        public static final int red_light=0x7f020015;
-        public static final int thumb_stretch=0x7f020016;
-        public static final int wrist_flex=0x7f020017;
+        public static final int ar_flip_left=0x7f020000;
+        public static final int ar_flip_right=0x7f020001;
+        public static final int ar_start=0x7f020002;
+        public static final int arm_rotation=0x7f020003;
+        public static final int back=0x7f020004;
+        public static final int claw_stretch=0x7f020005;
+        public static final int done=0x7f020006;
+        public static final int elbow_extension=0x7f020007;
+        public static final int finger_grip=0x7f020008;
+        public static final int finger_lift=0x7f020009;
+        public static final int finger_lift_arrow=0x7f02000a;
+        public static final int go=0x7f02000b;
+        public static final int green_light=0x7f02000c;
+        public static final int hold=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int open_and_close=0x7f02000f;
+        public static final int radial_deviation=0x7f020010;
+        public static final int ready=0x7f020011;
+        public static final int red_cross=0x7f020012;
+        public static final int red_light=0x7f020013;
+        public static final int thumb_stretch=0x7f020014;
+        public static final int wf_flip_down=0x7f020015;
+        public static final int wf_flip_up=0x7f020016;
+        public static final int wf_start=0x7f020017;
+        public static final int wrist_flex=0x7f020018;
     }
     public static final class id {
         public static final int ArmRotationProgress=0x7f0a0002;

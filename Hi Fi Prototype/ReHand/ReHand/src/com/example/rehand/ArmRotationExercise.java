@@ -17,17 +17,17 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 
 	private SensorManager mSensorManager;
 	private Sensor mOrientation;
-	private final float NOISE = (float) 1;
 	private float mLastX, mLastY, mLastZ;
 	private long timer;
 	private boolean gameStart = false;
 	private boolean gameOver = false;
 	private boolean stopped = false;
 	private String state = "A";
-	private int thresholdX = 10;
-	private int thresholdY = 10;
+	private int thresholdX = 3;
+	private int thresholdY = 3;
 	private int thresholdZ = 5;
 	private long wait_time = 2000;
+	private long wait_sound_time = 0;
 	private float first = 0;
 	private float second = 0;
 
@@ -35,11 +35,7 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_arm_rotation_exercise);
-/*
-		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
-		mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-	*/	
+
 	    mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 	    mOrientation = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 	    mSensorManager.registerListener(this, mOrientation, SensorManager.SENSOR_DELAY_NORMAL);
@@ -64,7 +60,7 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 	    	long time = System.currentTimeMillis() - timer;
 	    	if(time > 4000) {
 	    		countDown.setText("");
-		    	MediaPlayer ready = MediaPlayer.create(this, R.drawable.ready);
+		    	MediaPlayer ready = MediaPlayer.create(this, R.drawable.ar_start);
 		    	ready.start();
 		    	mLastX = x;
 				mLastY = y;
@@ -80,79 +76,85 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 		    }
 	    } else if(!gameOver) {
 			float deltaX = Math.abs(mLastX - x);
-			//float deltaY = Math.abs(mLastY - y);
+			float deltaY = Math.abs(mLastY - y);
 			float deltaZ = Math.abs(mLastZ - z);
-			//if (deltaX < NOISE) deltaX = mLastX; else deltaX = x;
-			//if (deltaY < NOISE) deltaY = mLastY; else deltaY = y;
-			//if (deltaZ < NOISE) deltaZ = mLastZ; else deltaZ = z;
 
-	    	//countDown.setText("" + ((Math.abs(x) < thresholdX)?"Y":"N") + ((Math.abs(y) < thresholdY)?"Y":"N") + ((Math.abs(mLastZ - z) < thresholdZ)?"Y":"N"));
-			if(Math.abs(deltaX) < thresholdX && Math.abs(y) < thresholdY && Math.abs(deltaZ) < thresholdZ) {
+			if(Math.abs(deltaX) < thresholdX && Math.abs(deltaY) < thresholdY && Math.abs(deltaZ) < thresholdZ) {
 				stopped = true;
 			} else {
 				stopped = false;
 				timer = System.currentTimeMillis();
 			}
 
+			long time = System.currentTimeMillis() - timer;
 			if(stopped) {
-				long time = System.currentTimeMillis() - timer;
-				if(time > wait_time) {
+				if(wait_time != 0 && time > wait_time) {
 					//stopped moving for enough time
-					if(state.equals("F")) {
+					if(state.equals("A")) {
+						//GO
+                    	if(Math.abs(Math.abs(x) - 90) < thresholdX*4) {
+                    		MediaPlayer go = MediaPlayer.create(this, R.drawable.ar_flip_left);
+                        	go.start();
+                        	state = "AB";
+                        	wait_time = 0;
+                        	wait_sound_time = 1000;
+                    	}
+					} else if(state.equals("B")) {
+						//HOLD
+				    	MediaPlayer hold = MediaPlayer.create(this, R.drawable.hold);
+						hold.start();
+						state = "C";
+						first = x;
+						wait_time = 3000;
+					} else if(state.equals("C")) {
+						//BACK
+						MediaPlayer back = MediaPlayer.create(this, R.drawable.back);
+						back.start();
+						state = "D";
+						wait_time = 2000;
+					} else if(state.equals("D")) {
+						//GO
+						MediaPlayer go = MediaPlayer.create(this, R.drawable.ar_flip_right);
+						go.start();
+						state = "DE";
+						wait_time = 0;
+						wait_sound_time = 1000;
+					} else if(state.equals("E")) {
+						//HOLD
+						MediaPlayer hold = MediaPlayer.create(this, R.drawable.hold);
+						hold.start();
+						state = "F";
+						second = x;
+						wait_time = 3000;
+					} else if(state.equals("F")) {
 						//DONE
 						MediaPlayer done = MediaPlayer.create(this, R.drawable.done);
 						done.start();
 						state = "G";
 						gameOver = true;
 					}
-					if(state.equals("E")) {
-						//HOLD
-						MediaPlayer hold = MediaPlayer.create(this, R.drawable.hold);
-						hold.start();
-						state = "F";
-						second = x;
-						wait_time = 4000;
-					}
-					if(state.equals("D")) {
-						//GO
-						if(Math.abs(Math.abs(x) - 80) < thresholdX) {
-							MediaPlayer go = MediaPlayer.create(this, R.drawable.go);
-							go.start();
-							state = "E";
-							wait_time = 3000;
-						}
-					}
-					if(state.equals("C")) {
-						//BACK
-						MediaPlayer back = MediaPlayer.create(this, R.drawable.back);
-						back.start();
-						state = "D";
-						wait_time = 2000;
-					}
-					if(state.equals("B")) {
-						//HOLD
-				    	MediaPlayer hold = MediaPlayer.create(this, R.drawable.hold);
-						hold.start();
-						state = "C";
-						first = x;
-						wait_time = 4000;
-					}
-                    if(state.equals("A")) {
-                    	//GO
-                    	if(Math.abs(Math.abs(x) - 80) < thresholdX) {
-                    		MediaPlayer go = MediaPlayer.create(this, R.drawable.go);
-                        	go.start();
-                        	state = "B";
-                        	wait_time = 3000;
-                    	}
-					}
                 	timer = System.currentTimeMillis();
                 	stopped = false;
 				}
 			}
 
+			time = System.currentTimeMillis() - timer;
+			if(wait_sound_time != 0 && time > wait_sound_time) {
+				if(state.equals("AB")) {
+					//WAIT FOR SOUND TO END
+					state = "B";
+					wait_time = 2000;
+					wait_sound_time = 0;
+				} else if(state.equals("DE")) {
+					//WAIT FOR SOUND TO END
+					state = "E";
+					wait_time = 2000;
+					wait_sound_time = 0;
+				}				
+			}
+
 			mLastX = x;
-			//mLastY = deltaY;
+			mLastY = y;
 			mLastZ = z;
 	    } else {
 	    	float range = second - first;
@@ -165,39 +167,6 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 			startActivity(intent);
 			this.finish();
 	    }
-
-		/*
-		final TextView xPosition = (TextView) findViewById(R.id.xPosition);
-		final TextView yPosition = (TextView) findViewById(R.id.yPosition);
-		final TextView zPosition = (TextView) findViewById(R.id.zPosition);
-		float x = event.values[0];
-		float y = event.values[1];
-		float z = event.values[2];
-		if (!mInitialized) {
-			mLastX = x;
-			mLastY = y;
-			mLastZ = z;
-			xPosition.setText("X: " +"0.0");
-			yPosition.setText("Y: " +"0.0");
-			zPosition.setText("Z: " +"0.0");
-			mInitialized = true;
-		}else {
-			float deltaX = Math.abs(mLastX - x);
-			float deltaY = Math.abs(mLastY - y);
-			float deltaZ = Math.abs(mLastZ - z);
-			if (deltaX < NOISE) deltaX = (float)0.0;
-			if (deltaY < NOISE) deltaY = (float)0.0;
-			if (deltaZ < NOISE) deltaZ = (float)0.0;
-			mLastX = x;
-			mLastY = y;
-			mLastZ = z;
-			xPosition.setText("X: " +Float.toString(deltaX));
-			yPosition.setText("Y: " +Float.toString(deltaY));
-			zPosition.setText("Z: " +Float.toString(deltaZ));
-			
-		}
-		*/
-		
 	}
 
 	public void goToArmRotationResult(View view) {
@@ -208,6 +177,6 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
