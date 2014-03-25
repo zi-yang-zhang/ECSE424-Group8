@@ -209,13 +209,9 @@ public final class R {
     }
     public static final class raw {
         public static final int arm_rotation=0x7f040000;
-        public static final int elbow_extension=0x7f040001;
-        public static final int finger_grip_full=0x7f040002;
-        public static final int finger_grip_part=0x7f040003;
-        public static final int finger_lift=0x7f040004;
-        public static final int radial_deviation=0x7f040005;
-        public static final int thumb_stretch=0x7f040006;
-        public static final int wrist_flex=0x7f040007;
+        public static final int finger_lift=0x7f040001;
+        public static final int thumb_stretch=0x7f040002;
+        public static final int wrist_flex=0x7f040003;
     }
     public static final class string {
         public static final int action_forgot_password=0x7f07008d;

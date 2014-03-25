@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.MediaController;
 import android.widget.VideoView;
 import android.support.v4.app.NavUtils;
@@ -17,6 +18,7 @@ public class ArmRotationTutorialPage extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_arm_rotation_tutorial_page);
 		// Show the Up button in the action bar.
 		//setupActionBar();
@@ -71,5 +73,4 @@ public class ArmRotationTutorialPage extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
 }
