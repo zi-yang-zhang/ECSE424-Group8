@@ -1,6 +1,5 @@
 package com.example.rehand;
 
-import java.lang.reflect.Array;
 import java.util.Random;
 
 import android.app.Activity;
@@ -30,7 +29,6 @@ public class FingerLiftExercise extends Activity {
 	CountDownTimer middleTimer;
 	CountDownTimer ringTimer;
 	CountDownTimer littleTimer;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences prefs = this.getSharedPreferences(
@@ -38,6 +36,19 @@ public class FingerLiftExercise extends Activity {
 		boolean gettingStarted = prefs.getBoolean("fingerLiftFirstTime", true);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_finger_lift_exercise);
+
+		final MediaPlayer hold = MediaPlayer.create(this,
+				R.drawable.hold);
+		final MediaPlayer intro = MediaPlayer.create(this,
+				R.drawable.fingerliftintro);
+		final MediaPlayer liftIndex = MediaPlayer.create(this,
+				R.drawable.liftindexfinger);
+		final MediaPlayer liftMiddle = MediaPlayer.create(this,
+				R.drawable.liftmiddlefinger);
+		final MediaPlayer liftRing = MediaPlayer.create(this,
+				R.drawable.liftringfinger);
+		final MediaPlayer liftLittle = MediaPlayer.create(this,
+				R.drawable.liftlittlefinger);
 		final ImageView indexFingerGreenLight = (ImageView) findViewById(R.id.indexFingerGreenLight);
 		final ImageView indexFingerRedLight = (ImageView) findViewById(R.id.indexFingerRedLight);
 		final ImageView indexFingerArrow = (ImageView) findViewById(R.id.indexFingerArrow);
@@ -76,7 +87,7 @@ public class FingerLiftExercise extends Activity {
 				indexdone = true;
 				holdTime[0] = -1;
 				gameInstruction.setText("Lift your middle finger");
-				indexHoldTime.setText("Timeout");
+				indexHoldTime.setText("You have hold 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.VISIBLE);
 				ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -95,7 +106,7 @@ public class FingerLiftExercise extends Activity {
 				middledone = true;
 				holdTime[1] = -1;
 				gameInstruction.setText("Lift your ring finger");
-				middleHoldTime.setText("Timeout");
+				middleHoldTime.setText("You have hold 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.INVISIBLE);
 				ringFingerArrow.setVisibility(View.VISIBLE);
@@ -113,7 +124,7 @@ public class FingerLiftExercise extends Activity {
 				holdTime[2] = -1;
 				ringdone = true;
 				gameInstruction.setText("Lift your little finger");
-				ringHoldTime.setText("Timeout");
+				ringHoldTime.setText("You have hold 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.INVISIBLE);
 				ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -166,6 +177,7 @@ public class FingerLiftExercise extends Activity {
 							gameStart = true;
 							gameInstruction
 									.setText("Exercise Start! Lift your index finger");
+							liftIndex.start();
 							indexFingerArrow.setVisibility(View.VISIBLE);
 							middleFingerArrow.setVisibility(View.INVISIBLE);
 							ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -178,6 +190,7 @@ public class FingerLiftExercise extends Activity {
 						holdTime[0] = (endScores[0] - startScores[0]) / 1000L;
 						indexdone = true;
 						gameInstruction.setText("Lift your middle finger");
+						liftMiddle.start();
 						indexHoldTime.setText(String.valueOf(holdTime[0])
 								+ "seconds");
 						indexFingerArrow.setVisibility(View.INVISIBLE);
@@ -192,8 +205,6 @@ public class FingerLiftExercise extends Activity {
 					if (gameStart && (!indexdone)) {
 						indexTimer.start();
 						startScores[0] = System.currentTimeMillis();
-						MediaPlayer hold = MediaPlayer.create(getBaseContext(),
-								R.drawable.hold);
 						hold.start();
 					}
 					indexFingerGreenLight.setVisibility(View.INVISIBLE);
@@ -215,6 +226,7 @@ public class FingerLiftExercise extends Activity {
 
 							gameInstruction
 									.setText("Exercise Start! Lift your index finger");
+							liftIndex.start();
 							indexFingerArrow.setVisibility(View.VISIBLE);
 							middleFingerArrow.setVisibility(View.INVISIBLE);
 							ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -229,6 +241,7 @@ public class FingerLiftExercise extends Activity {
 						middledone = true;
 						middleTimer.cancel();
 						gameInstruction.setText("Lift your ring finger");
+						liftRing.start();
 						middleHoldTime.setText(String.valueOf(holdTime[1])
 								+ "seconds");
 						indexFingerArrow.setVisibility(View.INVISIBLE);
@@ -244,8 +257,6 @@ public class FingerLiftExercise extends Activity {
 					if (gameStart && (!middledone) && (indexdone)) {
 						middleTimer.start();
 						startScores[1] = System.currentTimeMillis();
-						MediaPlayer hold = MediaPlayer.create(getBaseContext(),
-								R.drawable.hold);
 						hold.start();
 					}
 					middleFingerGreenLight.setVisibility(View.INVISIBLE);
@@ -267,6 +278,7 @@ public class FingerLiftExercise extends Activity {
 
 							gameInstruction
 									.setText("Exercise Start! Lift your index finger");
+							liftIndex.start();
 							indexFingerArrow.setVisibility(View.VISIBLE);
 							middleFingerArrow.setVisibility(View.INVISIBLE);
 							ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -280,6 +292,7 @@ public class FingerLiftExercise extends Activity {
 						holdTime[2] = (endScores[2] - startScores[2]) / 1000L;
 						ringdone = true;
 						gameInstruction.setText("Lift your little finger");
+						liftLittle.start();
 						ringHoldTime.setText(String.valueOf(holdTime[2])
 								+ "seconds");
 						indexFingerArrow.setVisibility(View.INVISIBLE);
@@ -295,8 +308,6 @@ public class FingerLiftExercise extends Activity {
 					if (gameStart && (!ringdone) && middledone && indexdone) {
 						ringTimer.start();
 						startScores[2] = System.currentTimeMillis();
-						MediaPlayer hold = MediaPlayer.create(getBaseContext(),
-								R.drawable.hold);
 						hold.start();
 					}
 					ringFingerGreenLight.setVisibility(View.INVISIBLE);
@@ -318,6 +329,7 @@ public class FingerLiftExercise extends Activity {
 
 							gameInstruction
 									.setText("Exercise Start! Lift your index finger");
+							liftIndex.start();
 							indexFingerArrow.setVisibility(View.VISIBLE);
 							middleFingerArrow.setVisibility(View.INVISIBLE);
 							ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -365,8 +377,6 @@ public class FingerLiftExercise extends Activity {
 							&& indexdone) {
 						littleTimer.start();
 						startScores[3] = System.currentTimeMillis();
-						MediaPlayer hold = MediaPlayer.create(getBaseContext(),
-								R.drawable.hold);
 						hold.start();
 					}
 					littleFingerGreenLight.setVisibility(View.INVISIBLE);
@@ -376,7 +386,7 @@ public class FingerLiftExercise extends Activity {
 			}
 
 		});
-
+		intro.start();
 		if (gettingStarted) {
 			fingerLiftInstruction.setText("BenchMarking Test");
 		} else {
