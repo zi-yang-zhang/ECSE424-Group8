@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="27" version="2.0">
+<workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
-<window height="1440" maximized="true" width="2560" x="0" y="0">
+<window height="1440" width="1280" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -18,7 +18,7 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -36,17 +36,37 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArmRotationExercise.java" partName="ArmRotationExercise.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/ArmRotationExercise.java" title="ArmRotationExercise.java" tooltip="ReHand/src/com/example/rehand/ArmRotationExercise.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArmRotationExercise.java" partName="ArmRotationExercise.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/ArmRotationExercise.java" title="ArmRotationExercise.java" tooltip="ReHand/src/com/example/rehand/ArmRotationExercise.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/ArmRotationExercise.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7001" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4002" selectionTopPixel="1350"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WristFlexExercise.java" partName="WristFlexExercise.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/WristFlexExercise.java" title="WristFlexExercise.java" tooltip="ReHand/src/com/example/rehand/WristFlexExercise.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WristFlexExercise.java" partName="WristFlexExercise.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/WristFlexExercise.java" title="WristFlexExercise.java" tooltip="ReHand/src/com/example/rehand/WristFlexExercise.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/WristFlexExercise.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6014" selectionTopPixel="2085"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1676" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArmRotationTutorialPage.java" partName="ArmRotationTutorialPage.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/ArmRotationTutorialPage.java" title="ArmRotationTutorialPage.java" tooltip="ReHand/src/com/example/rehand/ArmRotationTutorialPage.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/ArmRotationTutorialPage.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2608" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FingerLiftTutorialPage.java" partName="FingerLiftTutorialPage.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/FingerLiftTutorialPage.java" title="FingerLiftTutorialPage.java" tooltip="ReHand/src/com/example/rehand/FingerLiftTutorialPage.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/FingerLiftTutorialPage.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2772" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThumbStretchTutorialPage.java" partName="ThumbStretchTutorialPage.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/ThumbStretchTutorialPage.java" title="ThumbStretchTutorialPage.java" tooltip="ReHand/src/com/example/rehand/ThumbStretchTutorialPage.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/ThumbStretchTutorialPage.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2784" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WristFlexTutorialPage.java" partName="WristFlexTutorialPage.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/WristFlexTutorialPage.java" title="WristFlexTutorialPage.java" tooltip="ReHand/src/com/example/rehand/WristFlexTutorialPage.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/WristFlexTutorialPage.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2766" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -323,109 +343,162 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/ThumbStretchPage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/WristFlexPage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ReHand/res/layout/activity_arm_rotation_page.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ReHand/res/layout/activity_elbow_extension_page.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ReHand/res/layout/activity_finger_grip_page.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ReHand/res/layout/activity_finger_lift_page.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ReHand/res/layout/activity_radial_deviation_page.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ReHand/res/layout/activity_thumb_stretch_page.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/ReHand/res/layout/activity_wrist_flex_page.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/RadialDeviationPage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/FingerLiftPage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/FingerGripPage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/ElbowExtensionPage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/ArmRotationPage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/ReHand/AndroidManifest.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/ArmRotationExercise.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/WristFlexExercise.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/ArmRotationTutorialPage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/FingerLiftTutorialPage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/ThumbStretchTutorialPage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ReHand/src/com/example/rehand/WristFlexTutorialPage.java"/>
 </editors>
-<item historyLabel="activity_finger_grip_page.xml" index="4"/>
-<item historyLabel="activity_finger_lift_page.xml" index="5"/>
-<item historyLabel="activity_radial_deviation_page.xml" index="6"/>
-<item historyLabel="activity_thumb_stretch_page.xml" index="7"/>
-<item historyLabel="activity_wrist_flex_page.xml" index="8"/>
-<item historyLabel="activity_thumb_stretch_page.xml" index="7"/>
-<item historyLabel="activity_radial_deviation_page.xml" index="6"/>
-<item historyLabel="activity_finger_lift_page.xml" index="5"/>
-<item historyLabel="activity_finger_grip_page.xml" index="4"/>
-<item historyLabel="activity_elbow_extension_page.xml" index="3"/>
-<item historyLabel="activity_arm_rotation_page.xml" index="2"/>
-<item historyLabel="WristFlexPage.java" index="1">
-<position info="not_deleted" x="2029" y="0"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4864" y="0"/>
 </item>
-<item historyLabel="activity_arm_rotation_page.xml" index="2"/>
-<item historyLabel="activity_elbow_extension_page.xml" index="3"/>
-<item historyLabel="activity_finger_grip_page.xml" index="4"/>
-<item historyLabel="activity_finger_lift_page.xml" index="5"/>
-<item historyLabel="activity_radial_deviation_page.xml" index="6"/>
-<item historyLabel="activity_thumb_stretch_page.xml" index="7"/>
-<item historyLabel="activity_wrist_flex_page.xml" index="8"/>
-<item historyLabel="activity_arm_rotation_page.xml" index="2"/>
-<item historyLabel="activity_elbow_extension_page.xml" index="3"/>
-<item historyLabel="activity_finger_grip_page.xml" index="4"/>
-<item historyLabel="activity_finger_lift_page.xml" index="5"/>
-<item historyLabel="activity_radial_deviation_page.xml" index="6"/>
-<item historyLabel="activity_thumb_stretch_page.xml" index="7"/>
-<item historyLabel="activity_wrist_flex_page.xml" index="8"/>
-<item historyLabel="activity_thumb_stretch_page.xml" index="7"/>
-<item historyLabel="activity_radial_deviation_page.xml" index="6"/>
-<item historyLabel="activity_finger_lift_page.xml" index="5"/>
-<item historyLabel="activity_finger_grip_page.xml" index="4"/>
-<item historyLabel="activity_elbow_extension_page.xml" index="3"/>
-<item historyLabel="activity_arm_rotation_page.xml" index="2"/>
-<item historyLabel="WristFlexPage.java" index="1">
-<position info="not_deleted" x="2029" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="2739" y="0"/>
 </item>
-<item historyLabel="WristFlexPage.java" index="1">
-<position info="not_deleted" x="1894" y="135"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4022" y="0"/>
 </item>
-<item historyLabel="ThumbStretchPage.java" index="0">
-<position info="not_deleted" x="2044" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="2739" y="0"/>
 </item>
-<item historyLabel="RadialDeviationPage.java" index="9">
-<position info="not_deleted" x="2059" y="0"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4022" y="0"/>
 </item>
-<item historyLabel="FingerLiftPage.java" index="10">
-<position info="not_deleted" x="2034" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="2739" y="0"/>
 </item>
-<item historyLabel="FingerGripPage.java" index="11">
-<position info="not_deleted" x="2034" y="0"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="5243" y="0"/>
 </item>
-<item historyLabel="ElbowExtensionPage.java" index="12">
-<position info="not_deleted" x="2054" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="2739" y="0"/>
 </item>
-<item historyLabel="ArmRotationPage.java" index="13">
-<position info="not_deleted" x="2039" y="0"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4909" y="0"/>
 </item>
-<item historyLabel="ElbowExtensionPage.java" index="12">
-<position info="not_deleted" x="2054" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="2739" y="0"/>
 </item>
-<item historyLabel="FingerGripPage.java" index="11">
-<position info="not_deleted" x="2034" y="0"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4909" y="0"/>
 </item>
-<item historyLabel="FingerLiftPage.java" index="10">
-<position info="not_deleted" x="2034" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="6142" y="0"/>
 </item>
-<item historyLabel="RadialDeviationPage.java" index="9">
-<position info="not_deleted" x="2059" y="0"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4909" y="0"/>
 </item>
-<item historyLabel="ThumbStretchPage.java" index="0">
-<position info="not_deleted" x="2044" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="6142" y="0"/>
 </item>
-<item historyLabel="WristFlexPage.java" index="1">
-<position info="not_deleted" x="1894" y="135"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4909" y="0"/>
 </item>
-<item historyLabel="ReHand Manifest" index="14"/>
-<item historyLabel="ArmRotationExercise.java" index="15">
-<position info="not_deleted" x="7001" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="2314" y="0"/>
 </item>
-<item historyLabel="WristFlexExercise.java" index="16">
-<position info="not_deleted" x="5927" y="0"/>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="875" y="0"/>
 </item>
-<item active="true" historyLabel="WristFlexExercise.java" index="16">
-<position info="not_deleted" x="6058" y="0"/>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="1688" y="0"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="5670" y="0"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="873" y="0"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="875" y="0"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="3158" y="0"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="875" y="0"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="3246" y="0"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="3510" y="55"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="3834" y="0"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="3617" y="95"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="3834" y="0"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="3730" y="0"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="3834" y="0"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="3705" y="16"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="4284" y="0"/>
+</item>
+<item historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4719" y="0"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="3909" y="0"/>
+</item>
+<item historyLabel="ArmRotationTutorialPage.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ArmRotationTutorialPage.java" index="2">
+<position info="not_deleted" x="846" y="0"/>
+</item>
+<item historyLabel="FingerLiftTutorialPage.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ThumbStretchTutorialPage.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="WristFlexTutorialPage.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ArmRotationTutorialPage.java" index="2">
+<position info="not_deleted" x="842" y="0"/>
+</item>
+<item historyLabel="FingerLiftTutorialPage.java" index="3">
+<position info="not_deleted" x="736" y="0"/>
+</item>
+<item historyLabel="ArmRotationTutorialPage.java" index="2">
+<position info="not_deleted" x="596" y="114"/>
+</item>
+<item historyLabel="FingerLiftTutorialPage.java" index="3">
+<position info="not_deleted" x="736" y="0"/>
+</item>
+<item historyLabel="ThumbStretchTutorialPage.java" index="4">
+<position info="not_deleted" x="738" y="0"/>
+</item>
+<item historyLabel="WristFlexTutorialPage.java" index="5">
+<position info="not_deleted" x="2766" y="0"/>
+</item>
+<item historyLabel="ThumbStretchTutorialPage.java" index="4">
+<position info="not_deleted" x="2784" y="0"/>
+</item>
+<item historyLabel="FingerLiftTutorialPage.java" index="3">
+<position info="not_deleted" x="2772" y="0"/>
+</item>
+<item historyLabel="ArmRotationTutorialPage.java" index="2">
+<position info="not_deleted" x="2608" y="0"/>
+</item>
+<item historyLabel="WristFlexExercise.java" index="1">
+<position info="not_deleted" x="1676" y="0"/>
+</item>
+<item active="true" historyLabel="ArmRotationExercise.java" index="0">
+<position info="not_deleted" x="4719" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -444,11 +517,26 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WristFlexTutorialPage.java" tooltip="ReHand/src/com/example/rehand/WristFlexTutorialPage.java">
+<persistable path="/ReHand/src/com/example/rehand/WristFlexTutorialPage.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThumbStretchTutorialPage.java" tooltip="ReHand/src/com/example/rehand/ThumbStretchTutorialPage.java">
+<persistable path="/ReHand/src/com/example/rehand/ThumbStretchTutorialPage.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FingerLiftTutorialPage.java" tooltip="ReHand/src/com/example/rehand/FingerLiftTutorialPage.java">
+<persistable path="/ReHand/src/com/example/rehand/FingerLiftTutorialPage.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArmRotationTutorialPage.java" tooltip="ReHand/src/com/example/rehand/ArmRotationTutorialPage.java">
+<persistable path="/ReHand/src/com/example/rehand/ArmRotationTutorialPage.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WristFlexExercise.java" tooltip="ReHand/src/com/example/rehand/WristFlexExercise.java">
 <persistable path="/ReHand/src/com/example/rehand/WristFlexExercise.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArmRotationExercise.java" tooltip="ReHand/src/com/example/rehand/ArmRotationExercise.java">
 <persistable path="/ReHand/src/com/example/rehand/ArmRotationExercise.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FingerLiftExercise.java" tooltip="ReHand/src/com/example/rehand/FingerLiftExercise.java">
+<persistable path="/ReHand/src/com/example/rehand/FingerLiftExercise.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="ReHand/AndroidManifest.xml">
 <persistable path="/ReHand/AndroidManifest.xml"/>
@@ -473,21 +561,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_arm_rotation_page.xml" tooltip="ReHand/res/layout/activity_arm_rotation_page.xml">
 <persistable path="/ReHand/res/layout/activity_arm_rotation_page.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WristFlexPage.java" tooltip="ReHand/src/com/example/rehand/WristFlexPage.java">
-<persistable path="/ReHand/src/com/example/rehand/WristFlexPage.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThumbStretchPage.java" tooltip="ReHand/src/com/example/rehand/ThumbStretchPage.java">
-<persistable path="/ReHand/src/com/example/rehand/ThumbStretchPage.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RadialDeviationPage.java" tooltip="ReHand/src/com/example/rehand/RadialDeviationPage.java">
-<persistable path="/ReHand/src/com/example/rehand/RadialDeviationPage.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FingerLiftPage.java" tooltip="ReHand/src/com/example/rehand/FingerLiftPage.java">
-<persistable path="/ReHand/src/com/example/rehand/FingerLiftPage.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FingerGripPage.java" tooltip="ReHand/src/com/example/rehand/FingerGripPage.java">
-<persistable path="/ReHand/src/com/example/rehand/FingerGripPage.java"/>
 </file>
 </mruList>
 </workbench>
