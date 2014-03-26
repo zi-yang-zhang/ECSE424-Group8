@@ -182,7 +182,7 @@ public class FingerLiftExercise extends Activity {
 				}else{
 					intent.putExtra("scoreRingFinger", Double.toString(holdTime[2]));
 				}
-				if(holdTime[2]==-1){
+				if(holdTime[3]==-1){
 					intent.putExtra("scoreLittleFinger", "Pass");
 				}else{
 					intent.putExtra("scoreLittleFinger", Double.toString(holdTime[3]));
