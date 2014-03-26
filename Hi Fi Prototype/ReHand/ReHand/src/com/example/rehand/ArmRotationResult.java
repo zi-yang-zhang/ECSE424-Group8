@@ -53,7 +53,7 @@ public class ArmRotationResult extends Activity {
 		builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
 	        	SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-	       		prefs.edit().putString("armRotation", "Done").commit();
+	       		prefs.edit().putString("ArmRotation", "Done").commit();
 	       		ScoreDatabaseHelper db = new ScoreDatabaseHelper(getBaseContext());
 	       		boolean gettingStarted = prefs.getBoolean("armRotationFirstTime", true);
 	       		if(gettingStarted){

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="18" version="2.0">
+<workbench progressCount="21" version="2.0">
 <workbenchAdvisor/>
 <window height="1440" width="1280" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -46,7 +46,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArmRotationExercise.java" partName="ArmRotationExercise.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/ArmRotationExercise.java" title="ArmRotationExercise.java" tooltip="ReHand/src/com/example/rehand/ArmRotationExercise.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/ArmRotationExercise.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4002" selectionTopPixel="1350"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4518" selectionTopPixel="1350"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WristFlexExercise.java" partName="WristFlexExercise.java" path="C:/Users/Reklaw/Documents/GitHub/ECSE424-Group8/Hi Fi Prototype/ReHand/ReHand/src/com/example/rehand/WristFlexExercise.java" title="WristFlexExercise.java" tooltip="ReHand/src/com/example/rehand/WristFlexExercise.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ReHand/src/com/example/rehand/WristFlexExercise.java"/>
@@ -219,7 +219,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.13730875" ratioLeft="350" ratioRight="2199" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.7496136" ratioLeft="485" ratioRight="162" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
