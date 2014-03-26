@@ -55,7 +55,7 @@ public class WristFlexResult extends Activity {
 	           public void onClick(DialogInterface dialog, int id) {
 	               // User clicked OK button
 	        	SharedPreferences prefs = getBaseContext().getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
-	       		prefs.edit().putString("wristFlex", "Done").commit();
+	       		prefs.edit().putString("WristFlex", "Done").commit();
 	       		ScoreDatabaseHelper db = new ScoreDatabaseHelper(getBaseContext());
 	       		boolean gettingStarted = prefs.getBoolean("wristFlexFirstTime", true);
 	       		if(gettingStarted){

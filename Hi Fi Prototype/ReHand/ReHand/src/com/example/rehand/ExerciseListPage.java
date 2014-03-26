@@ -53,10 +53,10 @@ public class ExerciseListPage extends Activity {
 
         TextView view = (TextView) findViewById(R.id.progressPercentage);
         DecimalFormat df = new DecimalFormat("#.##");
-        view.setText(df.format(done/8.0*100) + "%");
+        view.setText(df.format(done/4.0*100) + "%");
 
         ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
-        bar.setProgress((int) (done/8.0*100.0));
+        bar.setProgress((int) (done/4.0*100.0));
 	}
 
 	/**
