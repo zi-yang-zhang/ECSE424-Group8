@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
         android:text="@string/exercise_text_thumb_stretch"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -22,31 +21,30 @@
         android:id="@+id/thumb_stretch_tutorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginBottom="18dp"
         android:onClick="viewTutorial"
         android:text="@string/exercise_tutorial_check_box" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/thumb_stretch_tutorial"
-        android:layout_alignRight="@+id/thumb_stretch_tutorial"
-        android:layout_below="@+id/thumb_stretch_tutorial"
-        android:layout_marginTop="20dp"
-        android:onClick="goToExercisePage"
-        android:text="@string/exercise_start_botton_text" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignRight="@+id/button2"
-        android:layout_below="@+id/button2"
-        android:layout_marginTop="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:onClick="goBack"
         android:text="@string/back_button" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_alignLeft="@+id/thumb_stretch_tutorial"
+        android:layout_alignRight="@+id/thumb_stretch_tutorial"
+        android:layout_marginBottom="14dp"
+        android:onClick="goToExercisePage"
+        android:text="@string/exercise_start_botton_text" />
+
 </RelativeLayout>

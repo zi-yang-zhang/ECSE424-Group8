@@ -52,10 +52,13 @@ public final class R {
         public static final int red_light=0x7f020019;
         public static final int rehand_icon=0x7f02001a;
         public static final int thumb_stretch=0x7f02001b;
-        public static final int wf_flip_down=0x7f02001c;
-        public static final int wf_flip_up=0x7f02001d;
-        public static final int wf_start=0x7f02001e;
-        public static final int wrist_flex=0x7f02001f;
+        public static final int thumbstretchintro=0x7f02001c;
+        public static final int thumbstretchleft=0x7f02001d;
+        public static final int thumbstretchright=0x7f02001e;
+        public static final int wf_flip_down=0x7f02001f;
+        public static final int wf_flip_up=0x7f020020;
+        public static final int wf_start=0x7f020021;
+        public static final int wrist_flex=0x7f020022;
     }
     public static final class id {
         public static final int ArmRotationProgress=0x7f0a0002;
@@ -66,7 +69,7 @@ public final class R {
         public static final int TextView02=0x7f0a0043;
         public static final int ThumbStretchProgress=0x7f0a0015;
         public static final int WristFlexProgress=0x7f0a0013;
-        public static final int action_settings=0x7f0a004c;
+        public static final int action_settings=0x7f0a004e;
         public static final int armRotationProgressButton=0x7f0a0012;
         public static final int arm_rotation_tutorial=0x7f0a0003;
         public static final int benchmark=0x7f0a000d;
@@ -83,7 +86,7 @@ public final class R {
         public static final int finger_lift_tutorial=0x7f0a0035;
         public static final int gameInstruction=0x7f0a0020;
         public static final int gettingStartedText=0x7f0a003e;
-        public static final int greenLight=0x7f0a0046;
+        public static final int greenLight=0x7f0a0048;
         public static final int homeButton=0x7f0a001d;
         public static final int imageView1=0x7f0a0044;
         public static final int indexFingerArrow=0x7f0a0021;
@@ -113,17 +116,19 @@ public final class R {
         public static final int progressBar1=0x7f0a0007;
         public static final int progressPageInstruction=0x7f0a0019;
         public static final int progressPercentage=0x7f0a001c;
-        public static final int redCross=0x7f0a0047;
-        public static final int redLight=0x7f0a0045;
+        public static final int redCross=0x7f0a0049;
+        public static final int redLight=0x7f0a0047;
         public static final int ringFingerArrow=0x7f0a0029;
         public static final int ringFingerButton=0x7f0a0033;
         public static final int ringFingerGreenLight=0x7f0a002b;
         public static final int ringFingerRedLight=0x7f0a002c;
         public static final int ringHoldTime=0x7f0a002a;
         public static final int ringScore=0x7f0a003b;
+        public static final int scoreLeft=0x7f0a004b;
+        public static final int scoreRight=0x7f0a004c;
         public static final int socreText=0x7f0a0010;
-        public static final int testInstruction=0x7f0a0048;
-        public static final int testType=0x7f0a0049;
+        public static final int testInstruction=0x7f0a0046;
+        public static final int testType=0x7f0a0045;
         public static final int testTypeText=0x7f0a000f;
         public static final int textView1=0x7f0a0006;
         public static final int textView2=0x7f0a0036;
@@ -134,7 +139,7 @@ public final class R {
         public static final int thumb_stretch_tutorial=0x7f0a004a;
         public static final int videoView1=0x7f0a0011;
         public static final int wristFlexProgressButton=0x7f0a0014;
-        public static final int wrist_flex_tutorial=0x7f0a004b;
+        public static final int wrist_flex_tutorial=0x7f0a004d;
     }
     public static final class layout {
         public static final int activity_arm_rotation_exercise=0x7f030000;

@@ -2,6 +2,7 @@ package com.example.rehand;
 
 import java.text.DecimalFormat;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,8 +16,12 @@ import android.widget.TextView;
 
 public class ThumbStretchResult extends Activity {
 
-	String attemptText;
+	private String attemptText;
 	double attempt;
+	private String leftText;
+	double left;
+	private String rightText;
+	double right;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
@@ -26,17 +31,29 @@ public class ThumbStretchResult extends Activity {
 		boolean gettingStarted = prefs.getBoolean("thumbStretchFirstTime", true);
 		DecimalFormat f = new DecimalFormat("##.##");
 		final TextView socreText = (TextView) findViewById(R.id.socreText);
+		final TextView scoreLeft = (TextView) findViewById(R.id.scoreLeft);
+		final TextView scoreRight = (TextView) findViewById(R.id.scoreRight);
 		final TextView testTypeText = (TextView) findViewById(R.id.testTypeText);
 		attemptText = this.getIntent().getStringExtra("score");
 		attempt = Double.parseDouble(attemptText);
+		leftText = this.getIntent().getStringExtra("scoreLeft");
+		left = Double.parseDouble(leftText);
+		rightText = this.getIntent().getStringExtra("scoreRight");
+		right = Double.parseDouble(rightText);
+		MediaPlayer done = MediaPlayer.create(getBaseContext(), R.drawable.done);
+		done.start();
 		//getting started
 		if(gettingStarted){
 			//create new entry and save in database
 			testTypeText.setText("You Have Completed Bench Mark Test!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(attempt)));
+			socreText.setText(String.valueOf(f.format(attempt))+"inches");
+			scoreLeft.setText(String.valueOf(f.format(left))+"inches");
+			scoreRight.setText(String.valueOf(f.format(right))+"inches");
 		}else{
 			testTypeText.setText("You Have Completed Finger Lift Exercise!");
-			socreText.setText("Your Score: "+String.valueOf(f.format(attempt)));
+			socreText.setText(String.valueOf(f.format(attempt))+"inches");
+			scoreLeft.setText(String.valueOf(f.format(left))+"inches");
+			scoreRight.setText(String.valueOf(f.format(right))+"inches");
 		}
 	}
 
@@ -60,7 +77,7 @@ public class ThumbStretchResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("thumbStretchFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult thumbStretchResult = new ExerciseResult(3,"Thumb Stretch",attempt,(attempt+300));
+	    			ExerciseResult thumbStretchResult = new ExerciseResult(3,"Thumb Stretch",attempt,1.8);
 	    			db.addResult(thumbStretchResult);
 	    			prefs.edit().putBoolean("thumbStretchFirstTime", false).commit();
 	    		}else{

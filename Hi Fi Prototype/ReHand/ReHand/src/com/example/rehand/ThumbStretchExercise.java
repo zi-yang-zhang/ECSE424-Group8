@@ -36,7 +36,7 @@ public class ThumbStretchExercise extends Activity {
 		boolean gettingStarted = prefs.getBoolean("thumbStretchFirstTime", true);
 
 		testInstruction = (TextView)findViewById(R.id.testInstruction);
-
+		final MediaPlayer intro = MediaPlayer.create(this, R.drawable.thumbstretchintro);
 		final TextView testType = (TextView)findViewById(R.id.testType);
 		if(gettingStarted){
 			testType.setText("Bechmarking Test");
@@ -46,8 +46,8 @@ public class ThumbStretchExercise extends Activity {
 		}
 		testInstruction.setText("Tap Your Start Point");
 
-		MediaPlayer go = MediaPlayer.create(getBaseContext(), R.drawable.go);
-		go.start();
+		
+		intro.start();
 		
 	}
 	
@@ -65,16 +65,20 @@ public class ThumbStretchExercise extends Activity {
 	    redLight = (ImageView)findViewById(R.id.redLight);
 	    greenLight = (ImageView)findViewById(R.id.greenLight);
 	    redCross = (ImageView)findViewById(R.id.redCross);
-	    MediaPlayer go = MediaPlayer.create(getBaseContext(), R.drawable.go);
+
+		final MediaPlayer left = MediaPlayer.create(getBaseContext(), R.drawable.thumbstretchleft);
+		final MediaPlayer right = MediaPlayer.create(getBaseContext(), R.drawable.thumbstretchright);
 	    switch(action) {
 	        case (MotionEvent.ACTION_DOWN) :
 	        	
 	        	if(!initialTouch){
 	        		initialX = event.getX()-xCalibration;
 	        		initialY = event.getY()-yCalibration;
+	        		/*
 	        		redCross.setVisibility(View.VISIBLE);
 	        		redCross.setX(initialX);
 	        		redCross.setY(initialY);
+	        		*/
 	        	}else if(!secondTouch){
 	        		secondX = event.getX()-xCalibration;
 	        		secondY = event.getY()-yCalibration;
@@ -84,7 +88,6 @@ public class ThumbStretchExercise extends Activity {
 	        	}else if(!thirdTouch){
 	        		thirdX = event.getX()-xCalibration;
 	        		thirdY = event.getY()-yCalibration;
-
 	        		greenLight.setVisibility(View.VISIBLE);
 	        		greenLight.setX(thirdX);
 	        		greenLight.setY(thirdY);
@@ -95,28 +98,45 @@ public class ThumbStretchExercise extends Activity {
 	        	if(!initialTouch){
 	        		testInstruction.setText("Go as far as you can to the left");
 	        		initialTouch = true;
-	        		go.start();
+	        		left.start();
 	        	}else if(!secondTouch){
 	        		testInstruction.setText("Go as far as you can to the right");
 	        		secondTouch = true;
-	        		go.start();
+	        		right.start();
 	        	}else if(!thirdTouch){
 	        		testInstruction.setText("");
 	        		thirdTouch = true;
-	        		MediaPlayer done = MediaPlayer.create(getBaseContext(), R.drawable.done);
-	        		done.start();
+	        		Resources resources = getBaseContext().getResources();
+	        	    DisplayMetrics metrics = resources.getDisplayMetrics();
+	        	    
 	        		float scoreLeftX = Math.abs(initialX-secondX);
+	        		scoreLeftX=scoreLeftX/metrics.xdpi;
 	        		float scoreLeftY = Math.abs(initialY-secondY);
+	        		scoreLeftY=scoreLeftY/metrics.xdpi;
 	        		float scoreLeft = (float) Math.sqrt(scoreLeftX*scoreLeftX+scoreLeftY*scoreLeftY);
 
 	        		float scoreRightX = Math.abs(initialX-thirdX);
+	        		scoreRightX=scoreRightX/metrics.xdpi;
 	        		float scoreRightY = Math.abs(initialY-thirdY);
+	        		scoreRightY=scoreRightY/metrics.xdpi;
 	        		float scoreRight = (float) Math.sqrt(scoreRightX*scoreRightX+scoreRightY*scoreRightY);
 	        		
 	        		float score = (scoreRight+scoreLeft)/2;
+	        		System.out.println("xdpi: "+metrics.xdpi);
+	        		System.out.println("ydpi: "+metrics.ydpi);
+	        		System.out.println("scoreLeftX: "+scoreLeftX);
+	        		System.out.println("scoreLeftY: "+scoreLeftY);
+
+	        		System.out.println("scoreRightX: "+scoreRightX);
+	        		System.out.println("scoreRightY: "+scoreRightY);
+	        		
 	        		Intent intent = new Intent(getBaseContext(), ThumbStretchResult.class);
+	        		intent.putExtra("scoreLeft", Float.toString(scoreLeft));
+	        		intent.putExtra("scoreRight", Float.toString(scoreRight));
 	       	 		intent.putExtra("score", Float.toString(score));
 	       	 		startActivity(intent);
+	       	 		left.release();
+	       	 		right.release();
 	       	 		finish();
 	        	}
 	        	

@@ -2,6 +2,7 @@ package com.example.rehand;
 
 import java.text.DecimalFormat;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -42,6 +43,8 @@ public class FingerLiftResult extends Activity {
 		middleText = this.getIntent().getStringExtra("scoreMiddleFinger");
 		ringText = this.getIntent().getStringExtra("scoreRingFinger");
 		littleText = this.getIntent().getStringExtra("scoreLittleFinger");
+		MediaPlayer done = MediaPlayer.create(getBaseContext(), R.drawable.done);
+		done.start();
 		//getting started
 		if(gettingStarted){
 			testTypeText.setText("You Have Completed Bench Mark Test!");
