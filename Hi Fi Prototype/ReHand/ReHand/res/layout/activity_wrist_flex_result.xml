@@ -9,22 +9,12 @@
     tools:context=".WristFlexPage" >
 
     <TextView
-        android:id="@+id/ArmRotationProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:text="@string/exercise_text_wrist_flex"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/testTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/ArmRotationProgress"
+        android:layout_below="@+id/WristFlexProgress"
         android:layout_marginTop="21dp"
         android:text="@string/exercise_level_text"
         android:textAlignment="center"
@@ -48,5 +38,25 @@
         android:layout_alignRight="@+id/button2"
         android:layout_centerVertical="true"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/WristFlexProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/exercise_text_wrist_flex"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/socreText"
+        android:layout_alignLeft="@+id/testTypeText"
+        android:layout_alignRight="@+id/testTypeText"
+        android:layout_below="@+id/testTypeText"
+        android:src="@drawable/wrist_flex" />
 
 </RelativeLayout>

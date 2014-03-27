@@ -9,16 +9,6 @@
     tools:context=".ArmRotationPage" >
 
     <TextView
-        android:id="@+id/ArmRotationProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:text="@string/exercise_text_arm_rotation"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/testTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,5 +38,25 @@
         android:layout_alignRight="@+id/button2"
         android:layout_centerVertical="true"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/ArmRotationProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/exercise_text_arm_rotation"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/socreText"
+        android:layout_alignLeft="@+id/testTypeText"
+        android:layout_alignRight="@+id/testTypeText"
+        android:layout_below="@+id/testTypeText"
+        android:src="@drawable/arm_rotation" />
 
 </RelativeLayout>

@@ -94,7 +94,7 @@ public class WristFlexExercise extends Activity implements SensorEventListener {
 					if(state.equals("A")) {
 						//GO
 		            	if(Math.abs(x) < 10 && Math.abs(y) < 10) {
-		            		MediaPlayer go = MediaPlayer.create(this, R.drawable.wf_flip_up);
+		            		MediaPlayer go = MediaPlayer.create(this, R.drawable.wf_rotate_up);
 		                	go.start();
 		                	state = "AB";
 		                	wait_time = 0;
@@ -122,7 +122,7 @@ public class WristFlexExercise extends Activity implements SensorEventListener {
 						wait_time = 2000;
 					} else if(state.equals("D")) {
 						//GO
-						MediaPlayer go = MediaPlayer.create(this, R.drawable.wf_flip_down);
+						MediaPlayer go = MediaPlayer.create(this, R.drawable.wf_rotate_down);
 						go.start();
 						state = "DE";
 						wait_time = 0;
