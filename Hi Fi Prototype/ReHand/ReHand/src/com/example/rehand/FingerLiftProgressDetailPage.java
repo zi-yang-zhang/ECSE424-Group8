@@ -30,7 +30,9 @@ public class FingerLiftProgressDetailPage extends Activity {
 		DecimalFormat f = new DecimalFormat("##.##");
 		final TextView levelText = (TextView) findViewById(R.id.level);
 		final TextView personalBestScore = (TextView) findViewById(R.id.personalBestScore);
-		final TextView progressText = (TextView) findViewById(R.id.progress);
+		final TextView lowestProgressText = (TextView) findViewById(R.id.lowestProgress);
+		final TextView middleProgressText = (TextView) findViewById(R.id.middleProgress);
+		final TextView highestProgressText = (TextView) findViewById(R.id.highestProgress);
 		final TextView benchmarkText = (TextView) findViewById(R.id.benchmark);
 		final TextView benchmarkTextView = (TextView) findViewById(R.id.benchmarkText);
 		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
@@ -39,7 +41,9 @@ public class FingerLiftProgressDetailPage extends Activity {
 			benchmarkText.setText("");
 			levelText.setText("");
 			personalBestScore.setText("");
-			progressText.setText("0%");
+			lowestProgressText.setText("");
+			middleProgressText.setText("");
+			highestProgressText.setText("");
 	        bar.setProgress((int) 0);
 		}else{
 		ExerciseResult fingerLiftResult = db.getResult(2);
@@ -47,10 +51,17 @@ public class FingerLiftProgressDetailPage extends Activity {
 		double personalBest = fingerLiftResult.getPersonalBest();
 		int level = fingerLiftResult.getLevel();
 		double benchmark = fingerLiftResult.getBenchmark();
+		double levelIncrements = (fingerLiftResult.getMaximumMark()-benchmark)/3;
 		benchmarkText.setText(String.valueOf(f.format(benchmark))+" Seconds");
 		levelText.setText(String.valueOf(level));
 		personalBestScore.setText(String.valueOf(f.format(personalBest))+" Seconds");
-		progressText.setText(String.valueOf(f.format(currentProgress))+"%");
+		if(benchmark-levelIncrements<0){
+			lowestProgressText.setText("0s");
+		}else{
+			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+"s");
+		}
+		middleProgressText.setText(String.valueOf(f.format(benchmark))+"s");
+		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+"s");
         bar.setProgress((int) currentProgress);
 		}
 	}

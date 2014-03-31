@@ -10,6 +10,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -29,6 +31,16 @@ public class ThumbStretchResult extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_thumb_stretch_result);
 		boolean gettingStarted = prefs.getBoolean("thumbStretchFirstTime", true);
+		/*
+		Resources resources = this.getResources();
+	    DisplayMetrics metrics = resources.getDisplayMetrics();
+	    System.out.println("xpid"+metrics.xdpi);
+	    System.out.println("ypid"+metrics.ydpi);
+	    System.out.println("heightPixels"+metrics.heightPixels);
+	    System.out.println("widthPixels"+metrics.widthPixels);
+	    System.out.println("width"+(metrics.widthPixels/metrics.xdpi));
+	    System.out.println("height"+(metrics.heightPixels/metrics.ydpi));
+	    */
 		DecimalFormat f = new DecimalFormat("##.##");
 		final TextView socreText = (TextView) findViewById(R.id.socreText);
 		final TextView scoreLeft = (TextView) findViewById(R.id.scoreLeft);
@@ -65,6 +77,8 @@ public class ThumbStretchResult extends Activity {
 	}
 
 	public void goToExercisesPage(View view){
+		Resources resources = this.getResources();
+	    final DisplayMetrics metrics = resources.getDisplayMetrics();
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(R.string.result_page_warning)
 			   .setTitle("Saving Result");
@@ -77,7 +91,7 @@ public class ThumbStretchResult extends Activity {
 	       		boolean gettingStarted = prefs.getBoolean("thumbStretchFirstTime", true);
 	       		if(gettingStarted){
 	    			//create new entry and save in database
-	    			ExerciseResult thumbStretchResult = new ExerciseResult(3,"Thumb Stretch",attempt,1.8);
+	    			ExerciseResult thumbStretchResult = new ExerciseResult(3,"Thumb Stretch",attempt,((metrics.heightPixels/metrics.ydpi)/2));
 	    			db.addResult(thumbStretchResult);
 	    			prefs.edit().putBoolean("thumbStretchFirstTime", false).commit();
 	    		}else{

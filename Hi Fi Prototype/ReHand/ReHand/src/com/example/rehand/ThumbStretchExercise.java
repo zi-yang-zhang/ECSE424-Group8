@@ -74,11 +74,6 @@ public class ThumbStretchExercise extends Activity {
 	        	if(!initialTouch){
 	        		initialX = event.getX()-xCalibration;
 	        		initialY = event.getY()-yCalibration;
-	        		/*
-	        		redCross.setVisibility(View.VISIBLE);
-	        		redCross.setX(initialX);
-	        		redCross.setY(initialY);
-	        		*/
 	        	}else if(!secondTouch){
 	        		secondX = event.getX()-xCalibration;
 	        		secondY = event.getY()-yCalibration;
@@ -102,13 +97,16 @@ public class ThumbStretchExercise extends Activity {
 	        	}else if(!secondTouch){
 	        		testInstruction.setText("Go as far as you can to the right");
 	        		secondTouch = true;
+	        		left.stop();
+	        		left.release();
 	        		right.start();
 	        	}else if(!thirdTouch){
 	        		testInstruction.setText("");
 	        		thirdTouch = true;
+	        		right.stop();
+	        		right.release();
 	        		Resources resources = getBaseContext().getResources();
 	        	    DisplayMetrics metrics = resources.getDisplayMetrics();
-	        	    
 	        		float scoreLeftX = Math.abs(initialX-secondX);
 	        		scoreLeftX=scoreLeftX/metrics.xdpi;
 	        		float scoreLeftY = Math.abs(initialY-secondY);
@@ -145,19 +143,5 @@ public class ThumbStretchExercise extends Activity {
 	            return super.onTouchEvent(event);
 	    }
 	    }  
-	/*
-	public static float convertDpToPixel(float dp, Context context){
-	    Resources resources = context.getResources();
-	    DisplayMetrics metrics = resources.getDisplayMetrics();
-	    float px = dp * (metrics.densityDpi / 160f);
-	    return px;
-	}
-	public static float convertPixelsToDp(float px, Context context){
-	    Resources resources = context.getResources();
-	    DisplayMetrics metrics = resources.getDisplayMetrics();
-	    float dp = px / (metrics.densityDpi / 160f);
-	    return dp;
-	}
-	*/
 
 }
