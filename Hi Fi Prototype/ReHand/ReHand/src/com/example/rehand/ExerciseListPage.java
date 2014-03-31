@@ -1,6 +1,7 @@
 package com.example.rehand;
 
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -19,6 +20,20 @@ public class ExerciseListPage extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		SharedPreferences prefs = this.getSharedPreferences("com.example.rehand", Context.MODE_PRIVATE);
+		Calendar cal = Calendar.getInstance();
+		int today = cal.get(Calendar.DAY_OF_YEAR);
+		int storedDate = prefs.getInt("Date", 0);
+		System.out.println("today"+today);
+		System.out.println("storedDate"+storedDate);
+		if(today!=storedDate){
+			prefs.edit().putString("ArmRotation", "Not Done").commit();
+			prefs.edit().putString("FingerLift", "Not Done").commit();
+			prefs.edit().putString("ThumbStretch", "Not Done").commit();
+			prefs.edit().putString("WristFlex", "Not Done").commit();
+			prefs.edit().putInt("Date", today).commit();
+		}
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_exercise_list_page);
 		// Show the Up button in the action bar.
