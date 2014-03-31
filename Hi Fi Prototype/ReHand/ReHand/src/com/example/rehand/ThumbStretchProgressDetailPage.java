@@ -35,7 +35,7 @@ public class ThumbStretchProgressDetailPage extends Activity {
 		final TextView benchmarkTextView = (TextView) findViewById(R.id.benchmarkText);
 		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
 		if(gettingStarted){
-			benchmarkTextView.setText("Please do benchmark Test");
+			benchmarkTextView.setText("Please do Baseline Test");
 			benchmarkText.setText("");
 			levelText.setText("");
 			personalBestScore.setText("");

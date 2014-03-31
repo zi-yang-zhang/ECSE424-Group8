@@ -39,7 +39,7 @@ public class ThumbStretchExercise extends Activity {
 		final MediaPlayer intro = MediaPlayer.create(this, R.drawable.thumbstretchintro);
 		final TextView testType = (TextView)findViewById(R.id.testType);
 		if(gettingStarted){
-			testType.setText("Bechmarking Test");
+			testType.setText("Baseline Test");
 			
 		}else{
 			testType.setText("Thumb Stretch Exercise");
