@@ -176,7 +176,7 @@ public class ArmRotationExercise extends Activity implements SensorEventListener
 			mLastY = y;
 			mLastZ = z;
 	    } else {
-	    	float range = first - second;
+	    	float range = Math.round(first - second);
 	    	if(range < 0) {
 	    		range += 360;
 	    	}

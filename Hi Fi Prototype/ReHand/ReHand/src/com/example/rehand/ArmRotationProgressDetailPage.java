@@ -28,7 +28,9 @@ public class ArmRotationProgressDetailPage extends Activity {
 		DecimalFormat f = new DecimalFormat("##.##");
 		final TextView levelText = (TextView) findViewById(R.id.level);
 		final TextView personalBestScore = (TextView) findViewById(R.id.personalBestScore);
-		final TextView progressText = (TextView) findViewById(R.id.progress);
+		final TextView lowestProgressText = (TextView) findViewById(R.id.lowestProgress);
+		final TextView middleProgressText = (TextView) findViewById(R.id.middleProgress);
+		final TextView highestProgressText = (TextView) findViewById(R.id.highestProgress);
 		final TextView benchmarkText = (TextView) findViewById(R.id.benchmark);
 		final TextView benchmarkTextView = (TextView) findViewById(R.id.benchmarkText);
 		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
@@ -37,7 +39,9 @@ public class ArmRotationProgressDetailPage extends Activity {
 			benchmarkText.setText("");
 			levelText.setText("");
 			personalBestScore.setText("");
-			progressText.setText("0%");
+			lowestProgressText.setText("");
+			middleProgressText.setText("");
+			highestProgressText.setText("");
 	        bar.setProgress((int) 0);
 		}else{
 		ExerciseResult armRotationResult = db.getResult(1);
@@ -45,10 +49,17 @@ public class ArmRotationProgressDetailPage extends Activity {
 		double personalBest = armRotationResult.getPersonalBest();
 		int level = armRotationResult.getLevel();
 		double benchmark = armRotationResult.getBenchmark();
+		double levelIncrements = (armRotationResult.getMaximumMark()-benchmark)/3;
 		benchmarkText.setText(String.valueOf(f.format(benchmark))+"Degrees");
 		levelText.setText(String.valueOf(level));
 		personalBestScore.setText(String.valueOf(f.format(personalBest))+"Degrees");
-		progressText.setText(String.valueOf(f.format(currentProgress))+"%");
+		if(benchmark-levelIncrements<0){
+			lowestProgressText.setText("0degrees");
+		}else{
+			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+"degrees");
+		}
+		middleProgressText.setText(String.valueOf(f.format(benchmark))+"degrees");
+		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+"degrees");
         bar.setProgress((int) currentProgress);
 		}
 	}
