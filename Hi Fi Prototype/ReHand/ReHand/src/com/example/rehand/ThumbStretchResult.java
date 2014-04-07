@@ -57,15 +57,15 @@ public class ThumbStretchResult extends Activity {
 		//getting started
 		if(gettingStarted){
 			//create new entry and save in database
-			testTypeText.setText("You Have Completed Baseline Test!");
-			socreText.setText(String.valueOf(f.format(attempt))+"inches");
-			scoreLeft.setText(String.valueOf(f.format(left))+"inches");
-			scoreRight.setText(String.valueOf(f.format(right))+"inches");
+			testTypeText.setText("You Have Completed the Baseline Test!");
+			socreText.setText(String.valueOf(f.format(attempt))+" inches");
+			scoreLeft.setText(String.valueOf(f.format(left))+" inches");
+			scoreRight.setText(String.valueOf(f.format(right))+" inches");
 		}else{
-			testTypeText.setText("You Have Completed Finger Lift Exercise!");
-			socreText.setText(String.valueOf(f.format(attempt))+"inches");
-			scoreLeft.setText(String.valueOf(f.format(left))+"inches");
-			scoreRight.setText(String.valueOf(f.format(right))+"inches");
+			testTypeText.setText("You Have Completed Thumb Stretch Exercise!");
+			socreText.setText(String.valueOf(f.format(attempt))+" inches");
+			scoreLeft.setText(String.valueOf(f.format(left))+" inches");
+			scoreRight.setText(String.valueOf(f.format(right))+" inches");
 		}
 	}
 

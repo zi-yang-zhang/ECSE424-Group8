@@ -56,12 +56,12 @@ public class FingerLiftProgressDetailPage extends Activity {
 		levelText.setText(String.valueOf(level));
 		personalBestScore.setText(String.valueOf(f.format(personalBest))+" Seconds");
 		if(benchmark-levelIncrements<0){
-			lowestProgressText.setText("0s");
+			lowestProgressText.setText("0 s");
 		}else{
-			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+"s");
+			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+" s");
 		}
-		middleProgressText.setText(String.valueOf(f.format(benchmark))+"s");
-		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+"s");
+		middleProgressText.setText(String.valueOf(f.format(benchmark))+" s");
+		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+" s");
         bar.setProgress((int) currentProgress);
 		}
 	}

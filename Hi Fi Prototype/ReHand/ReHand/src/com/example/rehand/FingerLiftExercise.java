@@ -90,7 +90,7 @@ public class FingerLiftExercise extends Activity {
 				holdTime[0] = -1;
 				gameInstruction.setText("Lift your middle finger");
 				liftMiddle.start();
-				indexHoldTime.setText("You have hold 15 seconds!");
+				indexHoldTime.setText("You held 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.VISIBLE);
 				ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -110,7 +110,7 @@ public class FingerLiftExercise extends Activity {
 				holdTime[1] = -1;
 				gameInstruction.setText("Lift your ring finger");
 				liftRing.start();
-				middleHoldTime.setText("You have hold 15 seconds!");
+				middleHoldTime.setText("You held 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.INVISIBLE);
 				ringFingerArrow.setVisibility(View.VISIBLE);
@@ -129,7 +129,7 @@ public class FingerLiftExercise extends Activity {
 				ringdone = true;
 				gameInstruction.setText("Lift your little finger");
 				liftLittle.start();
-				ringHoldTime.setText("You have hold 15 seconds!");
+				ringHoldTime.setText("You held 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.INVISIBLE);
 				ringFingerArrow.setVisibility(View.INVISIBLE);
@@ -146,7 +146,7 @@ public class FingerLiftExercise extends Activity {
 			public void onFinish() {
 				holdTime[3] = -1;
 				littledone = true;
-				littleHoldTime.setText("You have hold 15 seconds!");
+				littleHoldTime.setText("You held 15 seconds!");
 				indexFingerArrow.setVisibility(View.INVISIBLE);
 				middleFingerArrow.setVisibility(View.INVISIBLE);
 				ringFingerArrow.setVisibility(View.INVISIBLE);

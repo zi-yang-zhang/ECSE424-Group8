@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/currentLevelText"
         android:layout_centerVertical="true"
-        android:text="@string/benchmark_text"
+        android:text="Baseline Score:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView

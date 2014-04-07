@@ -50,16 +50,16 @@ public class ThumbStretchProgressDetailPage extends Activity {
 		int level = thumbStretchResult.getLevel();
 		double benchmark = thumbStretchResult.getBenchmark();
 		double levelIncrements = (thumbStretchResult.getMaximumMark()-benchmark)/3;
-		benchmarkText.setText(String.valueOf(f.format(benchmark))+"Iches");
+		benchmarkText.setText(String.valueOf(f.format(benchmark))+" Inches");
 		levelText.setText(String.valueOf(level));
-		personalBestScore.setText(String.valueOf(f.format(personalBest))+"Inches");
+		personalBestScore.setText(String.valueOf(f.format(personalBest))+" Inches");
 		if(benchmark-levelIncrements<0){
-			lowestProgressText.setText("0inch");
+			lowestProgressText.setText("0 in.");
 		}else{
-			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+"inch");
+			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+" in.");
 		}
-		middleProgressText.setText(String.valueOf(f.format(benchmark))+"inch");
-		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+"inch");
+		middleProgressText.setText(String.valueOf(f.format(benchmark))+" in.");
+		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+" in.");
         bar.setProgress((int) currentProgress);
 		}
 	}

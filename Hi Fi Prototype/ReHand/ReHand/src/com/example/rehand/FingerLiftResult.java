@@ -47,7 +47,7 @@ public class FingerLiftResult extends Activity {
 		done.start();
 		//getting started
 		if(gettingStarted){
-			testTypeText.setText("You Have Completed Baseline Test!");
+			testTypeText.setText("You Have Completed the Baseline Test!");
 		}else{
 			testTypeText.setText("You Have Completed Finger Lift Exercise!");
 		}

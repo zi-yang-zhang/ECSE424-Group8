@@ -35,7 +35,7 @@ public class WristFlexProgressDetailPage extends Activity {
 		final TextView benchmarkTextView = (TextView) findViewById(R.id.benchmarkText);
 		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
 		if(gettingStarted){
-			benchmarkTextView.setText("Please do benchmark Test");
+			benchmarkTextView.setText("Please do Baseline Test");
 			benchmarkText.setText("");
 			levelText.setText("");
 			personalBestScore.setText("");
@@ -50,16 +50,16 @@ public class WristFlexProgressDetailPage extends Activity {
 		int level = wristFlexResult.getLevel();
 		double benchmark = wristFlexResult.getBenchmark();
 		double levelIncrements = (wristFlexResult.getMaximumMark()-benchmark)/3;
-		benchmarkText.setText(String.valueOf(f.format(benchmark))+"Degrees");
+		benchmarkText.setText(String.valueOf(f.format(benchmark))+"\u00b0");
 		levelText.setText(String.valueOf(level));
-		personalBestScore.setText(String.valueOf(f.format(personalBest))+"Degrees");
+		personalBestScore.setText(String.valueOf(f.format(personalBest))+"\u00b0");
 		if(benchmark-levelIncrements<0){
-			lowestProgressText.setText("0degrees");
+			lowestProgressText.setText("0\u00b0");
 		}else{
-			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+"degrees");
+			lowestProgressText.setText(String.valueOf(f.format(benchmark-levelIncrements))+"\u00b0");
 		}
-		middleProgressText.setText(String.valueOf(f.format(benchmark))+"degrees");
-		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+"degrees");
+		middleProgressText.setText(String.valueOf(f.format(benchmark))+"\u00b0");
+		highestProgressText.setText(String.valueOf(f.format(benchmark+levelIncrements))+"\u00b0");
         bar.setProgress((int) currentProgress);
 		}
 	}

@@ -30,12 +30,12 @@ public class ArmRotationResult extends Activity {
 		//getting started
 		if(gettingStarted){
 			//create new entry and save in database
-			testTypeText.setText("You Have Completed Bench Mark Test!");
+			testTypeText.setText("You Have Completed the Baseline Test!");
 		}else{
 			//double score = wristFlexResult.getCurrentScore();
 			testTypeText.setText("You Have Completed Arm Rotation Exercise!");
 		}
-		socreText.setText("Your Score: "+String.valueOf(f.format(attempt)) +" degrees!");
+		socreText.setText("Your Score: "+String.valueOf(f.format(attempt)) +"\u00b0!");
 	}
 
 	@Override

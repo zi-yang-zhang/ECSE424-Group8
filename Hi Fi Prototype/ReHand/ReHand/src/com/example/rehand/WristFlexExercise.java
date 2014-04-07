@@ -39,6 +39,8 @@ public class WristFlexExercise extends Activity implements SensorEventListener {
 	    mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 	    mOrientation = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 	    mSensorManager.registerListener(this, mOrientation, SensorManager.SENSOR_DELAY_NORMAL);
+	    
+	    timer = System.currentTimeMillis();
 	}
 
 	@Override
@@ -56,7 +58,7 @@ public class WristFlexExercise extends Activity implements SensorEventListener {
 	    float y = event.values[2];
 	    if(!gameStart) {
 	    	long time = System.currentTimeMillis() - timer;
-	    	if(time > 4000) {
+	    	if(time > 2000) {
 	    		countDown.setText("");
 		    	MediaPlayer ready = MediaPlayer.create(this, R.drawable.wf_start);
 		    	ready.start();
@@ -66,13 +68,7 @@ public class WristFlexExercise extends Activity implements SensorEventListener {
 		    	gameStart = true;
 		    	timer = System.currentTimeMillis();
 			    sound_timer = System.currentTimeMillis();
-	    	} else if(time > 3000){
-		    	countDown.setText("1");
-		    } else if(time > 2000){
-		    	countDown.setText("2");
-		    } else if(time > 1000){
-		    	countDown.setText("3");
-		    }
+	    	}
 	    } else if(!gameOver) {
 	    	float deltaX = Math.abs(mLastX - x);
 			float deltaY = Math.abs(mLastY - y);
